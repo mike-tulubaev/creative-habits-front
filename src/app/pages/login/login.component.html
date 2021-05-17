@@ -1,0 +1,33 @@
+<main class="page page--intro">
+  <div class="container container--intro intro">
+    <div class="wrapper wrapper--intro">
+      <h1 class="title title--intro">
+        Welcome to
+        <br>
+        C<i class="title__italic">R</i>EATIVE LANDS<i class="title__italic">C</i>APE
+      </h1>
+      <form class="login-form" (submit)="password.blur(); validatePassword(password.value, $event)">
+        <input type="password" class="input login-form__input" [class.invalid]="invalid" placeholder="Enter password" #password>
+        <button class="button-small login-form__button" type="submit">Continue</button>
+      </form>
+    </div>
+    <p class="copyright">© Liminal Collective 2021</p>
+
+    <picture>
+      <source type="image/webp" srcset="/assets/img/intro/img1.webp 1x, /assets/img/intro/img1@2x.webp 2x">
+      <img appCache="/assets/img/intro/img1.png" class="intro__image intro__image--1" src="/assets/img/intro/img1.png" srcset="/assets/img/intro/img1@2x.png 2x" alt="">
+    </picture>
+    <picture>
+      <source type="image/webp" srcset="/assets/img/intro/img2.webp 1x, /assets/img/intro/img2@2x.webp 2x">
+      <img appCache="/assets/img/intro/img2.png" class="intro__image intro__image--2" src="/assets/img/intro/img2.png" srcset="/assets/img/intro/img2@2x.png 2x" alt="">
+    </picture>
+    <picture>
+      <source type="image/webp" srcset="/assets/img/intro/img3.webp 1x, /assets/img/intro/img3@2x.webp 2x">
+      <img appCache="/assets/img/intro/img3.png" class="intro__image intro__image--3" src="/assets/img/intro/img3.png" srcset="/assets/img/intro/img3@2x.png 2x" alt="">
+    </picture>
+    <picture>
+      <source type="image/webp" srcset="/assets/img/intro/img4.webp 1x, /assets/img/intro/img4@2x.webp 2x">
+      <img appCache="/assets/img/intro/img4.png" class="intro__image intro__image--4" src="/assets/img/intro/img4.png" srcset="/assets/img/intro/img4@2x.png 2x" alt="">
+    </picture>
+  </div>
+</main>

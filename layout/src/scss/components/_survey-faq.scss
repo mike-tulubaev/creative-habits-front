@@ -1,0 +1,18 @@
+.survey-faq {
+	//.survey-faq__title
+	&__title {
+		margin-bottom: 40px;
+		font-size: 24px;
+		line-height: 32px;
+	}
+
+	//.survey-faq__text
+	&__text {
+		margin-bottom: 0;
+		line-height: 20px;
+		font-family: $font-gt-light;
+		&:not(:last-child) {
+			margin-bottom: 70px;
+		}
+	}
+}

@@ -1,0 +1,50 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% from "templates/components/_header.html" import header %}
+{% from "./templates/components/_icon.html" import icon %}
+
+{% block page_title %}
+  Lanscape
+{% endblock %}
+
+{% block page_header %}
+  {{ header(showSound=true, showInfo=true, showMenu=true) }}
+{% endblock %}
+
+{% set pageClass='page--landscape' %}
+{% set bodyClass = '' %}
+
+{% block page_content %}
+  <div class="page__wrapper page__wrapper--landscape">
+    <div class="map map--single map--mode-landscape">
+      <div class="map__bg-wrapper map__bg-wrapper--landscape">
+        <img src="images/landscape/map/map.png" alt="" class="map__background">
+        <img src="images/landscape/map/mono_routinus_map.png" alt="" class="map__layer js-layer js-layer--mono-routinus">
+      </div>
+
+      <div class="map__plant-list">
+
+        <!-- Plant -->
+        <div class="map__plant plant plant--single plant--mono-routinus js-plant js-plant--name-mono-routinus">
+          <div class="plant__image-list">
+            <img src="images/landscape/plants/mono_routinus_white.png" alt="" class="plant__image plant__image--white">
+            <img src="images/landscape/plants/mono_routinus.png" alt="" class="plant__image plant__image--color">
+          </div>
+          <div class="plant__text-wrapper">
+            <p class="plant__text"><span class="plant__text-name"><span class="plant__text-italic">M</span>
+                ONO
+                <span class="plant__text-italic">R</span>OUTINUS</span>the creative species found in
+              <span class="plant__text-italic">“Canyonlands”</span></p>
+            <div class="plant__proportion-list">
+              <p class="plant__proportion">21% of survey participants are Mono Routinus</p>
+              <p class="plant__proportion">You have a 75% affinity with most Mono Routinus</p>
+            </div>
+            <a href="#" class="button button--plant-more">Learn more</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

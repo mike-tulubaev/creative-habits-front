@@ -1,0 +1,238 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% from "./templates/components/_icon.html" import icon %}
+
+{% block page_title %}
+  Science
+{% endblock %}
+
+{% block page_header %}
+  {{ header() }}
+{% endblock %}
+
+{% set bodyClass='overflow-hidden' %}
+{% set pageClass='page--science' %}
+
+{% block page_content %}
+  <section class="section-science section-science--animation">
+    <div class="container">
+      <img src="images/survey/seed-animation.gif" alt="" class="section-science__animation">
+      <p class="section-science__text">
+        <span class="section-science__text-uppercase">The seed of C<span class="section-science__text-italic">r</span>eative Lands<span class="section-science__text-italic">c</span>ape</span>
+        was 2015’s Hacking Creativity, a research project into the ecology of human creativity, and the largest-ever study of creative habits. Led by human performance expert Andy Walshe, Hacking Creativity enlisted the expertise of creativity researcher Mark Runco, ethnographer Lizbet Simmons, community ecologist Eric Berlow, and computational ecologist Rich Williams, as well as David Gurman, Kaustuv DeBiswas, and Anna Christy. The study sought to understand the variety of ways in which creative people create, not just in one person, but in thousands.</p>
+      <p class="section-science__text">We asked ourselves: could we learn how to nurture creativity in people, learn how to share it, and harness it to help people come up with creative solutions to the world’s hardest challenges?</p>
+    </div>
+  </section>
+
+  <section class="section-science section-science--figure1">
+    <div class="container">
+      <div class="row">
+        <div class="col col--6  col--science-f1-image">
+          <img src="images/science/fig1.png" alt="" class="section-science__image">
+          <p class="section-science__text-small section-science__text-small--f1">Fig. 1</p>
+        </div>
+        <div class="col col--4 col--offset-1 col--science-f1-text">
+          <p class="section-science__text">Hacking Creativity allowed us to map the tens of thousands of relationships between creative habits, better understanding how people feel most creatively fruitful. We began by asking a select group of 500 highly-successful creative people hundreds of questions, and from their answers, distilled the most pertinent few dozen questions. We shared this more refined survey with tens of thousands of people, mapping the 100,000 connections between their creative styles.</p>
+          <p class="section-science__text-small">Fig. 1<br><br>Participants in the Hacking Creativity project were linked if they shared similar creative habits. Clusters of people that tend to co-share the similar sets of habits were used to define Creative Species in the Creative Landscape.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-science section-science--figure2">
+    <div class="container">
+      <div class="row">
+        <div class="col col--4 col--offset-1 col--science-f2-text">
+          <p class="section-science__text">From the data, we discovered that people roughly fit into one of Seven Creative Species, but, more importantly, we found that there is no single right way to be creative. Highly successful people that included world-renowned inventors, circus performers, chefs, and rocket scientists varied widely in their creative preferences. In fact, the research shows that many of the creative habit recommendations in the popular press are misleading, and sometimes simply incorrect. Our project offers an alternative to the “top ten list” mentality that assumes there’s only one correct suite of creative habits.</p>
+          <p class="section-science__text-small">Fig. 2<br><br>Participants in the broader study of ~10,000 people linked if they share similar creative habits. The colored groups define our 'Creative Species' — or clusters of people that tend to co-share similar sets of habits. The 'defining habits' of each Creative Species were those that were most over-represented in that group relative to the rest of the participants. Note that links across groups show that individuals within one Creative Species often also have some affinities to other Species.</p>
+        </div>
+        <div class="col col--7 col--science-f2-image">
+          <img src="images/science/fig2.png" alt="" class="section-science__image">
+          <p class="section-science__text-small section-science__text-small--f2">Fig. 2</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-science section-science--results">
+    <div class="container container--science-results">
+      <div class="row">
+        <div class="col col--6 col--offset-3 col--science-results">
+          <p class="section-science__text">Creative Landscape is how we begin to share what we learned with a wider audience. We believe that by better understanding your creative style, and the styles of others, you can better harness the transformative power of creativity in your life and work, and also better collaborate with those who have different creative styles.</p>
+          <p class="section-science__text">We chose to express these insights through the metaphor of the natural world because, like all living things, creativity is also a type of dynamic ecosystem. Every species on earth is a unique creative solution to the universal problem of life — how to survive, grow, and reproduce. Every unique combination of strategies for solving this problem has its own advantages and weaknesses. Just as a Cactus won’t grow well in the rainforest, and a Water Lily won’t thrive in the desert, by understanding your own unique suite of creative strengths, you can cultivate the best strategy toward greater creativity.</p>
+          <p class="section-science__text">So, if you haven’t taken the Creative Landscape survey yet, what are you waiting for?</p>
+          <a href="#" class="button button--science-results">My results</a>
+        </div>
+        <img src="images/science/results1.png" alt="" class="section-science__result-image section-science__result-image--1">
+        <img src="images/science/results2.png" alt="" class="section-science__result-image section-science__result-image--2">
+        <img src="images/science/results3.png" alt="" class="section-science__result-image section-science__result-image--3">
+        <img src="images/science/results4.png" alt="" class="section-science__result-image section-science__result-image--4">
+        <img src="images/science/results5.png" alt="" class="section-science__result-image section-science__result-image--5">
+        <img src="images/science/results6.png" alt="" class="section-science__result-image section-science__result-image--6">
+        <img src="images/science/results7.png" alt="" class="section-science__result-image section-science__result-image--7">
+      </div>
+    </div>
+  </section>
+
+  <section class="section-science section-science--study">
+    <img src="images/science/study_bg.png" class="section-science__study-bg">
+    <div class="container">
+      <p class="section-science__text">If you’d like to dig even deeper into the science of creativity, you can read the scientific study
+        <a href="#" class="section-science__link">here</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-science section-science--team">
+    <div class="container">
+      <p class="section-science__text">Creative Landscape was conceived and built by an interdisciplinary team of scientists, creatives, and developers who believe
+        <span class="section-science__text-uppercase">Eve<span class="section-science__text-italic">r</span>yone is
+          <span class="section-science__text-italic">c</span>
+          reative.</span></p>
+
+        <!-- Team group -->
+        <div class="team-group">
+          <p class="team-group__title">Experience Concept & Design</p>
+          <div class="team-group__row">
+            <!-- Team group item-->
+            <a href="#" class="team-group__item">
+              <img src="images/team/tiffany_yuan.png" alt="Tiffany Yuan" class="team-group__image">
+              <p class="team-group__name">Tiffany Yuan</p>
+            </a>
+            <!-- Team group item-->
+            <a href="#" class="team-group__item">
+              <img src="images/team/shawna_jacoby.png" alt="Shawna Jacoby" class="team-group__image">
+              <p class="team-group__name">Shawna Jacoby</p>
+            </a>
+            <!-- Team group item-->
+            <a href="#" class="team-group__item">
+              <img src="images/team/spencer_canon.png" alt="Spencer Canon" class="team-group__image">
+              <p class="team-group__name">Spencer Canon</p>
+            </a>
+            <!-- Team group item-->
+            <a href="#" class="team-group__item">
+              <img src="images/team/ted_chang.png" alt="Ted Chang" class="team-group__image">
+              <p class="team-group__name">Ted Chang</p>
+            </a>
+          </div>
+        </div>
+
+      <div class="section-science__row-team">
+        <!-- Team group -->
+        <div class="team-group team-group--single">
+          <p class="team-group__title">Science</p>
+          <div class="team-group__row">
+            <!-- Team group item-->
+            <a href="#" class="team-group__item">
+              <img src="images/team/eric_berlow.png" alt="Eric Berlow" class="team-group__image">
+              <p class="team-group__name">Eric Berlow</p>
+            </a>
+          </div>
+        </div>
+        <!-- Team group -->
+        <div class="team-group">
+          <p class="team-group__title">Advisors</p>
+          <div class="team-group__row">
+            <!-- Team group item-->
+            <a href="#" class="team-group__item">
+              <img src="images/team/david_gurman.png" alt="David Gurman" class="team-group__image">
+              <p class="team-group__name">David Gurman</p>
+            </a>
+            <!-- Team group item-->
+            <a href="#" class="team-group__item">
+              <img src="images/team/mark_runco.png" alt="Mark Runco" class="team-group__image">
+              <p class="team-group__name">Mark Runco</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+        <!-- Team group -->
+        <div class="team-group">
+          <p class="team-group__title">Development by
+            <a href="#" class="team-group__title-link">Sharp Developers</a>
+          </p>
+          <div class="team-group__row">
+            <!-- Team group item-->
+            <a href="#" class="team-group__item">
+              <img src="images/team/mike_tulubaev.png" alt="Mike Tulubaev" class="team-group__image">
+              <p class="team-group__name">Mike Tulubaev</p>
+            </a>
+            <!-- Team group item-->
+            <a href="#" class="team-group__item">
+              <img src="images/team/vitaliy_makarov.png" alt="Vitaliy Makarov" class="team-group__image">
+              <p class="team-group__name">Vitaliy Makarov</p>
+            </a>
+            <!-- Team group item-->
+            <a href="#" class="team-group__item">
+              <img src="images/team/viktor_ovcharov.png" alt="Viktor Ovcharov" class="team-group__image">
+              <p class="team-group__name">Viktor Ovcharov</p>
+            </a>
+            <!-- Team group item-->
+            <a href="#" class="team-group__item">
+              <img src="images/team/rodion_zhuvagin.png" alt="Rodion Zhuvagin" class="team-group__image">
+              <p class="team-group__name">Rodion Zhuvagin</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Team group -->
+        <div class="team-group">
+          <p class="team-group__title">Project Sponsored by
+            <a href="#" class="team-group__title-link">Liminal Collective</a>
+          </p>
+          <div class="team-group__row">
+            <!-- Team group item-->
+            <a href="#" class="team-group__item">
+              <img src="images/team/andy_walshe.png" alt="Andy Walshe" class="team-group__image">
+              <p class="team-group__name">Andy Walshe</p>
+            </a>
+            <!-- Team group item-->
+            <a href="#" class="team-group__item">
+              <img src="images/team/ben_potvin.png" alt="Ben Potvin" class="team-group__image">
+              <p class="team-group__name">Ben Potvin</p>
+            </a>
+            <!-- Team group item-->
+            <a href="#" class="team-group__item">
+              <img src="images/team/kristen_kuzemko.png" alt="Kristen Kuzemko" class="team-group__image">
+              <p class="team-group__name">Kristen Kuzemko</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Team group -->
+        <div class="team-group">
+          <p class="team-group__title">Intro Video by
+            <a href="#" class="team-group__title-link">Formula</a>
+          </p>
+        </div>
+    </div>
+  </section>
+
+  <section class="section-science section-science--copyright">
+    <div class="container">
+      <p class="copyright">© Liminal Collective 2021</p>
+    </div>
+  </section>
+{% endblock %}
+
+{% block page_after %}
+	<div class="cover cover--science">
+			<button class="cover__close">
+				{{ icon(name="close") }}
+			</button>
+			<div class="cover__wrapper">
+        <div class="bio">
+          <img src="images/team/mark_runco_photo.png" alt="" class="bio__photo">
+          <p class="bio__team">Creativity Researcher</p>
+          <p class="bio__name">Mark Runco</p>
+          <div class="bio__text-wrapper">
+            <p class="bio__text">Mark Runco earned a PhD in Cognitive Psychology from the Claremont Graduate School. He studied creativity as a student and has kept at since graduating in 1984. He has published over 300 books, articles, and chapters on creativity and closely related topics and has developed a variety of courses and seminars on creativity and Innovation. He earned tenure at the University of Hawaii, Hilo, and then moved to California State University, Fullerton, where he directed the Creativity Research Center of Southern California. Next was an Endowed Professorship at the Univ of Georgia, where he was also Director of the Torrance Creativity Center. In addition he has held adjunct positions at Buffalo State University and the Norwegian Business School. He is currently the Director of Creativity Research at Southern Oregon University, as well as a Fellow and Past President of Division 10 of the APA. He is Emeritus Editor of the Creativity Research Journal and was owner and CEO of Creativity Testing Services, LLC until 2020. His creativity textbook has been translated into 10 languages. The 3rd edition of that textbook is soon to be released. The 3rd edition of the Encyclopedia of Creativity, which he co-edited, was released in 2020. His various awards and grants (e.g., Spencer Foundation, Creative Education Foundation) and further details on his career can be found, along with his CV, at www.markrunco.com. </p>
+          </div>
+        </div>
+			</div>
+
+      <img src="images/species/socialis_adventurous_scroll.png" alt="" class="cover__image cover__image--w5-left">
+      <img src="images/species/socialis_adventurous_scroll.png" alt="" class="cover__image cover__image--w5-right">
+	</div>
+{% endblock %}

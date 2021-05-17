@@ -1,0 +1,57 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% block page_title %}
+		Survey - Missed question
+{% endblock %}
+
+{% block page_header %}
+	{{ header(showSound=true, showHelp=true, showMenu=false) }}
+{% endblock %}
+
+{% set pageClass='page--survey' %}
+
+{% block page_content %}
+	<div class="container container--survey">
+		<div class="row row--survey">
+			<div class="col col--6 col--question">
+					<div class="question question--row question--disabled">
+						<h1 class="title title--survey question__title">How important to your creative process is it that you spend time outdoors in nature? </h1>
+						<div class="question__wrapper">
+							<div class="question__answer">
+								<input class="question__input" type="radio" name="q26" id="q26-1">
+								<label class="question__label" for="q26-1"><span class="question__text">Unimportant</span></label>
+							</div>
+							<div class="question__answer">
+								<input class="question__input" type="radio" name="q26" id="q26-2">
+								<label class="question__label" for="q26-2"></label>
+							</div>
+							<div class="question__answer">
+								<input class="question__input" type="radio" name="q26" id="q26-3">
+								<label class="question__label" for="q26-3"></label>
+							</div>
+							<div class="question__answer">
+								<input class="question__input" type="radio" name="q26" id="q26-4">
+								<label class="question__label" for="q26-4"></label>
+							</div>
+							<div class="question__answer">
+								<input class="question__input" type="radio" name="q26" id="q26-5">
+								<label class="question__label" for="q26-5"><span class="question__text">Extremely Important</span></label>
+							</div>
+						</div>
+					</div>
+					<div class="survey-missed">
+						<p class="survey-missed__text">
+							Almost there. <br>You have 1 unanswered question left.
+						</p>
+						<a href="#" class="button-small survey-missed__button">Answer it</a>
+					</div>
+				{% include "./templates/partials/_progress.html" %}
+			</div>
+			<div class="col col--6 d-flex-col">
+				<div class="seed-animation">
+					<img src="images/survey/seed26.png" alt="" class="seed-animation__image">
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+
+
+{% extends "./templates/layout/_base.html" %}
+
+{% from "templates/components/_header.html" import header %}
+{% from "./templates/components/_icon.html" import icon %}
+
+{% block page_title %}
+		Sui Inspira
+{% endblock %}
+
+{% block page_header %}
+	{{ header(showSound=true, showInfo=true, class="header--fixed") }}
+{% endblock %}
+
+{% set pageClass='page-species page-species--intro page-species--sui-inspira' %}
+{{ header(showSound=true, showInfo=true) }}
+{% block page_content %}
+  <div class="page-species__wrapper">
+    <div class="page-species__bg-container">
+      <img class="page-species__bg" src="images/species/sui_inspira_bg.jpg" alt="">
+    </div>
+    <div class="container page-species__container">
+      <p class="page-species__intro-text">Your<br>Creative Species</p>
+      <div class="page-species__header-wrapper">
+        <div class="page-species__header">
+          <img class="page-species__title" src="images/species/sui_inspira_title.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <img class="page-species__scroll" src="images/species/sui_inspira_scroll.png" alt="">
+  <a href="sui-inspira-reveal.html" class="page-species__next-page" style="opacity: 0">
+    {{icon(name="scroll", class="icon--next-page")}}
+  </a>
+{% endblock %}

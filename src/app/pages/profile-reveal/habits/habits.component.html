@@ -1,0 +1,73 @@
+<div class="page__scroll-wrapper">
+  <div class="container page-habits__container">
+    <div class="row">
+      <div class="col col--page-habits">
+        <div class="page-habits__content-block">
+          <p class="page-habits__big-text">
+            Your creative habits share a {{ clusterAffinity$ | async | number: '1.0-0'}}% affinity with {{ createiveSpecies$ | async }}.</p>
+          <p class="page-habits__small-text">
+            The Creative Species assigned to you is based on how your unique set of creative habits and preferences compare to other people in our reference database. 
+            No match is perfect. {{ clusterAffinity$ | async | number: '1.0-0' }}% of {{ createiveSpecies$ | async }}' defining habits overlap with yours. 
+            You also have your own unique preferences and likely will find some affinities with the top habits of one of the other Creative Species.
+          </p>
+          <div class="page-habits__tabs" [class.page-habits__tabs--disabled]="!isClusterHabitsShown && !isPersonalHabitsShown">
+            <button class="page-habits__tab" [class.page-habits__tab--active]="isClusterHabitsShown" (click)="showClusterHabits()">{{ createiveSpecies$ | async }}</button>
+            <button class="page-habits__tab" [class.page-habits__tab--active]="isPersonalHabitsShown" (click)="showPersonalHabits()">You</button>
+          </div>
+          <div class="page-habits__content-box enter" *ngIf="isClusterHabitsShown || isPersonalHabitsShown">
+            <div class="page-habits__content" [class.page-habits__content--active]="isClusterHabitsShown" *ngIf="isClusterHabitsShown">
+              <button
+                *ngFor="let habit of allHabits$ | async"
+                class="page-habits__button"
+                [ngClass]="{
+                  'page-habits__button--double-border': (sharedHabits$ | async)?.includes(habit),
+                  'page-habits__button--disabled': !(clusterHabits$ | async)?.includes(habit)
+                }"
+                (click)="showHabbitDetails(habit)"
+                [disabled]="!(clusterHabits$ | async)?.includes(habit)">
+                {{ habit }}
+              </button>
+            </div>
+            <div class="page-habits__content" [class.page-habits__content--active]="isPersonalHabitsShown" *ngIf="isPersonalHabitsShown">
+              <button
+                *ngFor="let habit of allHabits$ | async"
+                class="page-habits__button"
+                [ngClass]="{
+                  'page-habits__button--double-border': (sharedHabits$ | async)?.includes(habit),
+                  'page-habits__button--disabled': !(personalHabits$ | async)?.includes(habit)
+                }"
+                (click)="showHabbitDetails(habit)"
+                [disabled]="!(personalHabits$ | async)?.includes(habit)">
+                {{ habit }}
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="page-habits__content-block">
+          <p class="page-habits__final-text page-habits__final-text--italic">Digging deeper...</p>
+          <app-habit-summary></app-habit-summary>
+        </div>
+        <div class="page-habits__content-block">
+          <p class="page-habits__final-text">
+            We hope this exploration of your creative species has been insightful and inspiring, so your
+            creative endeavors can bloom. Your artwork showcasing {{ createiveSpecies$ | async }} & your
+            creative habits is ready to download. It contains a unique link you can use to return to the site.
+          </p>
+          <a href="#" class="page-habits__download" (click)="download($event)">
+            Download My Results
+            <app-icon name="download" class="icon--habit-download"></app-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <a
+      [routerLink]="['/profile-reveal', 'landscape']"
+      class="page-species__reveal-next-page"
+      [class.page-species__reveal-next-page--dark]="darkModeClass$ | async"
+    >
+      <app-icon name="scroll" class="icon--next-page"></app-icon>
+    </a>
+  </div>
+</div>
+<app-habit-description *ngIf="!!selectedHabit" [habit]="selectedHabit" (close)="closeHabitDetails()"></app-habit-description>

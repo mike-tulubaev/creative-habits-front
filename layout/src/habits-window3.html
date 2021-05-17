@@ -1,0 +1,69 @@
+
+
+{% extends "./templates/layout/_base.html" %}
+
+{% from "templates/components/_header.html" import header %}
+{% from "./templates/components/_icon.html" import icon %}
+
+{% block page_title %}
+		Habits
+{% endblock %}
+
+{% block page_header %}
+	{{ header(showSound=true, showInfo=true, showMenu=true) }}
+{% endblock %}
+
+{% set pageClass='page-species page-species--reveal page-species--mono-routinus page--habits' %}
+{% set bodyClass='overflow-hidden' %}
+
+{{ header(showSound=true, showInfo=true) }}
+{% block page_content %}
+  <div class="page-species__wrapper">
+    <div class="page-species__bg-container">
+      <img class="page-species__bg" src="images/species/mono_routinus_bg.jpg" alt="">
+    </div>
+    <div class="container page-species__container"></div>
+  </div>
+  <div class="container page-species__reveal-container page-habits__container">
+      <div class="row">
+        <div class="col col--page-habits">
+            <p class="page-habits__big-text">Your creative habits share a 75% affinity with Mono Routinus. See where your creative habits overlap.</p>
+            <p class="page-habits__small-text">The Creative Species assigned to you is based on how your unique set of creative habits and preferences compare to other people in our reference database. No match is perfect. 75% of Mono routinus' defining habits overlap with yours. You also have your own unique preferences and likely will find some affinities with the top habits of one of the other Creative Species.</p>
+            <div class="page-habits__tabs page-habits__tabs--disabled">
+              <button class="page-habits__tab">Mono Routinus</button>
+              <button class="page-habits__tab">You</button>
+            </div>
+            <div class="page-habits__content-box">
+              <div class="page-habits__content page-habits__content--active">
+              </div>
+            </div>
+        </div>
+      </div>
+      <a href="habits.html" class="page-species__reveal-next-page">
+        {{icon(name="scroll", class="icon--next-page")}}
+      </a>
+    </div>
+{% endblock %}
+
+{% block page_after %}
+  <div class="cover-half cover-half--light">
+			<button class="cover-half__close">
+				{{ icon(name="close") }}
+			</button>
+      <div class="cover-half__header">
+        <h3 class="cover-half__title">Performer</h3>
+      </div>
+			<div class="cover-half__wrapper">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Some people thrive with all eyes on them — the pressure, excitement, and others’ attention amping up their performers on-the-feet thinking. This is typically the territory of extrinsically-motivated, fast-paced, and self-assured creative thinkers, and a style one might find in good group-brainstormers, improv comedians, and musical soloists. Given the value society places on performative ability, those who are comfortable in these kinds of situations probably also see benefits in their professional lives as well. The character Don Draper in the TV show Mad Men comes to mind, for instance. Society may glorify this kind of ability, but that shouldn’t discount the equal creative abilities of non-performers. Furthermore, performers’ desire to please an audience may inhibit the novelty of their ideas since they devote energy toward impression management and social recognition.</p>
+          <h6 class="cover-half__text-header">References:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Kasof (1995)</li>
+            <li class="cover-half__text-list-item">Amabile (1995)</li>
+            <li class="cover-half__text-list-item">Runco (1995)</li>
+            <li class="cover-half__text-list-item">Sternberg and Lubart (1995)</li>
+          </ul>
+        </div>
+			</div>
+	</div>
+{% endblock %}

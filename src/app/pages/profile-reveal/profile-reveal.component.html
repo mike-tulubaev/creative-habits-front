@@ -1,0 +1,34 @@
+<main class="page page-species page-species--reveal" [class]="pageClasses$ | async" *ngIf="(pageProgess$ | async) !== 'landscape'; else landscape">
+  <div class="page-species__wrapper">
+    <div class="page-species__bg-container">
+      <video class="page-species__bg" preload="auto" autoplay="true" muted="muted" loop>
+        <source [src]="pageBackground$ | async" type='video/mp4' />
+      </video>
+    </div>
+    <div class="container page-species__container">
+      <ng-container *ngIf="!(pageProgess$ | async)">
+        <p class="page-species__intro-text">Your<br />Creative Species</p>
+        <div class="page-species__header-wrapper">
+          <div class="page-species__header">
+            <img
+              class="page-species__title"
+              [src]="titleImg$ | async"
+              alt=""
+            />
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="page-species__router" [@routeAnimations]="prepareRoute()">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+
+<ng-template #landscape>
+  <div [@routeAnimations]="prepareRoute()">
+    <router-outlet></router-outlet>
+  </div>
+</ng-template>
+
+<app-profile-reveal-info *ngIf="showProfileRevealInfo" (close)="hideInfo()"></app-profile-reveal-info>

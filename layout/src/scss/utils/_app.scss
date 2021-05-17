@@ -1,0 +1,29 @@
+﻿* {
+  box-sizing: border-box;
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+body {
+  font-family: $font-mi-roman;
+  font-size: 24px;
+  line-height: 1.4;
+  color: $color-yellow;
+  overflow-x: hidden;
+}
+
+p {
+  margin-bottom: 24px;
+}
+
+a,
+button {
+  outline: none !important;
+  cursor: pointer;
+
+  &:focus {
+    outline: none !important;
+  }
+}

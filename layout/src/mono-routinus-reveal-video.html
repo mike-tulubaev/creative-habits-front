@@ -1,0 +1,55 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% from "templates/components/_header.html" import header %}
+{% from "./templates/components/_icon.html" import icon %}
+
+{% block page_title %}
+		Mono Routinus reveal
+{% endblock %}
+
+{% block page_header %}
+	{{ header(showSound=true, showInfo=true, showMenu=true) }}
+{% endblock %}
+
+{% set pageClass='page-species page-species--reveal page-species--mono-routinus' %}
+{{ header(showSound=true, showInfo=true) }}
+{% block page_content %}
+  <div class="page-species__wrapper">
+    <div class="page-species__bg-container">
+      <!--<img class="page-species__bg" src="images/species/mono_routinus_bg.jpg" alt="">      -->
+      <video class="page-species__bg" preload="auto" autoplay="true" muted="muted" loop>
+        <source src="video/mono_routinus.mp4" type='video/mp4' />
+      </video>
+    </div>
+    <div class="container page-species__container"></div>
+  </div>
+  <div class="container page-species__reveal-container">
+      <div class="row">
+        <div class="col col--page-species col--mono-routinus-text">
+          <p class="page-species__text">
+            <span class="page-species__text-upper"><span class="page-species__text-italic">M</span>ONO <span class="page-species__text-italic">R</span>OUTINUS </span>
+            typically grows its best blooms while alone, in
+            <span class="page-species__text-italic">enclosed environments </span>
+            where it can find
+            <span class="page-species__text-italic">predictable </span>
+            conditions in which to
+            <span class="page-species__text-italic">spread its roots. </span>
+            Similar to Solo Noctus, this creative species
+            <span class="page-species__text-italic">does not take chances </span>
+            with its precious resources, preferring to begin growing a bloom only when all conditions are
+            <span class="page-species__text-italic">perfect. </span>
+            Those who come across a Mono Routinus in the wild should be respectful of its
+            <span class="page-species__text-italic">privacy </span>
+            and careful not to disturb its process.
+            <br>
+            Although it does not produce flowers at the speed of some other species, if given the right conditions, Mono Routinus will
+            <span class="page-species__text-italic">reliably produce </span>
+            perfect blooms throughout its remarkably productive life.
+          </p>
+        </div>
+      </div>
+      <a href="habits.html" class="page-species__reveal-next-page">
+        {{icon(name="scroll", class="icon--next-page")}}
+      </a>
+    </div>
+{% endblock %}

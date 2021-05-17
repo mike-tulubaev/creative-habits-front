@@ -1,0 +1,73 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% from "templates/components/_header.html" import header %}
+{% from "./templates/components/_icon.html" import icon %}
+
+{% block page_title %}
+		Habits
+{% endblock %}
+
+{% block page_header %}
+	{{ header(showSound=true, showInfo=true, showMenu=true) }}
+{% endblock %}
+
+{% set pageClass='page-species page-species--reveal page-species--mono-routinus page--habits' %}
+{% set bodyClass='overflow-hidden' %}
+
+{{ header(showSound=true, showInfo=true) }}
+{% block page_content %}
+  <div class="page-species__wrapper">
+    <div class="page-species__bg-container">
+      <img class="page-species__bg" src="images/species/mono_routinus_bg.jpg" alt="">
+    </div>
+    <div class="container page-species__container"></div>
+  </div>
+  <div class="container page-species__reveal-container page-habits__container">
+      <div class="row">
+        <div class="col col--page-habits">
+            <p class="page-habits__big-text">Your creative habits share a 75% affinity with Mono Routinus. See where your creative habits overlap.</p>
+            <p class="page-habits__small-text">The Creative Species assigned to you is based on how your unique set of creative habits and preferences compare to other people in our reference database. No match is perfect. 75% of Mono routinus' defining habits overlap with yours. You also have your own unique preferences and likely will find some affinities with the top habits of one of the other Creative Species.</p>
+            <div class="page-habits__tabs page-habits__tabs--disabled">
+              <button class="page-habits__tab">Mono Routinus</button>
+              <button class="page-habits__tab">You</button>
+            </div>
+            <div class="page-habits__content-box">
+              <div class="page-habits__content page-habits__content--active">
+              </div>
+            </div>
+        </div>
+      </div>
+      <a href="habits.html" class="page-species__reveal-next-page">
+        {{icon(name="scroll", class="icon--next-page")}}
+      </a>
+    </div>
+{% endblock %}
+
+{% block page_after %}
+  <div class="cover-half cover-half--light cover-half--image">
+			<button class="cover-half__close">
+				{{ icon(name="close") }}
+			</button>
+      <div class="cover-half__header">
+        <h3 class="cover-half__title">Dislike<br>Distractions</h3>
+        <img src="images/habits/light_mode/Dislike-Distractions.png" alt="" class="cover-half__bg">
+        <p class="cover-half__description">Creative species with this tendency don't have branches on their stems.</p>
+      </div>
+			<div class="cover-half__wrapper">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">The modern world can be a cruel place for creative thinkers who hate distractions; those rare stretches of focus can be broken so easily by a chirp from a phone or knock on the office door. In order to escape distractions, the Minimalist painter Agnes Martin took the extreme step of moving to a remote desert home, where she had no television, radio, or telephone — and not even a pet for fear it could be a distraction. For those who can’t always avoid distractions, however, there is evidence to support the idea that distractions are good for creative thinking, allowing one’s mind to continue working on a task while their attention is diverted elsewhere.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Mono Routinus</li>
+            <li class="cover-half__text-list-item">Fig. 2 Focus Mononovous</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Maurice James D’Arcy Collins (2020) A Distracted Muse: The Positive Effect of Dual-Task Distraction on Creative Potential, Creativity Research Journal, 32:4, 357-367, DOI: 10.1080/10400419.2020.1816066</p>
+          <p class="cover-half__text-small">Joseph Kasof (1997) Creativity and Breadth of Attention, Creativity Research Journal, 10:4, 303-315, DOI: 10.1207/s15326934crj1004_2</p>
+          <p class="cover-half__text-small">Noelle C. Chiang & Meng-Liang Chen (2017) Benefits of Incubation on Divergent Thinking, Creativity Research Journal, 29:3, 282-291, DOI: 10.1080/10400419.2017.1360058</p>
+        </div>
+			</div>
+	</div>
+{% endblock %}

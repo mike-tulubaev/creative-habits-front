@@ -1,0 +1,50 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% from "templates/components/_header.html" import header %}
+{% from "./templates/components/_icon.html" import icon %}
+
+{% block page_title %}
+		Solo Noctus reveal
+{% endblock %}
+
+{% block page_header %}
+	{{ header(showSound=true, showInfo=true, showMenu=true) }}
+{% endblock %}
+
+{% set pageClass='page-species page-species--reveal page-species--solo-noctus' %}
+{{ header(showSound=true, showInfo=true) }}
+{% block page_content %}
+  <div class="page-species__wrapper">
+    <div class="page-species__bg-container">
+      <img class="page-species__bg" src="images/species/solo_noctus_bg.jpg" alt="">
+    </div>
+    <div class="container page-species__container"></div>
+  </div>
+  <div class="container page-species__reveal-container">
+      <div class="row">
+        <div class="col col--page-species col--solo-noctus-text">
+          <p class="page-species__text">
+            <span class="page-species__text-upper"><span class="page-species__text-italic">S</span>OLO NO<span class="page-species__text-italic">C</span> TUS </span>
+            can be found in
+            <span class="page-species__text-italic">open terrain </span>
+            blooming under a
+            <span class="page-species__text-italic">wide-open night sky </span>
+            and will not thrive in constrained environments. Similar to Sui Inspira, this creative species grows from a bulb that
+            <span class="page-species__text-italic">contains </span>
+            everything it needs to succeed. Solo Noctus is
+            <span class="page-species__text-italic">tenacious and dedicated, </span>
+            waiting until conditions are
+            <span class="page-species__text-italic">perfect </span>
+            to put all its energy into growing a
+            <span class="page-species__text-italic">single, </span>
+            densely-petaled flower. A Sui Inspira does poorly in captivity, so
+            those who want to see its fabled flower in person should be prepared
+            to stay up late, because this creative species only blooms at night.
+          </p>
+        </div>
+      </div>
+      <a href="habits.html" class="page-species__reveal-next-page">
+        {{icon(name="scroll", class="icon--next-page")}}
+      </a>
+    </div>
+{% endblock %}

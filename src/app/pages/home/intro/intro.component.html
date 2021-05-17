@@ -1,0 +1,13 @@
+<div class="container container--home-step1">
+  <video appCache="/assets/video/home-bg.mp4" class="player" autoplay loop>
+  </video>
+  <div class="wrapper wrapper--home-step1">
+    <img appCache="/assets/img/home/title.svg" alt="" class="img-title img-title--step1">
+  </div>
+  <div class="play-video">
+    <button [routerLink]="['/home/video']" class="play-video__button">
+      <app-icon name="scroll" class="icon--play-video"></app-icon>
+    </button>
+    <p class="play-video__title">Play video</p>
+  </div>
+</div>

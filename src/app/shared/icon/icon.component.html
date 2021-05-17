@@ -1,0 +1,46 @@
+<ng-container [ngSwitch]="name">
+  <svg *ngSwitchCase="'burger'" viewBox="0 0 24 19" xmlns="http://www.w3.org/2000/svg" [class]="'icon ' + class">
+    <line x1="4.37114e-08" y1="0.5" x2="24" y2="0.500002" stroke="currentColor"/>
+    <line y1="9.5" x2="24" y2="9.5" stroke="currentColor"/>
+    <line y1="18.5001" x2="24" y2="18.5001" stroke="currentColor"/>
+  </svg>
+  <svg *ngSwitchCase="'close'" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" [class]="'icon ' + class">
+    <line y1="-0.5" x2="32.3858" y2="-0.5" transform="matrix(0.710188 0.704012 -0.710188 0.704012 0 1.2002)" stroke="currentColor"/>
+    <line y1="-0.5" x2="32.3858" y2="-0.5" transform="matrix(-0.710188 0.704012 -0.710188 -0.704012 23 0)" stroke="currentColor"/>
+  </svg>
+  <svg *ngSwitchCase="'scroll'" viewBox="0 0 26 14" fill="none" xmlns="http://www.w3.org/2000/svg" [class]="'icon ' + class">
+    <path d="M25 1L13 13L1 0.999999" stroke="currentColor"/>
+  </svg>
+  <svg *ngSwitchCase="'audio'" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg" [class]="'icon audio-button__icon ' + class">
+    <line class="audio-button__line1" x1="0.5" x2="0.5" y2="19" stroke="currentColor"/>
+    <line class="audio-button__line2" x1="7.5" y1="9" x2="7.5" y2="19" stroke="currentColor"/>
+    <line class="audio-button__line3" x1="14.5" y1="-2.18557e-08" x2="14.5" y2="19" stroke="currentColor"/>
+    <line class="audio-button__line4" x1="21.5" y1="6" x2="21.5" y2="19" stroke="currentColor"/>
+  </svg>
+  <svg *ngSwitchCase="'question'" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" [class]="'icon ' + class">
+    <circle cx="13" cy="13" r="12.5" stroke="currentColor"/>
+    <mask id="path-2-outside-1" maskUnits="userSpaceOnUse" x="9" y="6" width="8" height="10" fill="black">
+    <rect fill="white" x="9" y="6" width="8" height="10"/>
+    <path d="M10 10.1226C10 8.39939 11.3445 7 13 7C14.6555 7 16 8.39939 16 10.1226C16 11.8457 14.6555 13.2451 13 13.2451"/>
+    </mask>
+    <path d="M12.5 13.2451V16H13.5V13.2451H12.5ZM11 10.1226C11 8.91356 11.9341 8 13 8V6C10.7548 6 9 7.88522 9 10.1226H11ZM13 8C14.0659 8 15 8.91356 15 10.1226H17C17 7.88522 15.2452 6 13 6V8ZM15 10.1226C15 11.3316 14.0659 12.2451 13 12.2451V14.2451C15.2452 14.2451 17 12.3599 17 10.1226H15Z" fill="currentColor" mask="url(#path-2-outside-1)"/>
+    <circle cx="13" cy="20" r="1" fill="currentColor"/>
+  </svg>
+  <svg *ngSwitchCase="'info'" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" [class]="'icon ' + class">
+    <circle cx="13" cy="13" r="12.5" stroke="currentColor"/>
+    <circle cx="13" cy="7" r="1" fill="currentColor"/>
+    <line x1="13.0176" y1="11.5555" x2="13.0176" y2="20.2222" stroke="currentColor"/>
+  </svg>
+  <svg *ngSwitchCase="'download'" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg" [class]="'icon ' + class">
+    <path d="M10 0L10 10.8463" stroke="currentColor"/>
+    <path d="M6 7L10 11L14 7" stroke="currentColor"/>
+    <line y1="14.8734" x2="19.8433" y2="14.8734" stroke="currentColor"/>
+  </svg>
+  <svg *ngSwitchCase="'mountain'" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg" [class]="'icon ' + class">
+    <mask id="path-1-outside-1" maskUnits="userSpaceOnUse" x="0" y="0.584961" width="24" height="17" fill="black">
+    <rect fill="white" y="0.584961" width="24" height="17"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.926 11.4507L9.80276 2.58496L2 16.0875H17.6055L17.6055 16.0875H22L17.1233 7.64841L14.926 11.4507Z"/>
+    </mask>
+    <path d="M9.80276 2.58496L10.6686 2.08462L9.80276 0.586318L8.93694 2.08462L9.80276 2.58496ZM14.926 11.4507L14.0602 11.951L14.926 13.4494L15.7919 11.951L14.926 11.4507ZM2 16.0875L1.13417 15.5872L0.267165 17.0875H2V16.0875ZM17.6055 16.0875V17.0875H19.3717L18.463 15.573L17.6055 16.0875ZM17.6055 16.0875V15.0875H15.8393L16.748 16.602L17.6055 16.0875ZM22 16.0875V17.0875H23.7329L22.8658 15.5872L22 16.0875ZM17.1233 7.64841L17.9891 7.14807L17.1233 5.64977L16.2575 7.14807L17.1233 7.64841ZM8.93694 3.0853L14.0602 11.951L15.7919 10.9504L10.6686 2.08462L8.93694 3.0853ZM2.86583 16.5879L10.6686 3.0853L8.93694 2.08462L1.13417 15.5872L2.86583 16.5879ZM17.6055 15.0875H2V17.0875H17.6055V15.0875ZM16.748 16.602L16.748 16.602L18.463 15.573L18.463 15.573L16.748 16.602ZM22 15.0875H17.6055V17.0875H22V15.0875ZM16.2575 8.14875L21.1342 16.5878L22.8658 15.5872L17.9891 7.14807L16.2575 8.14875ZM15.7919 11.951L17.9891 8.14875L16.2575 7.14807L14.0602 10.9504L15.7919 11.951Z" fill="currentColor"  mask="url(#path-1-outside-1)"/>
+  </svg>
+</ng-container>

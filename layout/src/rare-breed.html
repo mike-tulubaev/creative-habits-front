@@ -1,0 +1,44 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% from "templates/components/_header.html" import header %}
+{% from "./templates/components/_icon.html" import icon %}
+
+{% block page_title %}
+  Rare breed
+{% endblock %}
+
+{% block page_header %}
+  {{ header(showSound=true, showInfo=true) }}
+{% endblock %}
+
+{% set pageClass='page-species page-species--rare-breed' %}
+
+{{ header(showSound=true, showInfo=true) }}
+{% block page_content %}
+  <p class="page-species__intro-text">Your<br>Creative Species</p>
+  <div class="page-species__wrapper">
+    <div class="container page-species__container">
+      <div class="row">
+        <div class="page-species__bg-container">
+          <img class="page-species__bg" src="images/species/rare_breed_bg.jpg" alt="">
+        </div>
+        <div class="col col--rare-breed-title">
+          <div class="page-species__header-wrapper">
+            <div class="page-species__header">
+              <img class="page-species__title" src="images/species/rare_breed_title.svg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="col col--rare-breed-text">
+          <p class="page-species__rare-text">
+              Your answers indicate that you don’t have very strong preferences.
+              That makes you one of the .2% who don’t map to one of the Seven Species.
+              You can retake the survey or go straight to learning about the other 99.8% of respondents.
+          </p>
+          <a class="button button--same-font-hover button--rare-breed" href="index.html">Retake</a>
+          <a class="button button--same-font-hover button--rare-breed" href="index.html">Meet others</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

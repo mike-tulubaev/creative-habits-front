@@ -1,0 +1,16 @@
+
+  <div class="container page-species__reveal-container">
+    <div class="row row--species-reveal">
+      <div class="col col--page-species" [class]="colFlowerClass$ | async">
+        <app-species-description [cluster]="createiveSpecies$ | async"></app-species-description>
+      </div>
+    </div>
+
+    <a
+      [routerLink]="['/profile-reveal','habits']"
+      class="page-species__reveal-next-page"
+      [class.page-species__reveal-next-page--dark]="darkModeClass$ | async"
+    >
+      <app-icon name="scroll" class="icon--next-page"></app-icon>
+    </a>
+  </div>

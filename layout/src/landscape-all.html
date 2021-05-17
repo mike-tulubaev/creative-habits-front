@@ -1,0 +1,174 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% from "templates/components/_header.html" import header %}
+{% from "./templates/components/_icon.html" import icon %}
+
+{% block page_title %}
+  Lanscape
+{% endblock %}
+
+{% block page_header %}
+  {{ header(showSound=true, showInfo=true, showMenu=true) }}
+{% endblock %}
+
+{% set pageClass='page--landscape' %}
+{% set bodyClass = '' %}
+
+{% block page_content %}
+  <div class="page__wrapper page__wrapper--landscape">
+    <div class="map map--mode-landscape">
+      <div class="map__bg-wrapper map__bg-wrapper--landscape">
+        <img src="images/landscape/map/map.png" alt="" class="map__background">
+        <img src="images/landscape/map/focus_mononovous_map.png" alt="" class="map__layer js-layer js-layer--focus-mononovous">
+        <img src="images/landscape/map/mono_routinus_map.png" alt="" class="map__layer js-layer js-layer--mono-routinus">
+        <img src="images/landscape/map/novo_gregarious_map.png" alt="" class="map__layer js-layer js-layer--novo-gregarious">
+        <img src="images/landscape/map/socialis_adventurous_map.png" alt="" class="map__layer js-layer js-layer--socialis-adventurous">
+        <img src="images/landscape/map/solo_noctus_map.png" alt="" class="map__layer js-layer js-layer--solo-noctus">
+        <img src="images/landscape/map/sui_inspira_map.png" alt="" class="map__layer js-layer js-layer--sui-inspira">
+        <img src="images/landscape/map/yolo_chaotis_map.png" alt="" class="map__layer js-layer js-layer--yolo-chaotis">
+      </div>
+      <div class="map__bg-wrapper map__bg-wrapper--data">
+        <img src="images/landscape/data/data.png" alt="" class="map__background">
+        <img src="images/landscape/data/focus_mononovous_data.png" alt="" class="map__layer js-layer js-layer--focus-mononovous">
+        <img src="images/landscape/data/mono_routinus_data.png" alt="" class="map__layer js-layer js-layer--mono-routinus">
+        <img src="images/landscape/data/novo_gregarious_data.png" alt="" class="map__layer js-layer js-layer--novo-gregarious">
+        <img src="images/landscape/data/socialis_adventurous_data.png" alt="" class="map__layer js-layer js-layer--socialis-adventurous">
+        <img src="images/landscape/data/solo_noctus_data.png" alt="" class="map__layer js-layer js-layer--solo-noctus">
+        <img src="images/landscape/data/sui_inspira_data.png" alt="" class="map__layer js-layer js-layer--sui-inspira">
+        <img src="images/landscape/data/yolo_chaotis_data.png" alt="" class="map__layer js-layer js-layer--yolo-chaotis">
+      </div>
+
+      <div class="map__plant-list">
+
+        <!-- Plant -->
+        <div class="map__plant plant plant--mode-landscape plant--focus-mononovous js-plant js-plant--name-focus-mononovous">
+          <div class="plant__image-list">
+            <img src="images/landscape/plants/focus_mononovous_white.png" alt="" class="plant__image plant__image--white">
+            <img src="images/landscape/plants/focus_mononovous.png" alt="" class="plant__image plant__image--color">
+          </div>
+          <div class="plant__text-wrapper">
+            <p class="plant__text">
+              <span class="plant__text-name">FOCUS MONONOVOUS</span>the creative species found in
+              <span class="plant__text-italic">“The Depths”</span></p>
+
+            <div class="plant__proportion-list">
+              <p class="plant__proportion">21% of survey participants are Focus Mononovous</p>
+              <p class="plant__proportion">You have a 75% affinity with most Focus Mononovous</p>
+            </div>
+            <a href="#" class="button button--plant-more">Learn more</a>
+          </div>
+        </div>
+
+        <!-- Plant -->
+        <div class="map__plant plant plant--mode-landscape plant--solo-noctus js-plant js-plant--name-solo-noctus">
+          <div class="plant__image-list">
+            <img src="images/landscape/plants/solo_noctus_white.png" alt="" class="plant__image plant__image--white">
+            <img src="images/landscape/plants/solo_noctus.png" alt="" class="plant__image plant__image--color">
+          </div>
+          <div class="plant__text-wrapper">
+            <p class="plant__text">
+              <span class="plant__text-name">SOLO NOCTUS</span>the creative species found in
+              <span class="plant__text-italic">“Luna”</span></p>
+            <div class="plant__proportion-list">
+              <p class="plant__proportion">xx% of survey participants are Solo Noctus</p>
+              <p class="plant__proportion">You have a xx% affinity with most Solo Noctus</p>
+            </div>
+            <a href="#" class="button button--plant-more">Learn more</a>
+          </div>
+        </div>
+
+        <!-- Plant -->
+        <div class="map__plant plant plant--mode-landscape plant--sui-inspira js-plant js-plant--name-sui-inspira">
+          <div class="plant__image-list">
+            <img src="images/landscape/plants/sui_inspira_white.png" alt="" class="plant__image plant__image--white">
+            <img src="images/landscape/plants/sui_inspira.png" alt="" class="plant__image plant__image--color">
+          </div>
+          <div class="plant__text-wrapper">
+            <p class="plant__text"><span class="plant__text-name"><span class="plant__text-italic">SUI</span>&nbsp; &nbsp;INSPI<span class="plant__text-italic">R</span>A</span>the creative species found in
+              <span class="plant__text-italic">“The Alcove”</span></p>
+            <div class="plant__proportion-list">
+              <p class="plant__proportion">xx% of survey participants are Sui Inspira</p>
+              <p class="plant__proportion">You have a xx% affinity with most Sui Inspira</p>
+            </div>
+            <a href="#" class="button button--plant-more">Learn more</a>
+          </div>
+        </div>
+
+        <!-- Plant -->
+        <div class="map__plant plant plant--mode-landscape plant--mono-routinus js-plant js-plant--name-mono-routinus">
+          <div class="plant__image-list">
+            <img src="images/landscape/plants/mono_routinus_white.png" alt="" class="plant__image plant__image--white">
+            <img src="images/landscape/plants/mono_routinus.png" alt="" class="plant__image plant__image--color">
+          </div>
+          <div class="plant__text-wrapper">
+            <p class="plant__text"><span class="plant__text-name"><span class="plant__text-italic">M</span>
+                ONO
+                <span class="plant__text-italic">R</span>OUTINUS</span>the creative species found in
+              <span class="plant__text-italic">“Canyonlands”</span></p>
+            <div class="plant__proportion-list">
+              <p class="plant__proportion">21% of survey participants are Mono Routinus</p>
+              <p class="plant__proportion">You have a 75% affinity with most Mono Routinus</p>
+            </div>
+            <a href="#" class="button button--plant-more">Learn more</a>
+          </div>
+        </div>
+
+        <!-- Plant -->
+        <div class="map__plant plant plant--mode-landscape plant--socialis-adventurous js-plant js-plant--name-socialis-adventurous">
+          <div class="plant__image-list">
+            <img src="images/landscape/plants/socialis_adventurous_white.png" alt="" class="plant__image plant__image--white">
+            <img src="images/landscape/plants/socialis_adventurous.png" alt="" class="plant__image plant__image--color">
+          </div>
+          <div class="plant__text-wrapper">
+            <p class="plant__text">
+              <span class="plant__text-name">SOCIALIS ADVENTUROUS</span>the creative species found in
+              <span class="plant__text-italic">Meadowland</span></p>
+            <div class="plant__proportion-list">
+              <p class="plant__proportion">21% of survey Socialis Adventurous</p>
+              <p class="plant__proportion">You have a 75% affinity with most Socialis Adventurous</p>
+            </div>
+            <a href="#" class="button button--plant-more">Learn more</a>
+          </div>
+        </div>
+
+        <!-- Plant -->
+        <div class="map__plant plant plant--mode-landscape plant--yolo-chaotis js-plant js-plant--name-yolo-chaotis">
+          <div class="plant__image-list">
+            <img src="images/landscape/plants/yolo_chaotis_white.png" alt="" class="plant__image plant__image--white">
+            <img src="images/landscape/plants/yolo_chaotis.png" alt="" class="plant__image plant__image--color">
+          </div>
+          <div class="plant__text-wrapper">
+            <p class="plant__text">
+              <span class="plant__text-name">YOLO CHAOTIS</span>the creative species found in
+              <span class="plant__text-italic">The Alpine</span></p>
+            <div class="plant__proportion-list">
+              <p class="plant__proportion">21% of survey participants are Yolo Chaotis</p>
+              <p class="plant__proportion">You have a 75% affinity with most Yolo Chaotis</p>
+            </div>
+            <a href="#" class="button button--plant-more">Learn more</a>
+          </div>
+        </div>
+
+        <!-- Plant -->
+        <div class="map__plant plant plant--mode-landscape plant--novo-gregarious js-plant js-plant--name-novo-gregarious">
+          <div class="plant__image-list">
+            <img src="images/landscape/plants/novo_gregarious_white.png" alt="" class="plant__image plant__image--white">
+            <img src="images/landscape/plants/novo_gregarious.png" alt="" class="plant__image plant__image--color">
+          </div>
+          <div class="plant__text-wrapper">
+            <p class="plant__text">
+              <span class="plant__text-name">NOVO GREGARIOUS</span>the creative species found in
+              <span class="plant__text-italic">The Jungle</span></p>
+            <div class="plant__proportion-list">
+              <p class="plant__proportion">21% of survey participants are Novo Gregarious</p>
+              <p class="plant__proportion">You have a 75% affinity with most Novo Gregarious</p>
+            </div>
+            <a href="#" class="button button--plant-more">Learn more</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

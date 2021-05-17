@@ -1,0 +1,17 @@
+.link-to-map {
+  display: flex;
+  align-items: center;
+  font-family: $font-gt-light;
+  font-size: 10px;
+  line-height: 12px;
+  color: rgba($color-yellow, 0.35);
+  text-decoration: none;
+
+  &--plant-links {
+    margin-bottom: 30px;
+  }
+
+  &:hover {
+    color: $color-yellow;
+  }
+}

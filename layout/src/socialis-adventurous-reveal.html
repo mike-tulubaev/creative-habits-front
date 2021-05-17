@@ -1,0 +1,54 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% from "templates/components/_header.html" import header %}
+{% from "./templates/components/_icon.html" import icon %}
+
+{% block page_title %}
+		Socialis Adventurous reveal
+{% endblock %}
+
+{% block page_header %}
+	{{ header(showSound=true, showInfo=true, showMenu=true, dark=true) }}
+{% endblock %}
+
+{% set pageClass='page-species page-species--reveal page-species--reveal-light-gradient page-species--socialis-adventurous' %}
+{{ header(showSound=true, showInfo=true) }}
+{% block page_content %}
+  <div class="page-species__wrapper">
+    <div class="page-species__bg-container">
+      <img class="page-species__bg" src="images/species/socialis_adventurous_bg.jpg" alt="">
+    </div>
+    <div class="container page-species__container"></div>
+  </div>
+  <div class="container page-species__reveal-container">
+      <div class="row">
+        <div class="col col--page-species col--socialis-adventurous-text">
+          <p class="page-species__text">
+            <span class="page-species__text-upper">SO<span class="page-species__text-italic">C</span>IALIS ADVENTU<span class="page-species__text-italic">R</span>OUS </span>
+            is characterized by its
+            <span class="page-species__text-italic">many blooms </span>
+            that take flight to
+            <span class="page-species__text-italic">ride air currents </span>
+            in search of
+            <span class="page-species__text-italic">new landscapes. </span>
+            A
+            <span class="page-species__text-italic">highly-social </span>
+            creative species, Socialis Adventurous is found in habitats
+            <span class="page-species__text-italic">dense with others, </span>
+            its roots flowing out to
+            <span class="page-species__text-italic">collect </span>
+            a wide range of nutrients, the more the better. Like Yolo Chaotis, Socialis Adeventurous liberally spreads its energy
+            <span class="page-species__text-italic">across many blooms </span>
+            at once, knowing that even though not all of them will flourish, those blooms that do, will be
+            <span class="page-species__text-italic">strong and vivid. </span>
+            Those who would like to see the best of this creative species will need to
+            <span class="page-species__text-italic">rise early, </span>
+            because many Socialis Adventurous prefer to show their brightest colors in the morning.
+          </p>
+        </div>
+      </div>
+      <a href="habits.html" class="page-species__reveal-next-page page-species__reveal-next-page--dark">
+        {{icon(name="scroll", class="icon--next-page")}}
+      </a>
+    </div>
+{% endblock %}

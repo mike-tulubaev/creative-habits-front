@@ -1,0 +1,59 @@
+@import "../../../../../styles/variables.scss";
+
+.header-menu {
+  margin-left: auto;
+
+  //.header-menu__list
+  &__list {
+		display: flex;
+		margin-bottom: 0;
+		padding-left: 0;
+  }
+
+  //.header-menu__item
+  &__item {
+		padding: 0 55px;
+		list-style-type: none;
+  }
+
+  //.header-menu__link
+  &__link {
+    position: relative;
+		font-family: $font-gt-light;
+    font-size: 14px;
+    line-height: 19px;
+    color: rgba($color-yellow, 0.4);
+		letter-spacing: .02em;
+    text-decoration: none;
+
+    &::after {
+      position: absolute;
+      bottom: -17px;
+      left: 50%;
+      width: 9px;
+      height: 9px;
+      background-color: currentColor;
+      border-radius: 50%;
+      content: "";
+			transform: translateX(-50%);
+			display: none;
+    }
+
+    .header-menu--dark & {
+      color: rgba($color-dark-gray, .3);
+    }
+
+    //.header-menu__link--active
+    &--active {
+			color: $color-yellow;
+
+      .header-menu--dark & {
+        color: $color-dark-gray;
+      }
+			
+			&::after {
+				display: block;
+			}
+    }
+  }
+}

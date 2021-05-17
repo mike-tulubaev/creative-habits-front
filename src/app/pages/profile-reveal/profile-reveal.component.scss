@@ -1,0 +1,111 @@
+@import "../../../styles/variables.scss";
+@import "./species.scss";
+
+app-landscape {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+app-habits {
+  &:not(.leave) {
+    animation: 1s slide-up-habits;
+  }
+  &.leave .col--page-habits {
+    animation: 1s slide-up-habits-leave;
+  }
+
+  .col--page-habits.step2-leave {
+    animation: .5s slide-up-habits-leave;
+  }
+  .col--page-habits.step3-enter {
+    animation: .5s slide-up-habits-step3-enter;
+  }
+  .col--page-habits.step3-leave {
+    animation: .5s slide-up-habits-leave;
+  }
+  .col--page-habits.step4-enter {
+    animation: .5s slide-up-habits-step3-enter;
+  }
+}
+
+app-species-description {
+  &:not(.leave) {
+    animation: 1s slide-up-species;
+  }
+  &.leave {
+    animation: 1s slide-up-species-leave;
+  }
+}
+
+// .page-habits__content-box.enter {
+//   .page-habits__content {
+//     animation: 1s slide-up-habits-content;
+//   }
+// }
+
+@keyframes slide-up-species {
+  from {
+    opacity: 0;
+    margin-top: 100%;
+    height: 300%;
+  }
+
+  to {
+    opacity: 1;
+    margin-top: 0%;
+    height: 100%;
+  }
+}
+
+@keyframes slide-up-species-leave {
+  from {
+    transform: translateY(0%);
+  }
+
+  to {
+    transform: translateY(-107%);
+  }
+}
+
+@keyframes slide-up-habits {
+  from {
+    margin-top: 46vh;
+  }
+
+  to {
+    margin-top: 0%;
+  }
+}
+
+@keyframes slide-up-habits-leave {
+  from {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-46vh);
+  }
+}
+
+@keyframes slide-up-habits-step3-enter {
+  from {
+    transform: translateY(110%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up-habits-content {
+  from {
+    margin-bottom: -150%;
+  }
+
+  to {
+    margin-bottom: 0;
+  }
+}

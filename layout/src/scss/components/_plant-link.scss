@@ -1,0 +1,90 @@
+.plant-link {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+
+  &--mono-routinus {
+    width: 61px;
+    height: 107px;
+  }
+
+  &--yolo-chaotis {
+    width: 55px;
+    height: 96px;
+  }
+
+  &--socialis-adventurous {
+    width: 153px;
+    height: 84px;
+  }
+
+  &--focus-mononovous {
+    width: 59px;
+    height: 103px;
+  }
+
+  &--novo-gregarious {
+    width: 106px;
+    height: 105px;
+  }
+
+  &--sui-inspira {
+    width: 52px;
+    height: 113px;
+  }
+
+  &--solo-noctus {
+    width: 109px;
+    height: 109px;
+  }
+
+  &--science {
+    width: 66px;
+    height: 52px;
+  }
+
+  &__image {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    transition: opacity 0.2s;
+    transform: translate(-50%, 50%);
+
+    &--white {
+      opacity: 1;
+
+      .plant-link:hover & {
+        opacity: 0;
+      }
+
+      .plant-link--active & {
+        opacity: 0;
+      }
+    }
+
+    &--color {
+      opacity: 0;
+
+      .plant-link:hover & {
+        opacity: 1;
+      }
+
+      .plant-link--active & {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__science-image {
+    transition: opacity 0.2s;
+    opacity: 0.25;
+    .plant-link:hover & {
+      opacity: 1;
+    }
+  }
+}

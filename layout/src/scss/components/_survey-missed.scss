@@ -1,0 +1,24 @@
+.survey-missed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+
+	//.survey-missed__text
+	&__text {
+		margin-bottom: 62px;
+		font-size: 30px;
+		line-height: 1.3;
+	}
+
+	//.survey-missed__button
+	&__button {
+		min-width: 203px;
+	}
+}

@@ -1,0 +1,336 @@
+
+<main class="page page--landscape-intro" *ngIf="step < steps.HABITS">
+  <div class="page__wrapper page__wrapper--landscape">
+    <div
+      class="map map--mode-landscape"
+      [ngClass]="{
+        'map--intro': step === steps.INTRO,
+        'map--single': step === steps.MAP_SINGLE,
+        'map--plant-selected': !!selectedCluster && step === steps.MAP_ALL
+      }">
+      <div class="map__bg-wrapper map__bg-wrapper--landscape">
+        <div class="map__empty"></div>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/landscape/map/map.webp">
+          <img src="/assets/img/landscape/map/map.png" alt="" class="map__background" [class.map__background--intro]="step === steps.INTRO" [@mapState]="step === steps.INTRO ? 'intro' : 'main'">
+        </picture>
+        <ng-container *ngIf="step !== steps.INTRO; else intro">
+          <picture>
+            <source type="image/webp" srcset="/assets/img/landscape/map/focus_mononovous_map.webp">
+            <img class="map__layer" src="/assets/img/landscape/map/focus_mononovous_map.png" alt="" [class.map__layer--active]="selectedCluster === clusters.FOCUS_MONONOVOUS" @appearenceDelay500>
+          </picture>
+          <picture>
+            <source type="image/webp" srcset="/assets/img/landscape/map/mono_routinus_map.webp">
+            <img class="map__layer" src="/assets/img/landscape/map/mono_routinus_map.png" alt="" [class.map__layer--active]="selectedCluster === clusters.MONO_ROUTINUS" @appearenceDelay500>
+          </picture>
+          <picture>
+            <source type="image/webp" srcset="/assets/img/landscape/map/novo_gregarious_map.webp">
+            <img class="map__layer" src="/assets/img/landscape/map/novo_gregarious_map.png" alt="" [class.map__layer--active]="selectedCluster === clusters.NOVO_GREGARIOUS" @appearenceDelay500>
+          </picture>
+          <picture>
+            <source type="image/webp" srcset="/assets/img/landscape/map/socialis_adventurous_map.webp">
+            <img class="map__layer" src="/assets/img/landscape/map/socialis_adventurous_map.png" alt="" [class.map__layer--active]="selectedCluster === clusters.SOCIALIS_ADVENTUROUS" @appearenceDelay500>
+          </picture>
+          <picture>
+            <source type="image/webp" srcset="/assets/img/landscape/map/solo_noctus_map.webp">
+            <img class="map__layer" src="/assets/img/landscape/map/solo_noctus_map.png" alt="" [class.map__layer--active]="selectedCluster === clusters.SOLO_NOCTUS" @appearenceDelay500>
+          </picture>
+          <picture>
+            <source type="image/webp" srcset="/assets/img/landscape/map/sui_inspira_map.webp">
+            <img class="map__layer" src="/assets/img/landscape/map/sui_inspira_map.png" alt="" [class.map__layer--active]="selectedCluster === clusters.SUI_INSPIRA" @appearenceDelay500>
+          </picture>
+          <picture>
+            <source type="image/webp" srcset="/assets/img/landscape/map/yolo_chaotis_map.webp">
+            <img class="map__layer" src="/assets/img/landscape/map/yolo_chaotis_map.png" alt="" [class.map__layer--active]="selectedCluster === clusters.YOLO_CHAOTIS" @appearenceDelay500>
+          </picture>
+        </ng-container>
+        <ng-template #intro>
+          <div class="container map__intro">
+            <div class="row">
+              <div class="col col--landscape-intro">
+                <h1 class="landscape-intro__title">Explore the habitats of the
+                  <span class="landscape-intro__title-italic">Seven Creative Species.</span></h1>
+                <p class="landscape-intro__text">
+                  As in the natural world, each species thrives in some environments and struggles in others; some prefer calm, quiet alcoves, and
+                  others, bustling and social meadows. Some root deep for creative nutrients while others glide on the wind, seeking new experiences.</p>
+                <p class="landscape-intro__text">Ready to find your habitat?</p>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+
+      <div class="map__plant-list" *ngIf="step > steps.INTRO">
+
+        <!-- Plant -->
+        <div @fadeAppearenceDelay500
+          class="map__plant plant plant--focus-mononovous"
+          [ngClass]="{
+            'plant--mode-landscape': step === steps.MAP_ALL,
+            'plant--single': step === steps.MAP_SINGLE && selectedCluster === clusters.FOCUS_MONONOVOUS,
+            'map__plant--selected': selectedCluster === clusters.FOCUS_MONONOVOUS
+          }"
+          (mouseenter)="onMouseEnterPlant($event)"
+          (mouseleave)="onMouseLeavePlant($event)"
+          data-cluster="Focus Mononovous"
+        >
+          <div class="plant__image-list">
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/focus_mononovous_white.webp">
+              <img class="plant__image plant__image--white" src="/assets/img/landscape/plants/focus_mononovous_white.png" alt="">
+            </picture>
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/focus_mononovous.webp">
+              <img class="plant__image plant__image--color" src="/assets/img/landscape/plants/focus_mononovous.png" alt="">
+            </picture>
+          </div>
+          <div class="plant__text-wrapper">
+            <p class="plant__text">
+              <span class="plant__text-name">FOCUS MONONOVOUS</span>the creative species found in
+              <span class="plant__text-italic">“The Depths”</span></p>
+
+            <div class="plant__proportion-list">
+              <p class="plant__proportion">21% of survey participants are Focus Mononovous</p>
+              <p class="plant__proportion">You have a {{ (affinity$ | async)?.FOCUS_MONONOVOUS | number: '1.0-0' }}% affinity with most Focus Mononovous</p>
+            </div>
+            <button (click)="goToHabits()" class="button button--plant-more" *ngIf="step === steps.MAP_ALL; else goToMapAll">Learn more</button>
+            <ng-template #goToMapAll>
+              <button (click)="goToNextStep()" class="button button--plant-more">Meet Others</button>
+            </ng-template>
+          </div>
+        </div>
+
+        <!-- Plant -->
+        <div @fadeAppearenceDelay500
+          class="map__plant plant plant--solo-noctus"
+          [ngClass]="{
+            'plant--mode-landscape': step === steps.MAP_ALL,
+            'plant--single': step === steps.MAP_SINGLE && selectedCluster === clusters.SOLO_NOCTUS,
+            'map__plant--selected': selectedCluster === clusters.SOLO_NOCTUS
+          }"
+          (mouseenter)="onMouseEnterPlant($event)"
+          (mouseleave)="onMouseLeavePlant($event)"
+          data-cluster="Solo Noctus"
+        >
+          <div class="plant__image-list">
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/solo_noctus_white.webp">
+              <img class="plant__image plant__image--white" src="/assets/img/landscape/plants/solo_noctus_white.png" alt="">
+            </picture>
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/solo_noctus.webp">
+              <img class="plant__image plant__image--color" src="/assets/img/landscape/plants/solo_noctus.png" alt="">
+            </picture>
+          </div>
+          <div class="plant__text-wrapper">
+            <p class="plant__text">
+              <span class="plant__text-name">SOLO NOCTUS</span>the creative species found in
+              <span class="plant__text-italic">“Luna”</span></p>
+            <div class="plant__proportion-list">
+              <p class="plant__proportion">xx% of survey participants are Solo Noctus</p>
+              <p class="plant__proportion">You have a {{ (affinity$ | async)?.SOLO_NOCTUS | number: '1.0-0' }}% affinity with most Solo Noctus</p>
+            </div>
+            <button (click)="goToHabits()" class="button button--plant-more" *ngIf="step === steps.MAP_ALL; else goToMapAll">Learn more</button>
+            <ng-template #goToMapAll>
+              <button (click)="goToNextStep()" class="button button--plant-more">Meet Others</button>
+            </ng-template>
+          </div>
+        </div>
+
+        <!-- Plant -->
+        <div @fadeAppearenceDelay500
+          class="map__plant plant plant--sui-inspira"
+          [ngClass]="{
+            'plant--mode-landscape': step === steps.MAP_ALL,
+            'plant--single': step === steps.MAP_SINGLE && selectedCluster === clusters.SUI_INSPIRA,
+            'map__plant--selected': selectedCluster === clusters.SUI_INSPIRA
+          }"
+          (mouseenter)="onMouseEnterPlant($event)"
+          (mouseleave)="onMouseLeavePlant($event)"
+          data-cluster="Sui Inspira"
+        >
+          <div class="plant__image-list">
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/sui_inspira_white.webp">
+              <img class="plant__image plant__image--white" src="/assets/img/landscape/plants/sui_inspira_white.png" alt="">
+            </picture>
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/sui_inspira.webp">
+              <img class="plant__image plant__image--color" src="/assets/img/landscape/plants/sui_inspira.png" alt="">
+            </picture>
+          </div>
+          <div class="plant__text-wrapper">
+            <p class="plant__text"><span class="plant__text-name"><span class="plant__text-italic">SUI</span>&nbsp; &nbsp;INSPI<span class="plant__text-italic">R</span>A</span>the creative species found in
+              <span class="plant__text-italic">“The Alcove”</span></p>
+            <div class="plant__proportion-list">
+              <p class="plant__proportion">xx% of survey participants are Sui Inspira</p>
+              <p class="plant__proportion">You have a {{ (affinity$ | async)?.SUI_INSPIRA | number: '1.0-0' }}% affinity with most Sui Inspira</p>
+            </div>
+            <button (click)="goToHabits()" class="button button--plant-more" *ngIf="step === steps.MAP_ALL; else goToMapAll">Learn more</button>
+            <ng-template #goToMapAll>
+              <button (click)="goToNextStep()" class="button button--plant-more">Meet Others</button>
+            </ng-template>
+          </div>
+        </div>
+
+        <!-- Plant -->
+        <div @fadeAppearenceDelay500
+          class="map__plant plant plant--mono-routinus"
+          [ngClass]="{
+            'plant--mode-landscape': step === steps.MAP_ALL,
+            'plant--single': step === steps.MAP_SINGLE && selectedCluster === clusters.MONO_ROUTINUS,
+            'map__plant--selected': selectedCluster === clusters.MONO_ROUTINUS
+          }"
+          (mouseenter)="onMouseEnterPlant($event)"
+          (mouseleave)="onMouseLeavePlant($event)"
+          data-cluster="Mono Routinus"
+        >
+          <div class="plant__image-list">
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/mono_routinus_white.webp">
+              <img class="plant__image plant__image--white" src="/assets/img/landscape/plants/mono_routinus_white.png" alt="">
+            </picture>
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/mono_routinus.webp">
+              <img class="plant__image plant__image--color" src="/assets/img/landscape/plants/mono_routinus.png" alt="">
+            </picture>
+          </div>
+          <div class="plant__text-wrapper">
+            <p class="plant__text"><span class="plant__text-name"><span class="plant__text-italic">M</span>
+                ONO
+                <span class="plant__text-italic">R</span>OUTINUS</span>the creative species found in
+              <span class="plant__text-italic">“Canyonlands”</span></p>
+            <div class="plant__proportion-list">
+              <p class="plant__proportion">21% of survey participants are Mono Routinus</p>
+              <p class="plant__proportion">You have a {{ (affinity$ | async)?.MONO_ROUTINUS | number: '1.0-0' }}% affinity with most Mono Routinus</p>
+            </div>
+            <button (click)="goToHabits()" class="button button--plant-more" *ngIf="step === steps.MAP_ALL; else goToMapAll">Learn more</button>
+            <ng-template #goToMapAll>
+              <button (click)="goToNextStep()" class="button button--plant-more">Meet Others</button>
+            </ng-template>
+          </div>
+        </div>
+
+        <!-- Plant -->
+        <div @fadeAppearenceDelay500
+          class="map__plant plant plant--socialis-adventurous"
+          [ngClass]="{
+            'plant--mode-landscape': step === steps.MAP_ALL,
+            'plant--single': step === steps.MAP_SINGLE && selectedCluster === clusters.SOCIALIS_ADVENTUROUS,
+            'map__plant--selected': selectedCluster === clusters.SOCIALIS_ADVENTUROUS
+          }"
+          (mouseenter)="onMouseEnterPlant($event)"
+          (mouseleave)="onMouseLeavePlant($event)"
+          data-cluster="Socialis Adventurous"
+        >
+          <div class="plant__image-list">
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/socialis_adventurous_white.webp">
+              <img class="plant__image plant__image--white" src="/assets/img/landscape/plants/socialis_adventurous_white.png" alt="">
+            </picture>
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/socialis_adventurous.webp">
+              <img class="plant__image plant__image--color" src="/assets/img/landscape/plants/socialis_adventurous.png" alt="">
+            </picture>
+          </div>
+          <div class="plant__text-wrapper">
+            <p class="plant__text">
+              <span class="plant__text-name">SOCIALIS ADVENTUROUS</span>the creative species found in
+              <span class="plant__text-italic">Meadowland</span></p>
+            <div class="plant__proportion-list">
+              <p class="plant__proportion">21% of survey Socialis Adventurous</p>
+              <p class="plant__proportion">You have a {{ (affinity$ | async)?.SOCIALIS_ADVENTUROUS | number: '1.0-0' }}% affinity with most Socialis Adventurous</p>
+            </div>
+            <button (click)="goToHabits()" class="button button--plant-more" *ngIf="step === steps.MAP_ALL; else goToMapAll">Learn more</button>
+            <ng-template #goToMapAll>
+              <button (click)="goToNextStep()" class="button button--plant-more">Meet Others</button>
+            </ng-template>
+          </div>
+        </div>
+
+        <!-- Plant -->
+        <div @fadeAppearenceDelay500
+          class="map__plant plant plant--yolo-chaotis"
+          [ngClass]="{
+            'plant--mode-landscape': step === steps.MAP_ALL,
+            'plant--single': step === steps.MAP_SINGLE && selectedCluster === clusters.YOLO_CHAOTIS,
+            'map__plant--selected': selectedCluster === clusters.YOLO_CHAOTIS
+          }"
+          (mouseenter)="onMouseEnterPlant($event)"
+          (mouseleave)="onMouseLeavePlant($event)"
+          data-cluster="Yolo Chaotis"
+        >
+          <div class="plant__image-list">
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/yolo_chaotis_white.webp">
+              <img class="plant__image plant__image--white" src="/assets/img/landscape/plants/yolo_chaotis_white.png" alt="">
+            </picture>
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/yolo_chaotis.webp">
+              <img class="plant__image plant__image--color" src="/assets/img/landscape/plants/yolo_chaotis.png" alt="">
+            </picture>
+          </div>
+          <div class="plant__text-wrapper">
+            <p class="plant__text">
+              <span class="plant__text-name">YOLO CHAOTIS</span>the creative species found in
+              <span class="plant__text-italic">The Alpine</span></p>
+            <div class="plant__proportion-list">
+              <p class="plant__proportion">21% of survey participants are Yolo Chaotis</p>
+              <p class="plant__proportion">You have a {{ (affinity$ | async)?.YOLO_CHAOTIS | number: '1.0-0' }}% affinity with most Yolo Chaotis</p>
+            </div>
+            <button (click)="goToHabits()" class="button button--plant-more" *ngIf="step === steps.MAP_ALL; else goToMapAll">Learn more</button>
+            <ng-template #goToMapAll>
+              <button (click)="goToNextStep()" class="button button--plant-more">Meet Others</button>
+            </ng-template>
+          </div>
+        </div>
+
+        <!-- Plant -->
+        <div @fadeAppearenceDelay500
+          class="map__plant plant plant--novo-gregarious"
+          [ngClass]="{
+            'plant--mode-landscape': step === steps.MAP_ALL,
+            'plant--single': step === steps.MAP_SINGLE && selectedCluster === clusters.NOVO_GREGARIOUS,
+            'map__plant--selected': selectedCluster === clusters.NOVO_GREGARIOUS
+          }"
+          (mouseenter)="onMouseEnterPlant($event)"
+          (mouseleave)="onMouseLeavePlant($event)"
+          data-cluster="Novo Gregarious"
+        >
+          <div class="plant__image-list">
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/novo_gregarious_white.webp">
+              <img class="plant__image plant__image--white" src="/assets/img/landscape/plants/novo_gregarious_white.png" alt="">
+            </picture>
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/novo_gregarious.webp">
+              <img class="plant__image plant__image--color" src="/assets/img/landscape/plants/novo_gregarious.png" alt="">
+            </picture>
+          </div>
+          <div class="plant__text-wrapper">
+            <p class="plant__text">
+              <span class="plant__text-name">NOVO GREGARIOUS</span>the creative species found in
+              <span class="plant__text-italic">The Jungle</span></p>
+            <div class="plant__proportion-list">
+              <p class="plant__proportion">21% of survey participants are Novo Gregarious</p>
+              <p class="plant__proportion">You have a {{ (affinity$ | async)?.NOVO_GREGARIOUS | number: '1.0-0' }}% affinity with most Novo Gregarious</p>
+            </div>
+            <button (click)="goToHabits()" class="button button--plant-more" *ngIf="step === steps.MAP_ALL; else goToMapAll">Learn more</button>
+            <ng-template #goToMapAll>
+              <button (click)="goToNextStep()" class="button button--plant-more">Meet Others</button>
+            </ng-template>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <a
+    (click)="goToNextStep()"
+    class="page-species__reveal-next-page"
+  >
+    <app-icon name="scroll" class="icon--next-page"></app-icon>
+  </a>
+</main>
+
+<app-landscape-habits *ngIf="step === steps.HABITS" (openMap)="goToMap()"></app-landscape-habits>

@@ -1,0 +1,40 @@
+<main class="page page--survey">
+  <div class="container container--survey">
+    <div class="row row--survey">
+      <div class="col col--6 col--question" app-question [question]="question | async" [index]="index | async">
+        <app-progress [currentIndex]="index | async"></app-progress>
+      </div>
+      <div class="col col--6 d-flex-col">
+        <div class="seed-animation">
+          <video height="140%" appCache="/assets/video/seed_wide.mp4" preload="metadata"
+            (loadedmetadata)="vidProps($event)" (timeupdate)="onTimeUpdate()" #video class="seed-animation__image"></video>
+          <!-- <picture
+            ><source srcset="/assets/img/survey/seed1.webp" type="image/webp" />
+            <img
+              src="/assets/img/survey/seed1.png"
+              alt=""
+              class="seed-animation__image"
+          /></picture> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="showSurveyCompleted" class="survey-complete">
+    <div class="survey-complete__wrapper">
+      <p class="survey-complete__text">
+        Your answers make up the unique DNA of your creative being. Although no
+        two people share the exact same set of creative habits, we do all fit
+        into one of Seven Creative Species
+      </p>
+      <a (click)="sendInterview()" class="button button--same-font-hover button--complete">See what bloomed</a>
+    </div>
+    <img
+      class="survey-complete__video"
+      appCache="/assets/seedling-new.gif"
+      alt=""
+    />
+    <button (click)="hideSurveyCompleted()" class="survey-complete__return">Wait, I’m not done</button>
+  </div>
+</main>
+<app-survey-faq *ngIf="showFAQ" (close)="hideFAQ()"></app-survey-faq>

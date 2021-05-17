@@ -1,0 +1,320 @@
+@import '../../../styles/variables.scss';
+
+.section-science {
+  position: relative;
+  z-index: 5;
+  background-color: $color-dark-gray;
+
+  &__animation { // .section-science__animation
+    position: fixed;
+    top: -270px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 1200px;
+  }
+
+  &__image { // .section-science__image
+    max-width: 100%;
+  }
+
+  &__result-image { // .section-science__result-image
+    position: absolute;
+    z-index: -1;
+
+    &--1 { // .section-science__result-image--1
+      top: -2px;
+      left: -18px;
+    }
+
+    &--2 { // .section-science__result-image--2
+      top: 502px;
+      left: -104px;
+    }
+
+    &--3 { // .section-science__result-image--3
+      top: 903px;
+      left: -16px;
+    }
+
+    &--4 { // .section-science__result-image--4
+      bottom: -30px;
+      left: 240px;
+    }
+
+    &--5 { // .section-science__result-image--5
+      bottom: -90px;
+      right: -89px;
+    }
+
+    &--6 { // .section-science__result-image--6
+      top: 400px;
+      right: -210px;
+    }
+
+    &--7 { // .section-science__result-image--7
+      top: 8px;
+      right: 20px;
+    }
+  }
+
+  &__text { // .section-science__text
+    margin-bottom: 0;
+    font-family: $font-mi-roman;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 31px;
+    letter-spacing: -0.01em;
+    z-index: 1;
+    position: relative;
+
+    .section-science--animation & {
+      margin-bottom: 30px;
+    }
+
+    .section-science--team & {
+      margin-bottom: 120px;
+    }
+
+    .section-science--figure1 & {
+      margin-bottom: 70px;
+    }
+
+    .section-science--figure2 & {
+      margin-bottom: 70px;
+    }
+
+    .section-science--results & {
+      margin-bottom: 24px;
+    }
+
+    .section-science--study & {
+      max-width: 698px;
+      margin: 0 auto;
+      font-size: 30px;
+      line-height: 39px;
+      color: $color-dark-gray;
+    }
+  }
+
+  &__text-italic { // .section-science__text-italic
+    font-family: $font-mi-italic;
+  }
+
+  &__text-uppercase { // .section-science__text-uppercase
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+  }
+
+  &__text-small { // .section-science__text-small
+    margin-bottom: 0;
+    font-family: $font-gt-light;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+
+    &--f1 { // .section-science__text-small--f1
+      position: absolute;
+      top: 110px;
+      left: 140px;
+    }
+
+    &--f2 { // .section-science__text-small--f2
+      position: absolute;
+      top: 20px;
+      right: 70px;
+    }
+  }
+
+  &__link { // .section-science__link
+    color: currentColor;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+
+    &:hover {
+      border-bottom-color: $color-transparent;
+    }
+  }
+
+  &--animation { // .section-science--animation
+    z-index: 1;
+    overflow: hidden;
+    max-width: 705px;
+    margin: 0 auto;
+    padding-top: 540px;
+    padding-bottom: 50px;
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background-image: linear-gradient(
+        to top,
+        $color-dark-gray,
+        rgba($color-dark-gray, 0)
+      );
+      content: '';
+    }
+  }
+
+  &--figure1 { // .section-science--figure1
+    padding-top: 50px;
+    padding-bottom: 120px;
+  }
+
+  &--figure2 { // .section-science--figure2
+    padding-top: 110px;
+    padding-bottom: 35px;
+    background-color: $color-yellow;
+    color: $color-dark-gray;
+  }
+
+  &--results { // .section-science--results
+    overflow: hidden;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    background-color: $color-yellow;
+    color: $color-dark-gray;
+  }
+
+  &--study { // .section-science--study
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 526px;
+    background-color: $color-yellow;
+  }
+
+  &__study-bg { // .section-science__study-bg
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    filter: blur(64px);
+    transform: translate(-50%, -50%);
+  }
+
+  &--team { // .section-science--team
+    max-width: 744px;
+    margin: 0 auto;
+    padding-top: 118px;
+    padding-bottom: 12px;
+  }
+
+  &__row-team { // .section-science__row-team
+    display: flex;
+  }
+
+  &--copyright { // .section-science--copyright
+    padding-top: 22px;
+    padding-bottom: 22px;
+    text-align: center;
+  }
+}
+
+
+.team-group {
+  position: relative;
+  width: 100%;
+  margin-bottom: 120px;
+  padding-top: 6px;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba($color-yellow, 0.35);
+    content: '';
+  }
+
+  &--single { // .team-group--single
+    max-width: 153px;
+    margin-right: 37px;
+  }
+
+  &__title { // .team-group__title
+    margin-bottom: 32px;
+    font-family: $font-gt-light;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+  }
+
+  &__title-link { // .team-group__title-link
+    text-decoration: underline;
+    color: $color-yellow;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__row { // .team-group__row
+    display: flex;
+    margin: 0 -44px;
+
+    .team-group--single & {
+      max-width: 153px;
+      margin-right: 37px;
+    }
+  }
+
+  &__item { // .team-group__item
+    position: relative;
+    display: inline-block;
+    width: 188px;
+    padding: 0 44px;
+    padding-bottom: 25px;
+    color: $color-yellow;
+    text-decoration: none;
+    background: none;
+    border: none;
+
+    &:hover {
+      .team-group__photo {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__image { // .team-group__image
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  &__photo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: inherit;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  &__name { // .team-group__name
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-bottom: 0;
+    font-family: $font-gt-light;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    transform: translateX(-50%);
+  }
+}
+

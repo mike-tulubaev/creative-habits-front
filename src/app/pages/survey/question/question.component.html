@@ -1,0 +1,86 @@
+<ng-container [ngSwitch]="question?.type">
+  <div *ngSwitchCase="questionTypes.ONE_TO_FIVE" class="question question--row question--two-labels" [class.question--disabled]="showMissed">
+    <div class="title title--survey question__title">
+      <h1>{{ question?.text }}</h1>
+    </div>
+    <div class="question__wrapper">
+      <ng-container *ngIf="getPickQuestion(question) as pickQuestion">
+        <div class="question__answer" *ngFor="let item of [].constructor(5); index as ansIndex; first as isFirst; last as isLast">
+          <input 
+            [formControl]="pickAnswerControl" 
+            [value]="ansIndex + 1" 
+            class="question__input"
+            [class.question__input--active]="prevAnswer === (ansIndex + 1)?.toString()" 
+            type="radio" 
+            name="{{ pickQuestion.name }}" 
+            id="{{ pickQuestion.name + '-' + ansIndex }}"
+            (click)="finishInterview()"
+          >
+          <label *ngIf="isFirst" class="question__label" for="{{ pickQuestion.name + '-' + ansIndex }}"><span class="question__text">{{ pickQuestion.answers[0] }}</span></label>
+          <label *ngIf="!isFirst && !isLast" class="question__label" for="{{ pickQuestion.name + '-' + ansIndex }}"></label>
+          <label *ngIf="isLast" class="question__label" for="{{ pickQuestion.name + '-' + ansIndex }}"><span class="question__text">{{ pickQuestion.answers[1] }}</span></label>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <div *ngSwitchCase="questionTypes.PICK_ONE_FIVE" class="question question--row" [class.question--disabled]="showMissed">
+    <div class="title title--survey question__title">
+      <h1>{{ question?.text }}</h1>
+    </div>
+    <div class="question__wrapper">
+      <ng-container *ngIf="getPickQuestion(question) as pickQuestion">
+        <div class="question__answer" *ngFor="let answer of pickQuestion.answers; index as ansIndex; first as isFirst; last as isLast">
+          <input 
+            [formControl]="pickAnswerControl" 
+            [value]="answer" 
+            class="question__input" 
+            [class.question__input--active]="prevAnswer === answer" 
+            type="radio" 
+            name="{{ pickQuestion.name }}" 
+            id="{{ pickQuestion.name + '-' + ansIndex }}"
+            (click)="finishInterview()"
+          >
+          <label class="question__label" for="{{ pickQuestion.name + '-' + ansIndex }}"><span class="question__text">{{ answer }}</span></label>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <div *ngSwitchCase="questionTypes.PICK_ONE" class="question question--col" [class.question--disabled]="showMissed">
+    <div class="title title--survey question__title">
+      <h1>{{ question?.text }}</h1>
+    </div>
+    <div class="question__wrapper">
+      <ng-container *ngIf="getPickQuestion(question) as pickQuestion">
+        <div class="question__answer" *ngFor="let answer of pickQuestion.answers; index as ansIndex; first as isFirst; last as isLast">
+          <input 
+            [formControl]="pickAnswerControl" 
+            [value]="answer" 
+            class="question__input" 
+            [class.question__input--active]="prevAnswer === answer" 
+            type="radio" 
+            name="{{ pickQuestion.name }}" 
+            id="{{ pickQuestion.name + '-' + ansIndex }}"
+            (click)="finishInterview()"
+          >
+          <label class="question__label" for="{{ pickQuestion.name + '-' + ansIndex }}"><span class="question__text">{{ answer }}</span></label>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>
+
+<div *ngIf="showMissed" class="survey-missed">
+  <p *ngIf="(missed.count | async) === 1;else multipleMissed" class="survey-missed__text">	
+    Almost there.<br> You have 1 unanswered question left.
+  </p>
+  <ng-template #multipleMissed>
+    <p class="survey-missed__text">	
+      Almost there.<br> You have {{ missed.count | async}} unanswered questions left.
+    </p>
+  </ng-template>
+  <a [routerLink]="['/survey', missed.firstIndex | async]" (click)="hideMissed()" class="button-small survey-missed__button">Answer it</a>
+</div>
+
+<ng-content></ng-content>

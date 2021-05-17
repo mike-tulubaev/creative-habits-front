@@ -1,0 +1,239 @@
+.page-species {
+  position: relative;
+  overflow-x: hidden;
+
+  &--reveal { // .page-species--reveal
+    justify-content: center;
+  }
+
+  &--yolov-haotis { // .page-species--yolov-haotis
+    background-color: #BD8B5C;
+  }
+
+  &--rare-breed { // .page-species--rare-breed
+    padding-top: 105px;
+  }
+
+  &__container { // .page-species__container
+    display: flex;
+    z-index: 1;
+    align-items: center;
+    justify-content: stretch;
+    height: 100%;
+    padding-top: 99px;
+    padding-bottom: 99px;
+
+    .page-species--intro & {
+      flex-direction: column;
+    }
+
+    .page-species--reveal & {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        max-width: 950px;
+        height: 100%;
+
+        background-image: linear-gradient(to right, rgba($color-dark-gray, 0), rgba($color-dark-gray, 0.4) 18%, rgba($color-dark-gray, 0.8) 37%, $color-dark-gray 93%);
+        content: '';
+      }
+
+      &::after {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 50vw;
+        height: 100%;
+        background-color: $color-dark-gray;
+        content: '';
+      }
+    }
+
+    .page-species--reveal-light-gradient & {
+      &::before {
+        background-image: linear-gradient(to right, rgba($color-yellow, 0), rgba($color-yellow, 0.4) 18%, rgba($color-yellow, 0.8) 37%, $color-yellow 93%);
+      }
+
+      &::after {
+        background-color: $color-yellow;
+      }
+    }
+
+    .page-species--rare-breed & {
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &__reveal-container { // .page-species__reveal-container
+    z-index: 5;
+    padding-top: 30px;
+  }
+
+  &__wrapper { // .page-species__wrapper
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    .page-species--rare-breed & {
+      position: static;
+      flex-grow: 1;
+      display: flex;  flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+  }
+
+  &__bg-container { // .page-species__bg-container
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    .page-species--intro & {
+      filter: blur(74px);
+    }
+
+    .page-species--rare-breed & {
+      z-index: 5;
+      height: 100%;
+    }
+  }
+
+  &__bg { // .page-species__bg
+    position: absolute;
+    top: 50%;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translateY(-50%);
+
+    .page-species--yolov-haotis & {
+      opacity: 0.64;
+    }
+
+    .page-species--yolov-haotis.page-species--reveal & {
+      opacity: 1;
+    }
+  }
+
+  &__intro-text { // .page-species__intro-text
+    font-family: $font-gt-light;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+
+  &__text,
+  &__text-italic,
+  &__text-upper { // .page-species__text, .page-species__text-italic, .page-species__text-upper
+    margin-bottom: 0;
+    font-family: $font-mi-roman;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 31px;
+    letter-spacing: -0.01em;
+
+    .page-species--reveal-light-gradient & {
+      color: $color-dark-gray;
+    }
+  }
+
+  &__text-italic { // .page-species__text-italic
+    margin-left: 3px;
+    margin-right: 3px;
+    font-family: $font-mi-italic;
+
+    .page-species__text-upper & {
+      margin-left: 0;
+    }
+  }
+
+  &__text-upper { // .page-species__text-upper
+    text-transform: uppercase;
+  }
+
+  &__info-title { // .page-species__info-title
+    margin-bottom: 67px;
+    font-family: $font-mi-roman;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 34px;
+    letter-spacing: -0.01em;
+  }
+
+  &__info-text { // .page-species__info-text
+    margin-bottom: 22px;
+    font-family: $font-gt-light;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+  }
+
+  &__rare-text { // .page-species__rare-text
+    margin-bottom: 38px;
+    font-family: $font-gt-light;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+  }
+
+  &__header-wrapper { // .page-species__header-wrapper
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  &__header { // .page-species__header
+    position: relative;
+  }
+
+  &__title { // .page-species__title
+    max-width: 100%;
+  }
+
+  &__scroll { // .page-species__scroll
+    position: relative;
+    display: block;
+    max-width: 100%;
+    margin: calc(100vh - 150px) auto 0;
+    z-index: 2;
+  }
+
+  &__next-page,
+  &__reveal-next-page { // .page-species__next-page, .page-species__reveal-next-page
+    position: fixed;
+    z-index: 10;
+    left: 50%;
+    bottom: 36px;
+    display: inline-block;
+    padding: 0 15px;
+    color: #fff;
+    transform: translateX(-50%);
+  }
+
+  &__reveal-next-page { // .page-species__reveal-next-page
+    &--dark { // .page-species__reveal-next-page--dark
+      color: $color-dark-gray;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@import "../../../../styles/variables.scss";
+
+.header {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 38px;
+  padding-bottom: 38px;
+
+  &--right-placeholder { // .header--right-placeholder
+    padding-right: 108px;
+  }
+
+  //.header__button
+  &__button {
+    display: inline-block;
+    padding: 2px;
+    background-color: $color-transparent;
+    border-width: 0;
+    color: $color-yellow;
+
+    //.header__button--burger
+    &--burger {
+      width: 28px;
+      height: 23px;
+      margin-right: auto;
+
+      .header--dark & {
+        color: $color-dark-gray;
+      }
+    }
+
+    //.header__button--audio
+    &--audio {
+      width: 26px;
+      height: 23px;
+      padding: 2px;
+
+      .header--dark &,
+      .header--dark-right-side & {
+        color: $color-dark-gray;
+      }
+    }
+
+    //.header__button--help
+    &--help {
+      margin-left: 36px;
+      width: 32px;
+      height: 32px;
+
+      .header--dark &,
+      .header--dark-right-side & {
+        color: $color-dark-gray;
+      }
+    }
+
+    // .header__button--info
+    &--info {
+      width: 32px;
+      height: 32px;
+      margin-left: 36px;
+
+      .header--dark &,
+      .header--dark-right-side & {
+        color: $color-dark-gray;
+      }
+    }
+  }
+}

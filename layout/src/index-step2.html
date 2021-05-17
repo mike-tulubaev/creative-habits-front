@@ -1,0 +1,19 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% from "./templates/components/_icon.html" import icon %}
+
+{% block page_title %}
+		Home - step 2
+{% endblock %}
+
+{% block page_header %}
+	{{ header() }}
+{% endblock %}
+
+{% set pageClass='page--home' %}
+
+{% block page_content %}
+	<div class="container container--home-step2">
+		<a href="#" class="skip-video">Skip Video ></a>
+	</div>
+{% endblock %}

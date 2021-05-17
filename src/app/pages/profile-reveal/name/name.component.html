@@ -1,0 +1,21 @@
+
+  <div class="container">
+    <picture
+      >
+      <!-- <source
+        srcset="assets/img/species/mono_routinus_scroll.webp"
+        type="image/webp" /> -->
+      <img
+        class="page-species__scroll"
+        [src]="flowerImg$ | async"
+        alt=""
+    /></picture>
+    <a
+      #scrollIcon
+      [routerLink]="['species']"
+      class="page-species__next-page"
+      style="opacity: 0"
+    >
+      <app-icon name="scroll" class="icon--next-page"></app-icon>
+    </a>
+  </div>

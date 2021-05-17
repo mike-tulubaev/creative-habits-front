@@ -1,0 +1,72 @@
+@import './variables.scss';
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  //.container--home-step1
+  &--home-step1 {
+    z-index: 10;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+  }
+
+  //.container--home-step3
+  &--home-step3 {
+    z-index: 10;
+    flex-grow: 1;
+    display: flex;
+    font-size: 22px;
+    line-height: 31px;
+  }
+
+  //.container--menu
+  &--menu {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  //.container--survey
+  &--survey {
+    flex-grow: 1;
+    display: flex;
+  }
+
+  //.container--grayscale
+  &--grayscale {
+    filter: grayscale(1);
+  }
+
+  //.container--faq
+  &--faq {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  //.container--intro
+  &--intro {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  //.container--science-results
+  &--science-results{
+    position: relative;
+    z-index: 1;
+    padding-bottom: 500px;
+  }
+}
+

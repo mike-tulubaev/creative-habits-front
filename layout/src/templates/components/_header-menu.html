@@ -1,0 +1,15 @@
+{% macro headerMenu(activeItem=1, dark) %}
+	<nav class="header-menu{{' header-menu--dark' if dark}}">
+		<ul class="header-menu__list">
+			<li class="header-menu__item">
+				<a href="index.html" class="header-menu__link{{' header-menu__link--active' if activeItem==1}}">Species</a>
+			</li>
+			<li class="header-menu__item">
+				<a href="index.html" class="header-menu__link{{' header-menu__link--active' if activeItem==2}}">Habits</a>
+			</li>
+			<li class="header-menu__item">
+				<a href="index.html" class="header-menu__link{{' header-menu__link--active' if activeItem==3}}">Landscape</a>
+			</li>
+		</ul>
+	</nav>
+{% endmacro %}

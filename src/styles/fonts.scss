@@ -1,0 +1,76 @@
+/**
+* Millionaire
+*/
+
+@font-face {
+	font-family: 'millionaireitalic';
+	font-display: swap;
+	src: url('../fonts/millionaire/millionaire_italic-webfont.eot');
+	src: url('../fonts/millionaire/millionaire_italic-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/millionaire/millionaire_italic-webfont.woff2') format('woff2'),
+			 url('../fonts/millionaire/millionaire_italic-webfont.woff') format('woff'),
+			 url('../fonts/millionaire/millionaire_italic-webfont.ttf') format('truetype'),
+			 url('../fonts/millionaire/millionaire_italic-webfont.svg#millionaireitalic') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'millionaireroman';
+	font-display: swap;
+	src: url('../fonts/millionaire/millionaire_roman-webfont.eot');
+	src: url('../fonts/millionaire/millionaire_roman-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/millionaire/millionaire_roman-webfont.woff2') format('woff2'),
+			 url('../fonts/millionaire/millionaire_roman-webfont.woff') format('woff'),
+			 url('../fonts/millionaire/millionaire_roman-webfont.ttf') format('truetype'),
+			 url('../fonts/millionaire/millionaire_roman-webfont.svg#millionaireroman') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'millionairescript';
+	font-display: swap;
+	src: url('../fonts/millionaire/millionaire_script-webfont.eot');
+	src: url('../fonts/millionaire/millionaire_script-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/millionaire/millionaire_script-webfont.woff2') format('woff2'),
+			 url('../fonts/millionaire/millionaire_script-webfont.woff') format('woff'),
+			 url('../fonts/millionaire/millionaire_script-webfont.ttf') format('truetype'),
+			 url('../fonts/millionaire/millionaire_script-webfont.svg#millionairescript') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/**
+* GT America mono
+*/
+
+@font-face {
+	font-family: 'gtamericamonolight';
+	font-display: swap;
+	src: url('../fonts/gt_america_mono/GT-America-Mono-Light.woff2') format('woff2'),
+			 url('../fonts/gt_america_mono/GT-America-Mono-Light.woff') format('woff'),
+			 url('../fonts/gt_america_mono/GT-America-Mono-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'gtamericamonoregular';
+	font-display: swap;
+	src: url('../fonts/gt_america_mono/GT-America-Mono-Regular.woff2') format('woff2'),
+			 url('../fonts/gt_america_mono/GT-America-Mono-Regular.woff') format('woff'),
+			 url('../fonts/gt_america_mono/GT-America-Mono-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'gtamericamonomedium';
+	font-display: swap;
+	src: url('../fonts/gt_america_mono/GT-America-Mono-Medium.woff2') format('woff2'),
+			 url('../fonts/gt_america_mono/GT-America-Mono-Medium.woff') format('woff'),
+			 url('../fonts/gt_america_mono/GT-America-Mono-Medium.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

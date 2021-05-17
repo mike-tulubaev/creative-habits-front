@@ -1,0 +1,1115 @@
+<div class="cover-half" [ngClass]="{'cover-half--light': !darkModeHabits.includes(habit) , 'cover-half--dark': darkModeHabits.includes(habit)}" @slideFromLeft>
+  <button class="cover-half__close" (click)="closeDetails()">
+    <app-icon name="close"></app-icon>
+  </button>
+  <ng-container [ngSwitch]="habit">
+    <div *ngSwitchCase="'Monotasker'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Monotasker</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Monotasker.webp">
+          <img appCache="/assets/img/habits/Monotasker.png" class="cover-half__bg" src="/assets/img/habits/Monotasker.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency have a singular narrow stem.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Creative monotaskers are characterized by a persistence and focus that allows deep insights that might not emerge from multitasking. A Stanford study showed that monotaskers are less easily distracted, more productive, and less error-prone than multitaskers, in general. For creative thinking, monotasking can help the in-depth thinking that allows remote associates and other good ideas to be found. It may be an especially helpful trait in the execution phase of a project. Monotasking, however, doesn’t beat out multitasking in all areas; in fact, monotasking is often closely associated with highly creative people, and may be more advantageous than monotasking in the early phases of a project when divergent thinking is helpful In the execution phase.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Mono Routinus</li>
+            <li class="cover-half__text-list-item">Fig. 2 Focus Mononovous</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Gruber, 1992</p>
+          <p class="cover-half__text-small">Root-Bernstein, 1999</p>
+          <p class="cover-half__text-small">Stanford, 2009</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Multitasker'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Multitasker</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Multitasker.webp">
+          <img appCache="/assets/img/habits/Multitasker.png" class="cover-half__bg" src="/assets/img/habits/Multitasker.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency are found with multiple stems.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Creative multitasking is commonly associated with highly-creative people. This style benefits from what Howard Gruber calls “networks of enterprise,” where the multitasker maintains different projects at different stages of fruition. Multitaskers can also switch between projects to distract their mind and allow insights or solutions to incubate in the background. Additionally, multitasking this way may provide a beneficial cross-fertilization of ideas and be more advantageous than monotasking in the early phases of a project, when divergent thinking is helpful In the execution phase. There may be some downsides to multitasking, however: a Stanford study showed that multitaskers are more easily distracted, less productive, and more error-prone than monotaskers, in general.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Yolo Chaotis</li>
+            <li class="cover-half__text-list-item">Fig. 2 Socialis Adventurous</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Gruber, 1992</p>
+          <p class="cover-half__text-small">Root-Bernstein, 1999</p>
+          <p class="cover-half__text-small">Stanford, 2009</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Specialist'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Specialist</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Specialist.webp">
+          <img appCache="/assets/img/habits/Specialist.png" class="cover-half__bg" src="/assets/img/habits/Specialist.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency can be identified by their intricate and layered blooms that never bear fruits or berries.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Specialists have the benefit of developing deep expertise in one creative area that allows them to innovate in ways that a generalist might not. Additionally, specialists that achieve true expertise have such deep knowledge bases that they are able to process information very quickly (called, "automatization") and they develop a sense of the nuances within the area of expertise. Holmes (1990) suggested that this gave experts meaningful "hunches" or intuitions. The potential creative cost of specialization is that this style may have fewer opportunities to discover novel ideas through cross-fertilization from other disciplines and alternative perspectives. Specialists might consider occasionally exploring other areas to avoid getting in a creative rut.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Mono Routinus</li>
+            <li class="cover-half__text-list-item">Fig. 2 Solo Noctus</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Gruber, 1992</p>
+          <p class="cover-half__text-small">Maria F. Ippolito & Ryan D. Tweney (2003) The Journey to Jacob's Room: The Network of Enterprise of Virginia Woolf's First Experimental Novel, Creativity Research Journal, 15:1, 25-43, DOI: <a href="https://doi.org/10.1207/S15326934CRJ1501_5" target="_blank">10.1207/S15326934CRJ1501_5</a></p>
+          <p class="cover-half__text-small">Holmes, 1990</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- not found -->
+    <div *ngSwitchCase="'Generalist'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header">
+        <h3 class="cover-half__title">Generalist</h3>
+      </div>
+      <div class="cover-half__wrapper">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">A generalist has a wide range of creative interests and styles, and research shows creativity - especially the ability to generate novel ideas - to benefit from wide interests. Howard Gruber described the benefits of the “networks of enterprise,” where the multitasking generalist maintains different projects at different stages of fruition. Generalising is associated with highly-creative people, like Picasso, for instance, who was adept at creating art in multiple media and styles. The potential creative cost of generalization is that the style may miss the opportunities to innovate that come from diving in deeper. Generalists might consider experimenting with focusing on one subject or project longer than is typically comfortable.</p>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Gruber, 1992</p>
+          <p class="cover-half__text-small">Maria F. Ippolito & Ryan D. Tweney (2003) The Journey to Jacob's Room: The Network of Enterprise of Virginia Woolf's First Experimental Novel, Creativity Research Journal, 15:1, 25-43, DOI: <a href="https://doi.org/10.1207/S15326934CRJ1501_5" target="_blank">10.1207/S15326934CRJ1501_5</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Solo Creator'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Solo Creator</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Solo-Creator.webp">
+          <img appCache="/assets/img/habits/Solo-Creator.png" class="cover-half__bg" src="/assets/img/habits/Solo-Creator.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency are never found with other creatures in sight.</p>
+      </div>
+      <div class="cover-half__wrapper">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Solo creators are often romanticized as “lone geniuses” who shun the distraction of groups. Indeed, studies have concluded that working alone often leads to better results. This is fine for someone whose creative efforts don’t require others, but there is a lot of emphasis on creative collaboration in our society, and teamwork is often a requirement in the workplace. So what is a solo creator to do? When possible, the independent creative thinker can contribute to a collaborative project by carving out time and space to work independently on discrete parts of a group project.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Sui Inspira</li>
+            <li class="cover-half__text-list-item">Fig. 2 Mono Routinus</li>
+            <li class="cover-half__text-list-item">Fig. 3 S</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Andrea Gaggioli, Elvis Mazzoni, Martina Benvenuti, Carlo Galimberti, Antonio Bova, Eleonora Brivio, Pietro Cipresso, Giuseppe Riva & Alice Chirico (2020) Networked Flow in Creative Collaboration: A Mixed Method Study, Creativity Research Journal, 32:1, 41-54, DOI: <a href="https://doi.org/10.1080/10400419.2020.1712160" target="_blank">10.1080/10400419.2020.1712160</a></p>
+          <p class="cover-half__text-small">Charlan Jeanne Nemeth & Jack A. Goncalo (2005) Creative Collaborations From Afar: The Benefits of Independent Authors, Creativity Research Journal, 17:1, 1-8, DOI: <a href="https://doi.org/10.1207/s15326934crj1701_1" target="_blank">10.1207/s15326934crj1701_1</a></p>
+          <p class="cover-half__text-small">Richards, R. (1996). Does the Lone Genius ride again? Chaos, creativity, and community. Journal of Humanistic Psychology, 36(2), 44-60.</p>
+          <p class="cover-half__text-small">Jock Abra (1994) Collaboration in creative work: An initiative for investigation, Creativity Research Journal, 7:1, 1-20, DOI: <a href="https://doi.org/10.1080/10400419409534505" target="_blank">10.1080/10400419409534505</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Collaborator'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Collaborator</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Collaborator.webp">
+          <img appCache="/assets/img/habits/Collaborator.png" class="cover-half__bg" src="/assets/img/habits/Collaborator.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency can be identified by their rhizomatous network of roots.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">By working in teams, creative collaborators can build shared ideas into successful outcomes, or at least that’s the ideal scenario. Collaboration is often promoted as a desired creative style, especially in the workplace, but the research shows that it doesn’t necessarily lead to better results than working alone. To give their team the best chance of success, highly-collaborative creators might consider how best to nurture the talent of solo creators in the group who need the space to work on their own. Additionally, alternating working in groups and working alone may help provide a team the benefits of both creative styles.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Socialis Adventurous</li>
+            <li class="cover-half__text-list-item">Fig. 2 Novo Gregarious</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Andrea Gaggioli, Elvis Mazzoni, Martina Benvenuti, Carlo Galimberti, Antonio Bova, Eleonora Brivio, Pietro Cipresso, Giuseppe Riva & Alice Chirico (2020) Networked Flow in Creative Collaboration: A Mixed Method Study, Creativity Research Journal, 32:1, 41-54, DOI: <a href="https://doi.org/10.1080/10400419.2020.1712160" target="_blank">10.1080/10400419.2020.1712160</a></p>
+          <p class="cover-half__text-small">Charlan Jeanne Nemeth & Jack A. Goncalo (2005) Creative Collaborations From Afar: The Benefits of Independent Authors, Creativity Research Journal, 17:1, 1-8, DOI: <a href="https://doi.org/10.1207/s15326934crj1701_1" target="_blank">10.1207/s15326934crj1701_1</a></p>
+          <p class="cover-half__text-small">Richards, R. (1996). Does the Lone Genius ride again? Chaos, creativity, and community. Journal of Humanistic Psychology, 36(2), 44-60.</p>
+          <p class="cover-half__text-small">Jock Abra (1994) Collaboration in creative work: An initiative for investigation, Creativity Research Journal, 7:1, 1-20, DOI: <a href="https://doi.org/10.1080/10400419409534505" target="_blank">10.1080/10400419409534505</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- not found -->
+    <div *ngSwitchCase="'Self-Critical'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header">
+        <h3 class="cover-half__title">Self-Critical</h3>
+      </div>
+      <div class="cover-half__wrapper">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Some of the most successful creators are driven by self-criticism, seeing flaws that others don’t and pushing themselves to be extremely high performers. Although self-criticism can be harnessed in the pursuit of greater creativity, it can easily be a destructive force in one’s life, stifling creative thought, or much worse. Self-critics could benefit from being mindful of the difference between being constructive and self-bullying. In his Encyclopedia of Creativity, Gary Davis describes what he calls “squelchers.” As the name implies, these are things people tell themselves that shut the door on creative thinking. Examples of squelching statements include, “this will never work,” “it will never fly,” “don’t rock the boat,” “if it ain’t broke, don’t fix it.”</p>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Davis, Gary. (2011). Squelchers. In Encyclopedia of Creativity. San Diego, CA: Elsevier.</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Self-Assured'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Self-Assured</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Self-Assured.webp">
+          <img appCache="/assets/img/habits/Self-Assured.png" class="cover-half__bg" src="/assets/img/habits/Self-Assured.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency are found in meadows where they stand towering overing the creatures around them.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">A self-assured creative thinker has the confidence to follow through on an idea, not allowing small flaws to derail potential success. There are innumerable well-known creative thinkers who never doubted the power of their ideas. In a Stanford University commencement speech, Steve Jobs explained that his confidence was rooted in having faith in his ideas. saying, “…believing that the dots will connect down the road will give you the confidence to follow your heart even when it leads you off the well-worn path...” Although being self-assured is certainly more psychologically comfortable, if manifest as overconfidence, it may make it more difficult to spot potential flaws in ideas, and cause the creative thinker to move forward too quickly on a project. A little healthy self-criticism can help avoid potential issues further on.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Socialis Adventurous</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Davis, Gary. (2011). Squelchers. In Encyclopedia of Creativity. San Diego, CA: Elsevier.</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Love Distractions'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Like Distractions</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Love-Distractions.webp">
+          <img appCache="/assets/img/habits/Love-Distractions.png" class="cover-half__bg" src="/assets/img/habits/Love-Distractions.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency have splitting stems.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">We often hear about the curse of distractions in modern society. However, distractions aren’t always bad for creative thinking; they can allow people to incubate on the key problem in the background while allowing their mind to be diverted by other subjects. According to Maurice James D’Arcy Colins, distraction may help "disinhibition," and, "the disinhibition hypothesis suggests creative cognition can be assisted by reducing cognitive inhibition of ideas, facilitating looser associative thoughts to bond with one another to produce novel concepts." People who love distractions may excel in divergent thinking aspects of the creative process but may suffer in the execution phase; while the reverse may be true for people who hate distractions.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Novo Gregarious</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Maurice James D’Arcy Collins (2020) A Distracted Muse: The Positive Effect of Dual-Task Distraction on Creative Potential, Creativity Research Journal, 32:4, 357-367, DOI: <a href="https://doi.org/10.1080/10400419.2020.1816066" target="_blank">10.1080/10400419.2020.1816066</a></p>
+          <p class="cover-half__text-small">Joseph Kasof (1997) Creativity and Breadth of Attention, Creativity Research Journal, 10:4, 303-315, DOI: <a href="https://doi.org/10.1207/s15326934crj1004_2" target="_blank">10.1207/s15326934crj1004_2</a></p>
+          <p class="cover-half__text-small">Noelle C. Chiang & Meng-Liang Chen (2017) Benefits of Incubation on Divergent Thinking, Creativity Research Journal, 29:3, 282-291, DOI: <a href="https://doi.org/10.1080/10400419.2017.1360058" target="_blank">10.1080/10400419.2017.1360058</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Hate Distractions'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Dislike<br>Distractions</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Dislike-Distractions.webp">
+          <img appCache="/assets/img/habits/Dislike-Distractions.png" class="cover-half__bg" src="/assets/img/habits/Dislike-Distractions.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency don't have branches on their stems.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">The modern world can be a cruel place for creative thinkers who hate distractions; those rare stretches of focus can be broken so easily by a chirp from a phone or knock on the office door. In order to escape distractions, the Minimalist painter Agnes Martin took the extreme step of moving to a remote desert home, where she had no television, radio, or telephone — and not even a pet for fear it could be a distraction. For those who can’t always avoid distractions, however, there is evidence to support the idea that distractions are good for creative thinking, allowing one’s mind to continue working on a task while their attention is diverted elsewhere.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Mono Routinus</li>
+            <li class="cover-half__text-list-item">Fig. 2 Focus Mononovous</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Maurice James D’Arcy Collins (2020) A Distracted Muse: The Positive Effect of Dual-Task Distraction on Creative Potential, Creativity Research Journal, 32:4, 357-367, DOI: <a href="https://doi.org/10.1080/10400419.2020.1816066" target="_blank">10.1080/10400419.2020.1816066</a></p>
+          <p class="cover-half__text-small">Joseph Kasof (1997) Creativity and Breadth of Attention, Creativity Research Journal, 10:4, 303-315, DOI: <a href="https://doi.org/10.1207/s15326934crj1004_2" target="_blank">10.1207/s15326934crj1004_2</a></p>
+          <p class="cover-half__text-small">Noelle C. Chiang & Meng-Liang Chen (2017) Benefits of Incubation on Divergent Thinking, Creativity Research Journal, 29:3, 282-291, DOI: <a href="https://doi.org/10.1080/10400419.2017.1360058" target="_blank">10.1080/10400419.2017.1360058</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Inwardly Inspired'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Inwardly Inspired</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Inwardly-Inspired.webp">
+          <img appCache="/assets/img/habits/Inwardly-Inspired.png" class="cover-half__bg" src="/assets/img/habits/Inwardly-Inspired.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency emanate a soft, warm glow.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Inspiration is a motivational concept that’s difficult to define since it can mean different things to different people. Nonetheless, inspiration is considered to be a primary trigger of, and inseparably linked to creativity. People who find creative inspiration within themselves might consider feeding their inner-muse by mixing up their creative routines and collaborating with others.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Sui Inspira</li>
+            <li class="cover-half__text-list-item">Fig. 2 Yolo Chaotis</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Howard Gardner on crystalling experiences and creativity.</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Outwardly Inspired'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Outwardly Inspired</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Outwardly-Inspired-5.webp">
+          <img appCache="/assets/img/habits/Outwardly-Inspired-5.png" class="cover-half__bg" src="/assets/img/habits/Outwardly-Inspired-5.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency can be identified by their color absorbing pistils.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Outwardly-inspired people seek sources of motivation from the world around them. What exactly “inspiration” is, however, isn’t easy to answer. Everyone seems to recognize it when they experience it, and inspiration’s link to creativity is undeniable. Outwardly-inspired people can cultivate their inspiration by seeking out what the world has to offer: reading, traveling, and collaborating with others. As B. F. Skinner said, “if you find something that is interesting, drop everything else and study it.”</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Novo Gregarious</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Howard Gardner on crystalling experiences and creativity.</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Rational'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Rational</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Rational.webp">
+          <img appCache="/assets/img/habits/Rational.png" class="cover-half__bg" src="/assets/img/habits/Rational.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency can be identified by concentric petals that form a perfect circle.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Rational creative thinking occupies one side of a spectrum with intuitiveness at the other.  These people can see the shape and nuance of a creative problem, and go to work solving it. While a rational and organized approach to creative thinking has clear merits, since much of the creative process benefits from random associations there is good experimental research showing that intuition is also valuable. (Bower, 199; Martindale, 1983)  Creative thinkers who work with more intuitive team members might consider exploring some off-shoot ideas that don’t immediately follow the plan. They may just find there are unforeseen benefits to incorporating both styles.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Mono Routinus</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Hasenfus, N., Martindale, C., & Birnbaum, D. (1983). Psychological reality of cross-media artistic styles. Journal of Experimental Psychology: Human Perception and Performance, 9, 841-863.</p>
+          <p class="cover-half__text-small">Bowers, K.S., Regher, G., Balthazard, C., & Parker, K. (1990). Intuition in the context of discovery. Cognitive Psychology, 22, 72-110.</p>
+          <p class="cover-half__text-small">https://www.taylorfrancis.com/chapters/intuition-reason-creativity-integrative-dual-process-perspective-nathaniel-barr/e/10.4324/9781315460178-11</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Intuitive'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Intuitive</h3>
+        <img appCache="/assets/img/habits/Intuitive.png" alt="" class="cover-half__bg">
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Intuitive.webp">
+          <img appCache="/assets/img/habits/Intuitive.png" class="cover-half__bg" src="/assets/img/habits/Intuitive.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency can be identified by blooms in varying states of blossom.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">An intuitive approach to creative can work well because there is often a benefit to incubation, where the problem or task is put aside so that intuitive processes are allowed to go to work. There is good experimental research showing that intuition works: it helps, at least on certain kinds of problems (Bower, 199; Martindale, 1983). The potential upsides of intuitive thinking might also explain the success of the “Let it happen” approach also addressed in this survey. Furthermore, those who reach a level of mastery over a subject or process can draw on a depth of acquired knowledge so that their intuition contains within it a consistent rationale.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Yolo Chaotis</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Hasenfus, N., Martindale, C., & Birnbaum, D. (1983). Psychological reality of cross-media artistic styles. Journal of Experimental Psychology: Human Perception and Performance, 9, 841-863.</p>
+          <p class="cover-half__text-small">Bowers, K.S., Regher, G., Balthazard, C., & Parker, K. (1990). Intuition in the context of discovery. Cognitive Psychology, 22, 72-110.</p>
+          <p class="cover-half__text-small">https://www.taylorfrancis.com/chapters/intuition-reason-creativity-integrative-dual-process-perspective-nathaniel-barr/e/10.4324/9781315460178-11</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Internally Motivated'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Internally Motivated</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Internally-Motivated.webp">
+          <img appCache="/assets/img/habits/Internally-Motivated.png" class="cover-half__bg" src="/assets/img/habits/Internally-Motivated.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency are likely to be found with bulb roots.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Internally motivated creative thinkers should count themselves lucky. There are few obvious shortcomings to being internally motivated: these kinds of thinkers invest more time into a project, will care about the results, and do their best work, despite external pressures. In fact, internal motivation is likely the style considered in this survey most closely linked to creativity.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Sui Inspira</li>
+            <li class="cover-half__text-list-item">Fig. 2 Yolo Chaotis</li>
+            <li class="cover-half__text-list-item">Fig. 3 Solo Noctus</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Amabile, 1990</p>
+          <p class="cover-half__text-small">Hennessy, 1989</p>
+          <p class="cover-half__text-small">Runco, 2005</p>
+          <p class="cover-half__text-small">Veena Prabhu, Charlotte Sutton & William Sauser (2008) Creativity and Certain Personality Traits: Understanding the Mediating Effect of Intrinsic Motivation, Creativity Research Journal, 20:1, 53-66, DOI: <a href="https://doi.org/10.1080/10400410701841955" target="_blank">10.1080/10400410701841955</a></p>
+          <p class="cover-half__text-small">Aristides I. Ferreira (2020) When Time Flies: How Timelessness Determines Creative Process Engagement, Creativity Research Journal, DOI: <a href="https://doi.org/10.1080/10400419.2020.1849486" target="_blank">10.1080/10400419.2020.1849486</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Externally Motivated'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Externally Motivated</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Externally-Motivated.webp">
+          <img appCache="/assets/img/habits/Externally-Motivated.png" class="cover-half__bg" src="/assets/img/habits/Externally-Motivated.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency are identified by their intricate outspread roots.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Externally-motivated creative thinkers are driven by the expectations of the world around them, or by personal needs, like salary, grades, respect, etc. In this situation, it can be harder to feel the freedom and be willing to take the risks associated with originality. This doesn’t mean that many successful creative thinkers have not been successful. For example, the author Agatha Christie would only write novels when she wanted to buy a new house or pay for an expensive vacation. Although it would be nice if everyone could always be internally motivated, that’s simply not the reality. So externally-motivated people don’t need to lose sleep over whether or not their motivations are pure enough and can simply focus on the creative process itself.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Novo Gregarious</li>
+            <li class="cover-half__text-list-item">Fig. 2 Mono Routinus</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Amabile, 1990</p>
+          <p class="cover-half__text-small">Hennessy, 1989</p>
+          <p class="cover-half__text-small">Runco, 2005</p>
+          <p class="cover-half__text-small">Veena Prabhu, Charlotte Sutton & William Sauser (2008) Creativity and Certain Personality Traits: Understanding the Mediating Effect of Intrinsic Motivation, Creativity Research Journal, 20:1, 53-66, DOI: <a href="https://doi.org/10.1080/10400410701841955" target="_blank">10.1080/10400410701841955</a></p>
+          <p class="cover-half__text-small">Aristides I. Ferreira (2020) When Time Flies: How Timelessness Determines Creative Process Engagement, Creativity Research Journal, DOI: <a href="https://doi.org/10.1080/10400419.2020.1849486" target="_blank">10.1080/10400419.2020.1849486</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Kinetic'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Kinetic</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Kinetic.webp">
+          <img appCache="/assets/img/habits/Kinetic.png" class="cover-half__bg" src="/assets/img/habits/Kinetic.png" alt="">
+        </picture>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Kinetic creative thinkers love to get out and move around to get the creative juices flowing. Beethoven was famous for taking “long, vigorous walks” in which he carried a pencil and blank sheet music. However, movement seems to be more beneficial in certain parts of the creative process than others: A Stanford study showed that while walking may help people with divergent thinking, focused thinking to find one correct answer (also known as convergent thinking) didn't improve during or after a brief walk. In fact, subjects performed slightly worse. Exercise can also indirectly benefit creativity simply by being a healthful activity, helping a person think more clearly and have the stamina and focus to undertake creative projects.</p>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Gardner, H. (1990). Creative lives. New York: Basic Books. He supplies good examples of kinetic creativity (e.g., Martha Graham).</p>
+          <p class="cover-half__text-small">JongHan Kim (2015) Physical Activity Benefits Creativity: Squeezing a Ball for Enhancing Creativity, Creativity Research Journal, 27:4, 328-333, DOI: <a href="https://doi.org/10.1080/10400419.2015.1087258" target="_blank">10.1080/10400419.2015.1087258</a></p>
+          <p class="cover-half__text-small">Opezzo & Schwartz 2014. Give Your Ideas Some Legs: The Positive Effect of Walking on Creative Thinking</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'NonKinetic'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Non-Kinetic</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Non-Kinetic.webp">
+          <img appCache="/assets/img/habits/Non-Kinetic.png" class="cover-half__bg" src="/assets/img/habits/Non-Kinetic.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency are usually found wedged in rocks.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">While many popular articles about the creative habits of successful people tout the benefits of walking or exercise, it doesn’t mean people who don’t take long walks will never be creative. There may be other ways to free the mind for fluid, flexible, divergent thinking. There are many highly creative and successful people who are non-kinetic creative people. Einstein, for example, used other approaches to take breaks and free the mind - like music breaks or play.  Similarly, non-kinetic practices like mindfulness meditation may be equally effective at facilitating divergent thought. Non-kinetic creative thinkers might keep in mind that although there are many ways to affect creativity directly, movement and exercise can indirectly benefit creativity simply through being part of a healthy lifestyle.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Solo Noctus</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Gardner, H. (1990). Creative lives. New York: Basic Books. He supplies good examples of kinetic creativity (e.g., Martha Graham).</p>
+          <p class="cover-half__text-small">JongHan Kim (2015) Physical Activity Benefits Creativity: Squeezing a Ball for Enhancing Creativity, Creativity Research Journal, 27:4, 328-333, DOI: <a href="https://doi.org/10.1080/10400419.2015.1087258" target="_blank">10.1080/10400419.2015.1087258</a></p>
+          <p class="cover-half__text-small">Opezzo & Schwartz 2014. Give Your Ideas Some Legs: The Positive Effect of Walking on Creative Thinking</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- not found -->
+    <div *ngSwitchCase="'Tidy'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header">
+        <h3 class="cover-half__title">Need a Tidy Environment</h3>
+      </div>
+      <div class="cover-half__wrapper">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">According to a study by the Journal of Neuroscience, visual clutter can lead to a more distracted state of mind. And another study showed that a tidy environment promotes healthy decision-making. However, the same study also shows that clutter might actually improve creativity. There’s probably a joke in there about bad-decisions and creativity, but ultimately, the type of environment one prefers is likely one of those areas that simply highlights that there is no single path to creative success.</p>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Vohs et al 2013 Physical Order Produces Healthy Choices, Generosity, and Conventionality, Whereas Disorder Produces Creativity - also summarized in this NYT op-ed</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- not found -->
+    <div *ngSwitchCase="'Comfortable With Mess'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Comfortable with Mess</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Comfortable-with-Mess.webp">
+          <img appCache="/assets/img/habits/Comfortable-with-Mess.png" class="cover-half__bg" src="/assets/img/habits/Comfortable-with-Mess.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency are found in wild, mossy environments.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">People who don’t mind a cluttered creative environment have a lot in common with many successful creative thinkers, including Mark Twain, Einstein, and even Beyonce. And some studies have shown that clutter might actually improve creativity. However, there’s certainly cultural pressure to be tidy and no end to popular maxims that encourage keeping a clean workspace. Ultimately, whether or not it’s okay to be messy is probably one of those creative habits that are unique to the individual, showing that there is no one path to being a successful creative thinker.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Yolo Chaotis</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Vohs et al 2013 Physical Order Produces Healthy Choices, Generosity, and Conventionality, Whereas Disorder Produces Creativity - also summarized in this NYT op-ed</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Slow Paced'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Slow-Paced</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Slow-Paced.webp">
+          <img appCache="/assets/img/habits/Slow-Paced.png" class="cover-half__bg" src="/assets/img/habits/Slow-Paced.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency blossom one bud at a time.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">It is likely that the speed at which one generates new ideas is tied to neurobiology, but it’s unlikely that the speed of idea generation affects the quality of the ideas. In fact, slower-paced creative thinkers may be more likely to benefit from “remote associates,” where thinking goes to novel and original spaces because there is more time for incubation, and where the mind is relatively free from self-censorship and the squelchers mentioned above (Davis, 1999). It is possible that a person can increase the pace of idea generation through practice, technique use, and experience, but what’s important here is that slower-paced creative thinkers can embrace their pace and use the time between new ideas to focus on developing the quality and depth of each.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Mono Routinus</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Davis, 1999</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Fast Paced'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Fast-Paced</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Fast-Paced.webp">
+          <img appCache="/assets/img/habits/Fast-Paced.png" class="cover-half__bg" src="/assets/img/habits/Fast-Paced.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency are quick to grow multiple buds on a singular stem.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">The speed at which a creative thinker generates new ideas is partially in-born, but it’s unlikely the speed of idea generation affects the quality of those ideas. In some cases, a focus on speed and quantity may inhibit truly novel ideas by not allowing enough time for “remote associates,” where thinking goes to novel and original spaces because there is more time for incubation (Davis, 1999). Prolific thinkers might consider giving all their ideas ample time for an idea’s unforeseen nuance to reveal itself before moving on to the next.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Yolo Chaotis</li>
+            <li class="cover-half__text-list-item">Fig. 2 Socialis Adventurous</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Davis, 1999</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- not found -->
+    <div *ngSwitchCase="'Pragmatist'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header">
+        <h3 class="cover-half__title">Pragmatist</h3>
+      </div>
+      <div class="cover-half__wrapper">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Those perfectionists who never have to compromise should consider themselves lucky, because there are almost always limiting factors on creative ideas. Of course, the reality is that most perfectionists who want to see a project through to the end, still have to make some pragmatic concessions. And those who do pursue perfection, straddle an unenviable divide between doing truly great work, and the negative emotions associated with feeling the work is never truly great. Those who experience this anxiety might condider taking into account that unchecked perfectionism can inhibit creative thought, and take a break, or work on another project when negative emotions build up.</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Risk Averse'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Risk-Averse</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Risk-Averse.webp">
+          <img appCache="/assets/img/habits/Risk-Averse.png" class="cover-half__bg" src="/assets/img/habits/Risk-Averse.png" alt="">
+        </picture>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">There are lots of potential risks associated with creative thinking: reputational risk, financial risk, risk of wasting time on pursuing a dead-end idea. And truly novel ideas can certainly seem risky on account of the fact that they’ve never been attempted! Risk-averse creative thinkers prefer to give an idea every chance of success before devoting lots of energy to it. This approach can still succeed in high-risk creative endeavors because, by being keenly aware of the inherent risks involved, risk-averse thinkers can excel at minimizing the chances of failure by addressing all the risks in their control. Furthermore, those who feel risk-averse might consider that some risks are simply imaginary and will not result in any real harm. Sara Blakely, the founder of Spanx, had the idea for footless pantyhose. She kept her day job for two years while launching her company. She became America’s youngest self-made billionaire with a truly novel idea, but played it safe by making sure she had the financial resources to make it work.</p>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Rubenson & Runco (1992)</p>
+          <p class="cover-half__text-small">Xavier Caroff & Todd Lubart (2012) Multidimensional Approach to Detecting Creative Potential in Managers, Creativity Research Journal, 24:1, 13-20, DOI: <a href="https://doi.org/10.1080/10400419.2012.652927" target="_blank">10.1080/10400419.2012.652927</a></p>
+          <p class="cover-half__text-small">Sakhavat Mammadov, Tracy L. Cross & Jennifer Riedl Cross (2019) In Search of Temperament and Personality Predictors of Creativity: A Test of a Mediation Model, Creativity Research Journal, 31:2, 174-187, DOI: <a href="https://doi.org/10.1080/10400419.2019.1577085" target="_blank">10.1080/10400419.2019.1577085</a></p>
+          <p class="cover-half__text-small">Li-fang Zhang & Robert J. Sternberg (2011) Revisiting the Investment Theory of Creativity, Creativity Research Journal, 23:3, 229-238, DOI: <a href="https://doi.org/10.1080/10400419.2011.595974" target="_blank">10.1080/10400419.2011.595974</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Risk Friendly'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Risk-Friendly</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Risk-Friendly.webp">
+          <img appCache="/assets/img/habits/Risk-Friendly.png" class="cover-half__bg" src="/assets/img/habits/Risk-Friendly.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency are likely to grow many blooms on a single stem.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Original ideas can be unconventional, and proposing them can open the creative thinker up to criticism, or worse. Despite the risks, the risk-friendly creator is unafraid of proposing and following many creative paths, allowing ideas to mature before committing to the strongest. Risk-friendly creative thinkers may have the disadvantage of not bothering to mitigate controllable risks, but at the same time will have the advantage of not being so easily stymied by risks that are not possible to control.</p>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Rubenson & Runco (1992)</p>
+          <p class="cover-half__text-small">Xavier Caroff & Todd Lubart (2012) Multidimensional Approach to Detecting Creative Potential in Managers, Creativity Research Journal, 24:1, 13-20, DOI: <a href="https://doi.org/10.1080/10400419.2012.652927" target="_blank">10.1080/10400419.2012.652927</a></p>
+          <p class="cover-half__text-small">Sakhavat Mammadov, Tracy L. Cross & Jennifer Riedl Cross (2019) In Search of Temperament and Personality Predictors of Creativity: A Test of a Mediation Model, Creativity Research Journal, 31:2, 174-187, DOI: <a href="https://doi.org/10.1080/10400419.2019.1577085" target="_blank">10.1080/10400419.2019.1577085</a></p>
+          <p class="cover-half__text-small">Li-fang Zhang & Robert J. Sternberg (2011) Revisiting the Investment Theory of Creativity, Creativity Research Journal, 23:3, 229-238, DOI: <a href="https://doi.org/10.1080/10400419.2011.595974" target="_blank">10.1080/10400419.2011.595974</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Make It Happen'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Make it Happen</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Make-it-Happen.webp">
+          <img appCache="/assets/img/habits/Make-it-Happen.png" class="cover-half__bg" src="/assets/img/habits/Make-it-Happen.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency are identified by their ever-renewing blooms.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">The “make it happen'' creative thinker keeps at a problem or challenge, using tactics that are directed and on-task, shifting their perspective on it, but never losing sight of it. Those who display this creative habit should understand that in collaborative environments, a “make it happen” approach can make others feel creatively stifled if there is no room to capitalize on chance opportunities along the way.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Mono Routinus</li>
+            <li class="cover-half__text-list-item">Fig. 2 Solo Noctus</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Parnes, 1999</p>
+          <p class="cover-half__text-small">Runco, 2011</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Let It Happen'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Let it Happen</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Let-it-Happen.webp">
+          <img appCache="/assets/img/habits/Let-it-Happen.png" class="cover-half__bg" src="/assets/img/habits/Let-it-Happen.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency have arched, translucent stems.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">“Let it happen” tactics are where a person takes a walk or directs their thinking to things other than the creative task. They trust their intuition and incubation to keep working on the creative task even if their conscious mind is elsewhere. Let it happen also involves looking for outside inspiration (e.g., talking to others, looking to nature for inspiration). One advantage of the “let it happen” style is that it allows people to easily capitalize on chance opportunities that may have not been part of the original plan. It doesn’t mean that a person doesn’t have a clear vision for what they want to create, but rather that they have more fluidity in how that vision is accomplished. Keep in mind, a ‘let it happen’ approach can be difficult for others in a group who prefer a clear plan where every step in the process is well articulated.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Yolo Chaotis</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Parnes, 1999</p>
+          <p class="cover-half__text-small">Runco, 2011</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Tenacious'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Tenacious</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Tenacious.webp">
+          <img appCache="/assets/img/habits/Tenacious.png" class="cover-half__bg" src="/assets/img/habits/Tenacious.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency can be identified by their thick, thorny stems.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">A tenacious creative thinker will stick with an idea and see it through to the end, choosing to hold the course instead of entertaining off-shoot ideas. This tenacity might allow a person to stick with a new or controversial idea, even in the face of criticism. For instance, Thomas Edison’s light bulb was once called a “conspicuous failure.” Truly creative ideas are often novel, and therefore risk being misunderstood. A tenacious individual might continue to refine an idea and explain it until its value is finally socially recognized.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Solo Noctus</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Robert S. Root-Bernstein, Maurine Bernstein & Helen Garnier (1995) Correlations Between Avocations, Scientific Style, Work Habits, and Professional Impact of Scientists, Creativity Research Journal, 8:2, 115-137, DOI: <a href="https://doi.org/10.1207/s15326934crj0802_2" target="_blank">10.1207/s15326934crj0802_2</a></p>
+          <p class="cover-half__text-small">Adams, J. (2003). Conceptual Blockbusting. Norton.</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Reframer'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Reframer</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Reframer.webp">
+          <img appCache="/assets/img/habits/Reframer.png" class="cover-half__bg" src="/assets/img/habits/Reframer.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency can be identified by their vine-like stems.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Reframers are willing to step back and change perspective on creative problems that aren’t yielding results, and are comfortable dropping unpromising ideas completely. Einstein was a reframer, famously reconsidering a difficult problem as, “what would it look like if … I was riding a beam of light?” There is good evidence that shows reframing is linked to creativity, some of which comes from the research on “problem definition” (Adams, 2003; Root-Bernstein, 1988). Reframers, however, can take a lesson from tenacious creative thinkers, since sometimes the best ideas can only be found after pushing past perceived roadblocks.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Socialis Adventurous</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Robert S. Root-Bernstein, Maurine Bernstein & Helen Garnier (1995) Correlations Between Avocations, Scientific Style, Work Habits, and Professional Impact of Scientists, Creativity Research Journal, 8:2, 115-137, DOI: <a href="https://doi.org/10.1207/s15326934crj0802_2" target="_blank">10.1207/s15326934crj0802_2</a></p>
+          <p class="cover-half__text-small">Adams, J. (2003). Conceptual Blockbusting. Norton.</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Public'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Public Spaces</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Public-Spaces.webp">
+          <img appCache="/assets/img/habits/Public-Spaces.png" class="cover-half__bg" src="/assets/img/habits/Public-Spaces.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative Species with this tendency are found in enclosed spaces with narrow openings.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Human beings are inherently social, so it’s no surprise that public spaces put many people at ease. In fact, Studies have confirmed that creativity can be stimulated by public spaces, something researchers nicknamed the “Starbucks Effect.” A possible reason for this is that noise is a type of beneficial distraction: if attention is focused on one line of thought, creative ideas are unlikely. People who like working and thinking in public spaces are certainly in good company. One of history’s most creative thinkers, Benjamin Franklin, loved to work in a coffee shop while living in London, even insisting on having his mail delivered there!</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Mono Routinus</li>
+            <li class="cover-half__text-list-item">Fig. 2 Sui Inspira</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Mehta, R., Zhu, R. J., and Cheema, A. (2012). Is noise always bad? Exploring the effects of ambient noise on creative cognition. J. Consum. Res. 39, 784–799. DOI: <a href="https://doi.org/10.1086/665048" target="_blank">10.1086/665048</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Private'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Private Spaces</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Private-Spaces.webp">
+          <img appCache="/assets/img/habits/Private-Spaces.png" class="cover-half__bg" src="/assets/img/habits/Private-Spaces.png" alt="">
+        </picture>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Many people find it difficult to concentrate and think creatively in a public, noisy environment. Studies have been conducted among school-aged children that show noise can negatively affect selective attention and recall. Interestingly, similar studies show that moderate amounts of noise like that found in coffee shops or cafés can actually help creative thinking because they distract the mind from locking in on only one line of thought. So those who prefer private spaces may find their creative thinking benefits by occasionally taking their ideation to a public area.</p>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Sörqvist, P. (2010). Effects of aircraft noise and speech on prose memory: what role for working memory capacity? J. Environ. Psychol. 30, 112–118. DOI: <a href="https://doi.org/10.1016/j.jenvp.2009.11.004" target="_blank">10.1016/j.jenvp.2009.11.004</a></p>
+          <p class="cover-half__text-small">Is Classroom Noise Always Bad for Children? The Contribution of Age and Selective Attention to Creative Performance in Noise Jessica Massonnié*, Cathy Jane Rogers, Denis Mareschal and Natasha Z. Kirkham Department of Psychological Sciences, Centre for Brain and Cognitive Development, Birkbeck, Frontiers in psychology, 2019</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- not found -->
+    <div *ngSwitchCase="'Silence'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header">
+        <h3 class="cover-half__title">Silence</h3>
+      </div>
+      <div class="cover-half__wrapper">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Common wisdom holds that a silence offers fewer distractions to the mind, thus allowing for greater levels of concentration and deeper thought. This may well be true for many people, but there are studies that have shown creativity can be stimulated by moderate levels of noise. Nicknamed the “Starbucks Effect,” people who are exposed to noise of the level and type found in coffee shops (70 dB, with varying traffic and speech sounds overlapped), give more original answers compared to participants working in low noise (50 dB) and high noise (85 dB) conditions. Ultimately, whether silence or noise works for a person may come depend on personal preference.</p>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Is Classroom Noise Always Bad for Children? The Contribution of Age and Selective Attention to Creative Performance in Noise Jessica Massonnié*, Cathy Jane Rogers, Denis Mareschal and Natasha Z. Kirkham Department of Psychological Sciences, Centre for Brain and Cognitive Development, Birkbeck, Frontiers in psychology, 2019</p>
+          <p class="cover-half__text-small">Mehta, R., Zhu, R. J., and Cheema, A. (2012). Is noise always bad? Exploring the effects of ambient noise on creative cognition. J. Consum. Res. 39, 784–799. DOI: <a href="https://doi.org/10.1086/665048" target="_blank">10.1086/665048</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Noise/Music'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Noise</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Noise.webp">
+          <img appCache="/assets/img/habits/Noise.png" class="cover-half__bg" src="/assets/img/habits/Noise.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency are found in bustling environments.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Noise is an environmental factor that may affect creativity, but the reason for this is not fully understood. Studies have shown that creativity can be stimulated by moderate levels of noise. Nicknamed the “Starbucks Effect,” people who are exposed to noise of the level and type found in coffee shops give more original answers compared to participants working in low noise and high noise conditions. One reason for this may be that some level of distraction actually distracts the mind from locking in on a single line of thought. However, another study showed that young children showed lower levels of creativity while exposed to similar noise levels, although the creativity did increase with age. Ultimately, whether or not moderate noise works for a person may come down to personal preference.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Yolo Chaotis</li>
+            <li class="cover-half__text-list-item">Fig. 2 Novo Gregarious</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Is Classroom Noise Always Bad for Children? The Contribution of Age and Selective Attention to Creative Performance in Noise Jessica Massonnié*, Cathy Jane Rogers, Denis Mareschal and Natasha Z. Kirkham Department of Psychological Sciences, Centre for Brain and Cognitive Development, Birkbeck, Frontiers in psychology, 2019</p>
+          <p class="cover-half__text-small">Mehta, R., Zhu, R. J., and Cheema, A. (2012). Is noise always bad? Exploring the effects of ambient noise on creative cognition. J. Consum. Res. 39, 784–799. DOI: <a href="https://doi.org/10.1086/665048ise on creative cognition. J. Consum. Res. 39, 784–799. doi: 10.1086/665048" target="_blank">10.1086/665048ise on creative cognition. J. Consum. Res. 39, 784–799. doi: 10.1086/665048</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Nature'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Nature-Lover</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Nature-Lover.webp">
+          <img appCache="/assets/img/habits/Nature-Lover.png" class="cover-half__bg" src="/assets/img/habits/Nature-Lover.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency are usually found near dense forests.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Countless studies and lived experience point to the benefits of spending time in nature. Going outdoors can not only provide the creative mind with a wide variety of experiences, but can be emotionally calming and physically healthy. Anecdotes abound of the inventions inspired by “looking to nature,” including Velcro, which was inspired by the burrs stuck to the pants of inventor George de Mestral while he was walking in the woods.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Focus Mononovous</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Urban'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Nature-Agnostic</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Nature-Agnostic.webp">
+          <img appCache="/assets/img/habits/Nature-Agnostic.png" class="cover-half__bg" src="/assets/img/habits/Nature-Agnostic.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency are usually found in dry and barren environments.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Not everyone is a nature-lover, and that’s okay. People can find inspiration and rejuvenation that don’t include the stereotypical walk in the woods. Many studies do point to the benefits of spending time outdoors, so it’s important to find these benefits elsewhere.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Solo Noctus</li>
+            <li class="cover-half__text-list-item">Fig. 2 Mono Routinus</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Novelty Seeker'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Novelty-Seeker</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Novelty-Seeker.webp">
+          <img appCache="/assets/img/habits/Novelty-Seeker.png" class="cover-half__bg" src="/assets/img/habits/Novelty-Seeker.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency are rooted in bodies of water.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Many creative thinkers prefer to vary their surroundings in the hope of stimulating thought and generating new ideas. David Shenk, a successful author, uses several desks that are a mix of sitting or standing so he can change his setting when he gets antsy. Like nature lovers, novelty-seekers may also benefit from exposing themselves to ideas and solutions found in the world around them. A study by Marleen Gillebaart showed that novelty-seeking may benefit creative performance when divergent thinking is required, but it could also inhibit creative performance when convergent thinking is required.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Novo Gregarious</li>
+            <li class="cover-half__text-list-item">Fig. 2 Yolo Chaotis</li>
+            <li class="cover-half__text-list-item">Fig. 3 Focus Mononovous</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Gillebaart, 2013</p>
+          <p class="cover-half__text-small">Parns, 1999</p>
+          <p class="cover-half__text-small">Runco, M. A. (2020). Tactics for creativity. In M. A. Runco & S. Pritzker (Eds.), Encyclopedia of Creativity. Oxford: Elsevier.</p>
+          <p class="cover-half__text-small">Parnes, S. (1992). Source Book for Creative Problem Solving : A Fifty Year Digest of Proven Innovation Processes. Buffalo, NJ: Creative Education Foundation</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Routine Seeker'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Routine-Seeker</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Routine-Seeker.webp">
+          <img appCache="/assets/img/habits/Routine-Seeker.png" class="cover-half__bg" src="/assets/img/habits/Routine-Seeker.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency are found in environments enclosed by rock walls.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Different styles and habits can be used by different people to the benefit of creative outcomes. Routines are sometimes used by creative people so they can get through the day expending little effort on things that are unrelated to their creative efforts. Having routines for one’s uncreative tasks may free up time for the important things–creative work. For instance, Rodney Mullen, the godfather of modern street skating, expressed that his creativity relies on a fixed routine that every night: he practices at precisely the same time every night while listening to the “exact same” music playlist. Routines may also be important for successful execution of creative ideas - for example many writers or artists stick to a strict schedule at their desk or in their studio to ensure that every day a little more gets done.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Sui Inspira</li>
+            <li class="cover-half__text-list-item">Fig. 2 Mono Routinus</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Parns (1999)</p>
+          <p class="cover-half__text-small">Runco, M. A. (2020). Tactics for creativity. In M. A. Runco & S. Pritzker (Eds.), Encyclopedia of Creativity. Oxford: Elsevier.</p>
+          <p class="cover-half__text-small">Parnes, S. (1992). Source Book for Creative Problem Solving : A Fifty Year Digest of Proven Innovation Processes. Buffalo, NJ: Creative Education Foundation</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Stifled By Constraints'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Stifled by Constraints</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Stifled-by-Constraints.webp">
+          <img appCache="/assets/img/habits/Stifled-by-Constraints.png" class="cover-half__bg" src="/assets/img/habits/Stifled-by-Constraints.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency blossom under vast, open skies.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">There are many popular articles that argue constraints limit creative thought. Following this theory, many businesses dependent on creative solutions try to clear away as many limitations as possible. This is certainly good for those who feel stifled by constraints, but there is also evidence that shows constraints may actually be more beneficial to creativity. Constraints can achieve this by forcing the mind to work harder to find the right idea. Ultimately, whether an individual prefers constraints or hates them, it’s unlikely one style is better than the other.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Focus Mononovous</li>
+            <li class="cover-half__text-list-item">Fig. 2 Yolo Chaotis</li>
+            <li class="cover-half__text-list-item">Fig. 2 Solo Noctus</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Epstein, 2015</p>
+          <p class="cover-half__text-small">Stokes, 2008</p>
+          <p class="cover-half__text-small">Torrance, 1995</p>
+          <p class="cover-half__text-small">Lynne J. Millward & Helen Freeman (2002) Role Expectations as Constraints to Innovation: The Case of Female Managers, Creativity Research Journal, 14:1, 93-109, DOI: <a href="https://doi.org/10.1207/S15326934CRJ1401_8" target="_blank">10.1207/S15326934CRJ1401_8</a></p>
+          <p class="cover-half__text-small">David R. Peterson, Jamie D. Barrett, Kimberly S. Hester, Issac C. Robledo, Dean F. Hougen, Eric A. Day & Dr. Michael D. Mumford (2013) Teaching People to Manage Constraints: Effects on Creative Problem-Solving, Creativity Research Journal, 25:3, 335-347, DOI: <a href="https://doi.org/10.1080/10400419.2013.813809" target="_blank">10.1080/10400419.2013.813809</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Stimulated By Constraints'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Stimulated by Constraints</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Stimulated-by-Constraints.webp">
+          <img appCache="/assets/img/habits/Stimulated-by-Constraints.png" class="cover-half__bg" src="/assets/img/habits/Stimulated-by-Constraints.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency are found in environments with limited view of the sky.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Creative thinkers who prefer to work with limitations may be onto something. There’s evidence that shows how constraints can be beneficial to creativity by forcing the mind to work harder to find the right idea. Whether these studies are correct or not, there are many popular articles that argue constraints limit creative thought, and following this theory, many businesses that depend on creativity try to clear away as many limitations on their employees as possible. Which creative style is the better one? Ultimately, it probably just comes down to personal preference.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Mono Routinus</li>
+            <li class="cover-half__text-list-item">Fig. 2 Novo Gregarious</li>
+          </ul>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Epstein, 2015</p>
+          <p class="cover-half__text-small">Stokes, 2008</p>
+          <p class="cover-half__text-small">Torrance, 1995</p>
+          <p class="cover-half__text-small">Lynne J. Millward & Helen Freeman (2002) Role Expectations as Constraints to Innovation: The Case of Female Managers, Creativity Research Journal, 14:1, 93-109, DOI: <a href="https://doi.org/10.1207/S15326934CRJ1401_8" target="_blank">10.1207/S15326934CRJ1401_8</a></p>
+          <p class="cover-half__text-small">David R. Peterson, Jamie D. Barrett, Kimberly S. Hester, Issac C. Robledo, Dean F. Hougen, Eric A. Day & Dr. Michael D. Mumford (2013) Teaching People to Manage Constraints: Effects on Creative Problem-Solving, Creativity Research Journal, 25:3, 335-347, DOI: <a href="https://doi.org/10.1080/10400419.2013.813809" target="_blank">10.1080/10400419.2013.813809</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Early Bird'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Early Bird</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Early-Bird.webp">
+          <img appCache="/assets/img/habits/Early-Bird.png" class="cover-half__bg" src="/assets/img/habits/Early-Bird.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency blossom at dawn.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Being an early bird is popularly associated with being a high achiever, and it’s often a convenient trait for people who have to start work early. But when it comes to creativity, there’s no evidence to support that getting up early or staying up late is better than the other. What is important, is getting enough sleep overall and staying healthy.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Socialis Adventurous</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Night Owl'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header cover-half__header--image">
+        <h3 class="cover-half__title">Night Owl</h3>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/habits/Night-Owl.webp">
+          <img appCache="/assets/img/habits/Night-Owl.png" class="cover-half__bg" src="/assets/img/habits/Night-Owl.png" alt="">
+        </picture>
+        <p class="cover-half__description">Creative species with this tendency blossom at night.</p>
+      </div>
+      <div class="cover-half__wrapper cover-half__wrapper--image">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Being a night owl is often associated with artists but there’s no evidence to support that those who stay up late are more creative than early risers - or those with no preference at all. Getting enough sleep, and staying healthy, however, is vital to maintaining the focus and energy required for creative thought.</p>
+
+          <h6 class="cover-half__text-header">Found in:</h6>
+          <ul class="cover-half__text-list">
+            <li class="cover-half__text-list-item">Fig. 1 Solo Noctus</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- not found -->
+    <div *ngSwitchCase="'Performer'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header">
+        <h3 class="cover-half__title">Performer</h3>
+      </div>
+      <div class="cover-half__wrapper">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Some people thrive with all eyes on them - the pressure, excitement, and others’ attention amping up their performers on-the-feet thinking. This is typically the territory of extrinsically-motivated, fast-paced, and self-assured creative thinkers, and a style one might find in good group-brainstormers, improv comedians, and musical soloists. Given the value society places on performative ability, those who are comfortable in these kinds of situations probably also see benefits in their professional lives as well. The character Don Draper in the TV show Mad Men comes to mind, for instance. Society may glorify this kind of ability, but that shouldn’t discount the equal creative abilities of non-performers. Furthermore, performers’ desire to please an audience may inhibit the novelty of their ideas since they devote energy toward impression management and social recognition.</p>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Kasof (1995)</p>
+          <p class="cover-half__text-small">Amabile (1995)</p>
+          <p class="cover-half__text-small">Runco (1995)</p>
+          <p class="cover-half__text-small">Sternberg and Lubart (1995)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- not found -->
+    <div *ngSwitchCase="'Non-Performer'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header">
+        <h3 class="cover-half__title">Non-Performer</h3>
+      </div>
+      <div class="cover-half__wrapper">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Non-performers are no less creative than performers, but they do not feel motivated or inspired by the same external factors that ignite performers. Non-performers are typically internally-motivated, and don’t put energy into pleasing others. Although society places praise and attention on performers, non-performers are more likely to consider the unconventional or unpopular ideas that can lead to novel concepts.</p>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Kasof (1995)</p>
+          <p class="cover-half__text-small">Amabile (1995)</p>
+          <p class="cover-half__text-small">Runco (1995)</p>
+          <p class="cover-half__text-small">Sternberg and Lubart (1995)</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Consistent'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header">
+        <h3 class="cover-half__title">Consistent</h3>>
+      </div>
+      <div class="cover-half__wrapper">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Everyone would love to be able to consistently come up with creative ideas, and those who can should consider themselves fortunate. However, consistency is not equivalent to quality, so those who can regularly generate creative ideas do not always outperform less consistent creative thinkers.</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Inconsistent'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header">
+        <h3 class="cover-half__title">Inconsistent</h3>
+      </div>
+      <div class="cover-half__wrapper">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">For many people, highly creative output may come in intense bursts of activity followed by periods of creative quiet. During the ‘creative doldrums’, the creator can feel like their sails will never fill with creative winds again. There is good news for those who feel stuck in a rut because it’s possible that downtime may encourage “remote associates,” where thinking goes to novel and original spaces because there is more time for incubation, and where the mind is relatively free from self-censorship and the “squelcher” statements like “this will never work.” (Davis, 1999). Those who feel inconsistent can help take pressure off to allow themselves to focus on other work, or take a break, while remaining poised to capitalize on the next creative storm when it naturally arrives again. </p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Happy'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header">
+        <h3 class="cover-half__title">Happy</h3>
+      </div>
+      <div class="cover-half__wrapper">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Those who find the creation process pleasant should count themselves fortunate, because many people become stressed by creative projects. Happiness and contentment while working on a creative task is typically associated with “broad attention,” and wide or even loose associations. Such associations in the thinking process allow a person to go beyond conventional ideas and find original possibilities. (Isen, 2000) has demonstrated the cognitive benefits of happiness in various experimental studies. (Kaufmann 2000) qualified Isen’s findings and demonstrated that the benefit varies from task to task.</p>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">“Positive Affect and Decision Making”, Alice Isen, 2000</p>
+          <p class="cover-half__text-small">Kaufmann 2000</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Tortured'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header">
+        <h3 class="cover-half__title">Tortured</h3>
+      </div>
+      <div class="cover-half__wrapper">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">The “tortured artist” is a bit of a cultural legend: the melancholy creator slaving away to make something to benefit the world, but sacrificing their happiness in the process. This story may be a stereotype, but it’s not a myth. And certainly many people experience anxiety, doubt, impatience, and any number of other negative emotions while creating. For many, the stress of creation is only balanced by the catharsis of a project's completion. Ultimately, however, one's mental and emotional health is more important than any creative task.</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Solo-Ideator'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header">
+        <h3 class="cover-half__title">Solo-Ideator</h3>
+      </div>
+      <div class="cover-half__wrapper">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Brainstorming is an integral practice in many companies, but they can feel like a waste of time to those who don’t feel comfortable or creative in these group sessions. In fact, the data show that, contrary to popular wisdom, most people are actually less original when brainstorming than when working alone. One review paper (Rickards, 2003) looked at about 1000 studies of brainstorming and concluded that it is not good for originality as working alone. This is not likely to change corporate work habits, so those who are partial to group ideation, might suggest mixing up group sessions with solo work as well.</p>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Rickards 2003 (brainstorming ref)</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Group-Ideator'" [ngClass]="'cover-half__full-height'" @fadeHabits>
+      <div class="cover-half__header">
+        <h3 class="cover-half__title">Group-Ideator</h3>
+      </div>
+      <div class="cover-half__wrapper">
+        <div class="cover-half__text-wrapper">
+          <p class="cover-half__text">Brainstorming sessions with whiteboards, markers, and sticky notes are an iconic image of many corporate innovation workshops. However, most of the data show that people are actually less original when brainstorming than when working alone. While brainstorming is useful at certain times in the creative process, the most original ideas are far more likely to be found when working alone. Group ideators who want to make the most of the creative process should consider making time for solo ideation as well.</p>
+
+          <h6 class="cover-half__text-header">References:</h6>
+          <p class="cover-half__text-small">Rickards 2003 (brainstorming ref)</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchDefault>
+      <ng-container *ngIf="habit === 'Problem Definer' || habit === 'Ideator' || habit === 'Evaluator' || habit === 'Implementer'">
+        <div class="cover-half__header">
+          <h3 class="cover-half__title">{{habit}}</h3>
+        </div>
+        <div class="cover-half__wrapper">
+          <div class="cover-half__text-wrapper">
+            <p class="cover-half__text">Creativity researchers often break down the creative process into different phases: Problem definition, Ideation, Evaluation, and Implementation. Different people may gravitate toward different aspects of the creative process, some preferring to clarify the problem being solved, others generating many possible novel solutions, while others defining the problem and possible solutions so they can focus their creative energy on execution. Being aware of where one’s tendencies lie can be very important for assembling successful collaborative groups that include people who have strengths in different parts of the process.</p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
+</div>

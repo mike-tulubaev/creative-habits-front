@@ -1,0 +1,104 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% from "templates/components/_header.html" import header %}
+{% from "./templates/components/_icon.html" import icon %}
+
+{% block page_title %}
+  Habits
+{% endblock %}
+
+{% block page_header %}
+  {{ header(showSound=true, showInfo=true, showMenu=true, class="header--fixed") }}
+{% endblock %}
+
+{% set pageClass='page-species page-species--reveal page-species--mono-routinus page-habits page-habits--landscape page--habits-landscape' %}
+{{ header(showSound=true, showInfo=true) }}
+{% block page_content %}
+  <div class="page-species__wrapper">
+    <div class="page-species__bg-container">
+      <img class="page-species__bg" src="images/species/mono_routinus_bg.jpg" alt="">
+    </div>
+    <div class="container page-species__container"></div>
+  </div>
+  <div class="container page-habits__container">
+    <div class="row">
+      <div class="col col--habits-landscape">
+        <div class="page-habits__wrapper">
+          <p class="page-species__text">
+            <span class="page-species__text-upper">FOCUS MONONOVOUS
+            </span>
+            is a
+            <span class="page-species__text-italic">detailed and dignified
+            </span>
+            creative species that, like Novo Gregarious, travels streams and rivers in search of
+            <span class="page-species__text-italic">novel, unconstrained environments. Single-minded and precise,
+            </span>
+            Focus Mononovous requires
+            <span class="page-species__text-italic">calm and quiet
+            </span>
+            to focus its energy into growing a colorful, perfectly-formed bloom. Although many creative species can thrive in indoor environments, Focus Mononovous grows best in the wild,
+            <span class="page-species__text-italic">unconstrained and free.
+            </span>
+            Those who find a Focus Mononovous in the wild should be careful
+            <span class="page-species__text-italic">not to distract it,
+            </span>
+            otherwise it may have to start its flowering process over again.
+          </p>
+          <div class="page-habits__content">
+            <button class="page-habits__button page-habits__button--double-border">Dislike Distractions</button>
+            <button class="page-habits__button page-habits__button--double-border">Risk-Averse</button>
+            <button class="page-habits__button page-habits__button--double-border">Solo Creator</button>
+            <button class="page-habits__button page-habits__button--double-border">Non-Kinetic</button>
+            <button class="page-habits__button page-habits__button--double-border">Routine-Seeker</button>
+            <button class="page-habits__button page-habits__button--double-border">Monotasker</button>
+            <button class="page-habits__button page-habits__button--double-border">Make It Happen</button>
+            <button class="page-habits__button page-habits__button--double-border">Private</button>
+            <button class="page-habits__button page-habits__button--double-border">Externally Motivated</button>
+            <button class="page-habits__button">Stimulated by Constraints</button>
+            <button class="page-habits__button">Rational</button>
+            <button class="page-habits__button">Slow-Paced</button>
+            <button class="page-habits__button">Nature-Agnostic</button>
+          </div>
+        </div>
+        <!-- Plant links -->
+        <div class="page-habits__wrapper page-habits__wrapper--links">
+          <a href="#" class="link-to-map link-to-map--plant-links">
+            {{icon(name="mountain", class="icon--mountain")}}
+            Back to Map
+          </a>
+          <a href="#" class="plant-link plant-link--mono-routinus plant-link--active">
+            <img src="images/landscape/plants/mono_routinus_white.png" alt="" class="plant-link__image plant-link__image--white">
+            <img src="images/landscape/plants/mono_routinus.png" alt="" class="plant-link__image plant-link__image--color">
+          </a>
+          <a href="#" class="plant-link plant-link--yolo-chaotis">
+            <img src="images/landscape/plants/yolo_chaotis_white.png" alt="" class="plant-link__image plant-link__image--white">
+            <img src="images/landscape/plants/yolo_chaotis.png" alt="" class="plant-link__image plant-link__image--color">
+          </a>
+          <a href="#" class="plant-link plant-link--socialis-adventurous">
+            <img src="images/landscape/plants/socialis_adventurous_white.png" alt="" class="plant-link__image plant-link__image--white">
+            <img src="images/landscape/plants/socialis_adventurous.png" alt="" class="plant-link__image plant-link__image--color">
+          </a>
+          <a href="#" class="plant-link plant-link--focus-mononovous">
+            <img src="images/landscape/plants/focus_mononovous_white.png" alt="" class="plant-link__image plant-link__image--white">
+            <img src="images/landscape/plants/focus_mononovous.png" alt="" class="plant-link__image plant-link__image--color">
+          </a>
+          <a href="#" class="plant-link plant-link--novo-gregarious">
+            <img src="images/landscape/plants/novo_gregarious_white.png" alt="" class="plant-link__image plant-link__image--white">
+            <img src="images/landscape/plants/novo_gregarious.png" alt="" class="plant-link__image plant-link__image--color">
+          </a>
+          <a href="#" class="plant-link plant-link--sui-inspira">
+            <img src="images/landscape/plants/sui_inspira_white.png" alt="" class="plant-link__image plant-link__image--white">
+            <img src="images/landscape/plants/sui_inspira.png" alt="" class="plant-link__image plant-link__image--color">
+          </a>
+          <a href="#" class="plant-link plant-link--solo-noctus">
+            <img src="images/landscape/plants/solo_noctus_white.png" alt="" class="plant-link__image plant-link__image--white">
+            <img src="images/landscape/plants/solo_noctus.png" alt="" class="plant-link__image plant-link__image--color">
+          </a>
+          <a href="#" class="plant-link plant-link--science">
+            <img src="images/landscape/science.png" alt="" class="plant-link__science-image">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

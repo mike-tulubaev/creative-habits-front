@@ -1,0 +1,33 @@
+{% from "./_icon.html" import icon %}
+
+{% macro leftMenu(showResult=false) %}
+	<aside class="left-menu">
+			<button class="left-menu__close">
+				{{ icon(name="close") }}
+			</button>
+			<nav class="left-menu__nav">
+					<ul class="left-menu__list">
+							<li class="left-menu__item">
+									<a class="left-menu__link" href="index.html">Home</a>
+							</li>
+							<li class="left-menu__item">
+									<a class="left-menu__link" href="index.html">Science</a>
+							</li>
+							{% if not showResult %}
+							<li class="left-menu__item">
+									<a class="left-menu__link left-menu__link--button" href="index.html">Begin</a>
+							</li>
+							{% else %}
+							<li class="left-menu__item">
+									<a class="left-menu__link left-menu__link--button" href="index.html">My results</a>
+							</li>
+							{% endif %}
+							<li class="left-menu__item">
+									<button class="left-menu__link left-menu__link--policy">Learn about <br>our data collection policy</button>
+							</li>
+					</ul>
+			</nav>
+			<p class="left-menu__copyright">© Liminal Collective 2021</p>				
+			{% include "../partials/_policy.html" %}
+	</aside>
+{% endmacro %}

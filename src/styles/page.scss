@@ -1,0 +1,99 @@
+@import './variables.scss';
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 67px 0 40px;
+  background-color: $color-dark-gray;
+
+  //.page-home
+  &--home {
+    background-image: url("../assets/img/home/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color-dark-gray, 0.6);
+      content: "";
+    }
+  }
+
+  //.page--home-step1
+  &--home-step1 {
+    padding: 90px 0;
+  }
+  //.page--intro
+  &--intro {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  //.page--science
+  &--science {
+    padding-bottom: 0;
+  }
+
+  //.page--landscape
+  &--landscape {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  //.page--landscape-intro
+  &--landscape-intro {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100%;
+  }
+
+  //.page--habits-landscape
+  &--habits-landscape {
+    height: 100vh;
+    overflow: hidden;
+    padding-bottom: 0;
+  }
+
+  //.page--habits
+  &--habits {
+    padding-bottom: 0;
+  }
+
+  //.page__wrapper
+  &__wrapper {
+    //.page__wrapper--landscape
+    &--landscape {
+      min-height: 800px;
+      max-height: 100vh;
+      height: 100vh;
+      overflow: hidden;
+    }
+  }
+
+  //.page__scroll-wrapper
+  &__scroll-wrapper {
+    position: relative;
+    z-index: 999;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    -webkit-mask-image: -webkit-linear-gradient(bottom, rgba(#000, 0) 0%, rgba(0, 0, 0, 1.0) 10%, rgba(0, 0, 0, 1.0) 90%, rgba(#000, 0) 100%);
+    mask-image: -moz-linear-gradient(bottom, rgba(#000, 0) 0%, rgba(0, 0, 0, 1.0) 10%, rgba(0, 0, 0, 1.0) 90%, rgba(#000, 0) 100%);
+    mask-image: -o-linear-gradient(bottom, rgba(#000, 0) 0%, rgba(0, 0, 0, 1.0) 10%, rgba(0, 0, 0, 1.0) 90%, rgba(#000, 0) 100%);
+    mask-image: linear-gradient(to top, rgba(#000, 0) 0%, rgba(0, 0, 0, 1.0) 10%, rgba(0, 0, 0, 1.0) 90%, rgba(#000, 0) 100%);
+
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+}
+}

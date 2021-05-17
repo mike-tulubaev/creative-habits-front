@@ -1,0 +1,250 @@
+<main class="page page--science">
+  <section class="section-science section-science--animation">
+    <div class="container">
+      <img appCache="/assets/img/survey/seed-animation.gif" alt="" class="section-science__animation">
+      <p class="section-science__text">
+        <span class="section-science__text-uppercase">The seed of C<span class="section-science__text-italic">r</span>eative Lands<span class="section-science__text-italic">c</span>ape</span>
+        was 2015’s Hacking Creativity, a research project into the ecology of human creativity, and the largest-ever study of creative habits. Led by human performance expert Andy Walshe, Hacking Creativity enlisted the expertise of creativity researcher Mark Runco, ethnographer Lizbet Simmons, community ecologist Eric Berlow, and computational ecologist Rich Williams, as well as David Gurman, Kaustuv DeBiswas, and Anna Christy. The study sought to understand the variety of ways in which creative people create, not just in one person, but in thousands.</p>
+      <p class="section-science__text">We asked ourselves: could we learn how to nurture creativity in people, learn how to share it, and harness it to help people come up with creative solutions to the world’s hardest challenges?</p>
+    </div>
+  </section>
+
+  <section class="section-science section-science--figure1">
+    <div class="container">
+      <div class="row">
+        <div class="col col--6  col--science-f1-image">
+          <picture>
+            <source type="image/webp" srcset="/assets/img/science/fig1.webp">
+            <img appCache="/assets/img/science/fig1.png" class="section-science__image" src="/assets/img/science/fig1.png" alt="">
+          </picture>
+          <p class="section-science__text-small section-science__text-small--f1">Fig. 1</p>
+        </div>
+        <div class="col col--4 col--offset-1 col--science-f1-text">
+          <p class="section-science__text">Hacking Creativity allowed us to map the tens of thousands of relationships between creative habits, better understanding how people feel most creatively fruitful. We began by asking a select group of 500 highly-successful creative people hundreds of questions, and from their answers, distilled the most pertinent few dozen questions. We shared this more refined survey with tens of thousands of people, mapping the 100,000 connections between their creative styles.</p>
+          <p class="section-science__text-small">Fig. 1<br><br>Participants in the Hacking Creativity project were linked if they shared similar creative habits. Clusters of people that tend to co-share the similar sets of habits were used to define Creative Species in the Creative Landscape.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-science section-science--figure2">
+    <div class="container">
+      <div class="row">
+        <div class="col col--4 col--offset-1 col--science-f2-text">
+          <p class="section-science__text">From the data, we discovered that people roughly fit into one of Seven Creative Species, but, more importantly, we found that there is no single right way to be creative. Highly successful people that included world-renowned inventors, circus performers, chefs, and rocket scientists varied widely in their creative preferences. In fact, the research shows that many of the creative habit recommendations in the popular press are misleading, and sometimes simply incorrect. Our project offers an alternative to the “top ten list” mentality that assumes there’s only one correct suite of creative habits.</p>
+          <p class="section-science__text-small">Fig. 2<br><br>Participants in the broader study of ~10,000 people linked if they share similar creative habits. The colored groups define our 'Creative Species' — or clusters of people that tend to co-share similar sets of habits. The 'defining habits' of each Creative Species were those that were most over-represented in that group relative to the rest of the participants. Note that links across groups show that individuals within one Creative Species often also have some affinities to other Species.</p>
+        </div>
+        <div class="col col--7 col--science-f2-image">
+          <picture>
+            <source type="image/webp" srcset="/assets/img/science/fig2.webp">
+            <img appCache="/assets/img/science/fig2.png" class="section-science__image" src="/assets/img/science/fig2.png" alt="">
+          </picture>
+          <p class="section-science__text-small section-science__text-small--f2">Fig. 2</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-science section-science--results">
+    <div class="container container--science-results">
+      <div class="row">
+        <div class="col col--6 col--offset-3 col--science-results">
+          <p class="section-science__text">Creative Landscape is how we begin to share what we learned with a wider audience. We believe that by better understanding your creative style, and the styles of others, you can better harness the transformative power of creativity in your life and work, and also better collaborate with those who have different creative styles.</p>
+          <p class="section-science__text">We chose to express these insights through the metaphor of the natural world because, like all living things, creativity is also a type of dynamic ecosystem. Every species on earth is a unique creative solution to the universal problem of life — how to survive, grow, and reproduce. Every unique combination of strategies for solving this problem has its own advantages and weaknesses. Just as a Cactus won’t grow well in the rainforest, and a Water Lily won’t thrive in the desert, by understanding your own unique suite of creative strengths, you can cultivate the best strategy toward greater creativity.</p>
+          <p class="section-science__text">So, if you haven’t taken the Creative Landscape survey yet, what are you waiting for?</p>
+          <a [routerLink]="['/survey']" class="button button--science-results" *ngIf="!(interviewResult$ | async); else resultsExist">Begin</a>
+          <ng-template #resultsExist>
+            <a [routerLink]="['/profile-reveal']" class="button button--science-results">My results</a>
+          </ng-template>
+        </div>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/science/results1.webp">
+          <img appCache="/assets/img/science/results1.png" class="section-science__result-image section-science__result-image--1" src="/assets/img/science/results1.png" alt="">
+        </picture>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/science/results2.webp">
+          <img appCache="/assets/img/science/results2.png" class="section-science__result-image section-science__result-image--2" src="/assets/img/science/results2.png" alt="">
+        </picture>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/science/results3.webp">
+          <img appCache="/assets/img/science/results3.png" class="section-science__result-image section-science__result-image--3" src="/assets/img/science/results3.png" alt="">
+        </picture>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/science/results4.webp">
+          <img appCache="/assets/img/science/results4.png" class="section-science__result-image section-science__result-image--4" src="/assets/img/science/results4.png" alt="">
+        </picture>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/science/results5.webp">
+          <img appCache="/assets/img/science/results5.png" class="section-science__result-image section-science__result-image--5" src="/assets/img/science/results5.png" alt="">
+        </picture>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/science/results6.webp">
+          <img appCache="/assets/img/science/results6.png" class="section-science__result-image section-science__result-image--6" src="/assets/img/science/results6.png" alt="">
+        </picture>
+        <picture>
+          <source type="image/webp" srcset="/assets/img/science/results7.webp">
+          <img appCache="/assets/img/science/results7.png" class="section-science__result-image section-science__result-image--7" src="/assets/img/science/results7.png" alt="">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-science section-science--study">
+    <picture>
+      <source type="image/webp" srcset="/assets/img/science/study_bg.webp">
+      <img appCache="/assets/img/science/study_bg.png" class="section-science__study-bg" src="/assets/img/science/study_bg.png" alt="">
+    </picture>
+    <div class="container">
+      <p class="section-science__text">If you’d like to dig even deeper into the science of creativity, you can read the scientific study
+        <a href="#" class="section-science__link">here</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-science section-science--team">
+    <div class="container">
+      <p class="section-science__text">Creative Landscape was conceived and built by an interdisciplinary team of scientists, creatives, and developers who believe
+        <span class="section-science__text-uppercase">Eve<span class="section-science__text-italic">r</span>yone is
+          <span class="section-science__text-italic">c</span>
+          reative.</span></p>
+
+        <!-- Team group -->
+        <div class="team-group">
+          <p class="team-group__title">Experience Concept & Design</p>
+          <div class="team-group__row">
+            <!-- Team group item-->
+            <div class="team-group__item">
+              <img src="assets/img/team/tiffany_yuan.png" alt="Tiffany Yuan" class="team-group__image">
+              <img src="assets/img/team/tiffany_yuan_photo.png" alt="Tiffany Yuan" class="team-group__photo">
+              <p class="team-group__name">Tiffany Yuan</p>
+            </div>
+            <!-- Team group item-->
+            <div class="team-group__item">
+              <img src="assets/img/team/shawna_jacoby.png" alt="Shawna Jacoby" class="team-group__image">
+              <img src="assets/img/team/shawna_jacoby_photo.png" alt="Shawna Jacoby" class="team-group__photo">
+              <p class="team-group__name">Shawna Jacoby</p>
+            </div>
+            <!-- Team group item-->
+            <div class="team-group__item">
+              <img src="assets/img/team/spencer_canon.png" alt="Spencer Canon" class="team-group__image">
+              <img src="assets/img/team/spencer_canon_photo.png" alt="Spencer Canon" class="team-group__photo">
+              <p class="team-group__name">Spencer Canon</p>
+            </div>
+            <!-- Team group item-->
+            <div class="team-group__item">
+              <img src="assets/img/team/ted_chang.png" alt="Ted Chang" class="team-group__image">
+              <img src="assets/img/team/ted_chang_photo.png" alt="Ted Chang" class="team-group__photo">
+              <p class="team-group__name">Ted Chang</p>
+            </div>
+          </div>
+        </div>
+
+      <div class="section-science__row-team">
+        <!-- Team group -->
+        <div class="team-group team-group--single">
+          <p class="team-group__title">Science</p>
+          <div class="team-group__row">
+            <!-- Team group item-->
+            <button class="team-group__item" (click)="selectPerson('Eric L Berlow')">
+              <img src="assets/img/team/eric_berlow.png" alt="Eric Berlow" class="team-group__image">
+              <img src="assets/img/team/eric_berlow_photo.png" alt="Eric Berlow" class="team-group__photo">
+              <p class="team-group__name">Eric Berlow</p>
+            </button>
+          </div>
+        </div>
+        <!-- Team group -->
+        <div class="team-group">
+          <p class="team-group__title">Advisors</p>
+          <div class="team-group__row">
+            <!-- Team group item-->
+            <button class="team-group__item" (click)="selectPerson('David Gurman')">
+              <img src="assets/img/team/david_gurman.png" alt="David Gurman" class="team-group__image">
+              <img src="assets/img/team/david_gurman_photo.png" alt="David Gurman" class="team-group__photo">
+              <p class="team-group__name">David Gurman</p>
+            </button>
+            <!-- Team group item-->
+            <button class="team-group__item" (click)="selectPerson('Mark Runco')">
+              <img src="assets/img/team/mark_runco.png" alt="Mark Runco" class="team-group__image">
+              <img src="assets/img/team/mark_runco_photo.png" alt="Mark Runco" class="team-group__photo">
+              <p class="team-group__name">Mark Runco</p>
+            </button>
+          </div>
+        </div>
+      </div>
+
+        <!-- Team group -->
+        <div class="team-group">
+          <p class="team-group__title">Development by
+            <a href="http://sharp-dev.net/" target="_blank" class="team-group__title-link">Sharp Developers</a>
+          </p>
+          <div class="team-group__row">
+            <!-- Team group item-->
+            <div class="team-group__item">
+              <img src="assets/img/team/mike_tulubaev.png" alt="Mike Tulubaev" class="team-group__image">
+              <img src="assets/img/team/mike_tulubaev_photo.png" alt="Mike Tulubaev" class="team-group__photo">
+              <p class="team-group__name">Mike Tulubaev</p>
+            </div>
+            <!-- Team group item-->
+            <div class="team-group__item">
+              <img src="assets/img/team/vitaliy_makarov.png" alt="Vitaliy Makarov" class="team-group__image">
+              <img src="assets/img/team/vitaliy_makarov_photo.png" alt="Vitaliy Makarov" class="team-group__photo">
+              <p class="team-group__name">Vitaliy Makarov</p>
+            </div>
+            <!-- Team group item-->
+            <div class="team-group__item">
+              <img src="assets/img/team/viktor_ovcharov.png" alt="Viktor Ovcharov" class="team-group__image">
+              <img src="assets/img/team/viktor_ovcharov_photo.png" alt="Viktor Ovcharov" class="team-group__photo">
+              <p class="team-group__name">Viktor Ovcharov</p>
+            </div>
+            <!-- Team group item-->
+            <div class="team-group__item">
+              <img src="assets/img/team/rodion_zhuvagin.png" alt="Rodion Zhuvagin" class="team-group__image">
+              <img src="assets/img/team/rodion_zhuvagin_photo.png" alt="Rodion Zhuvagin" class="team-group__photo">
+              <p class="team-group__name">Rodion Zhuvagin</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team group -->
+        <div class="team-group">
+          <p class="team-group__title">Project Sponsored by
+            <a href="https://www.liminalcollective.co/" target="_blank" class="team-group__title-link">Liminal Collective</a>
+          </p>
+          <div class="team-group__row">
+            <!-- Team group item-->
+            <button class="team-group__item" (click)="selectPerson('Andy Walshe')">
+              <img src="assets/img/team/andy_walshe.png" alt="Andy Walshe" class="team-group__image">
+              <img src="assets/img/team/andy_walshe_photo.png" alt="Andy Walshe" class="team-group__photo">
+              <p class="team-group__name">Andy Walshe</p>
+            </button>
+            <!-- Team group item-->
+            <button class="team-group__item" (click)="selectPerson('Ben Potvin')">
+              <img src="assets/img/team/ben_potvin.png" alt="Ben Potvin" class="team-group__image">
+              <img src="assets/img/team/ben_potvin_photo.png" alt="Ben Potvin" class="team-group__photo">
+              <p class="team-group__name">Ben Potvin</p>
+            </button>
+            <!-- Team group item-->
+            <button class="team-group__item" (click)="selectPerson('Kristen Kuzemko')">
+              <img src="assets/img/team/kristen_kuzemko.png" alt="Kristen Kuzemko" class="team-group__image">
+              <img src="assets/img/team/kristen_kuzemko_photo.png" alt="Kristen Kuzemko" class="team-group__photo">
+              <p class="team-group__name">Kristen Kuzemko</p>
+            </button>
+          </div>
+        </div>
+
+        <!-- Team group -->
+        <div class="team-group">
+          <p class="team-group__title">Intro Video by
+            <a href="https://www.weareformula.com/" target="_blank" class="team-group__title-link">Formula</a>
+          </p>
+        </div>
+    </div>
+  </section>
+
+  <section class="section-science section-science--copyright">
+    <div class="container">
+      <p class="copyright">© Liminal Collective 2021</p>
+    </div>
+  </section>
+</main>
+<app-team-description *ngIf="!!selectedPerson" [person]="selectedPerson" (close)="closeWindow()"></app-team-description>

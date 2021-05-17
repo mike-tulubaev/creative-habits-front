@@ -1,0 +1,48 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% from "templates/components/_header.html" import header %}
+{% from "./templates/components/_icon.html" import icon %}
+
+{% block page_title %}
+		Sui Inspira reveal
+{% endblock %}
+
+{% block page_header %}
+	{{ header(showSound=true, showInfo=true, showMenu=true) }}
+{% endblock %}
+
+{% set pageClass='page-species page-species--reveal page-species--sui-inspira' %}
+{{ header(showSound=true, showInfo=true) }}
+{% block page_content %}
+  <div class="page-species__wrapper">
+    <div class="page-species__bg-container">
+      <img class="page-species__bg" src="images/species/sui_inspira_bg.jpg" alt="">
+    </div>
+    <div class="container page-species__container"></div>
+  </div>
+  <div class="container page-species__reveal-container">
+      <div class="row">
+        <div class="col col--page-species col--sui-inspira-text">
+          <p class="page-species__text">
+             <span class="page-species__text-upper"><span class="page-species__text-italic">S</span>UI INSPI<span class="page-species__text-italic">R</span>A </span>
+            is found in
+            <span class="page-species__text-italic">quiet, enclosed habitats, </span>
+            protected from passersby and
+            <span class="page-species__text-italic">far </span>
+            from other flora and fauna. This unique and magical creative species requires a
+            <span class="page-species__text-italic">predictable environment </span>
+            and has a deeply-rooted bulb that
+            <span class="page-species__text-italic">contains </span>
+            all the nutrients it needs to grow. Because it is so self-sufficient,Sui Inspira is
+            <span class="page-species__text-italic">happy in isolation, </span>
+            diligently growing its intricate, gently-glowing bloom. Those who come across a Sui Inspira in the wild should be
+            <span class="page-species__text-italic">quiet, respectful, </span>
+            and let it bloom in peace.
+          </p>
+        </div>
+      </div>
+      <a href="habits.html" class="page-species__reveal-next-page">
+        {{icon(name="scroll", class="icon--next-page")}}
+      </a>
+    </div>
+{% endblock %}

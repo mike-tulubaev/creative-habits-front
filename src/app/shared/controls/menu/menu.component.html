@@ -1,0 +1,52 @@
+<aside class="left-menu">
+  <div class="container container--menu">
+    <button class="left-menu__close" (click)="close()">
+      <app-icon name="close"></app-icon>
+    </button>
+    <nav class="left-menu__nav">
+      <ul class="left-menu__list">
+        <li class="left-menu__item">
+          <a class="left-menu__link" [routerLink]="['/home']" (click)="close()">Home</a>
+        </li>
+        <li class="left-menu__item">
+          <a class="left-menu__link" [routerLink]="['/science']">Science</a>
+        </li>
+
+        <li class="left-menu__item" *ngIf="!(interviewResult$ | async); else resultsExist">
+          <a
+            class="left-menu__link left-menu__link--button"
+            [routerLink]="['/survey']"
+            >Begin</a
+          >
+        </li>
+
+        <ng-template #resultsExist>
+          <li class="left-menu__item">
+            <a
+              class="left-menu__link left-menu__link--button"
+              [routerLink]="['/profile-reveal']"
+              >My Results</a
+            >
+          </li>
+        </ng-template>
+        <li class="left-menu__item">
+          <button class="left-menu__link left-menu__link--policy" (click)="policyText.style.display = ''">Learn about <br>our data collection policy</button>
+      </li>
+      </ul>
+    </nav>
+    <p class="left-menu__copyright">© Liminal Collective 2021</p>
+    <div class="policy" style="display: none;" #policyText>
+      <button class="policy__close" (click)="policyText.style.display = 'none'">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon">
+          <line y1="-0.5" x2="32.3858" y2="-0.5" transform="matrix(0.710188 0.704012 -0.710188 0.704012 0 1.2002)" stroke="currentColor"></line>
+          <line y1="-0.5" x2="32.3858" y2="-0.5" transform="matrix(-0.710188 0.704012 -0.710188 -0.704012 23 0)" stroke="currentColor"></line>
+        </svg>
+      </button>
+      <div class="policy__wrapper">
+        <h3 class="title title--policy">Data Policy <i class="title__italic">&</i> Terms of Service</h3>
+        <p class="policy__text">This survey is anonymous. Your individual results are for your eyes only unless you chose to share them with others. We do not collect any personally identifiable information about you. We will not sell your data to anyone or use your data target you with ads or sell you things. We will not use your results to deny you a job or a loan or raise your insurance rates. We will store your fully anonymous results in a larger database of results which, along with the analysis code, will be open-sourced to researchers for the the sole purpose of advancing our (society's) collective knowledge of the creative process.  </p>
+        <p class="policy__text">You will receive at the end a unique anonymous ID which will only be used to allow you to return to the site and see your results. Only you will be able to connect that id to you. We will install a few cookies on your computer for the sole purpose of making the site function better for you — for example so we don't show you the introductory video after the first time you arrive on on the site. We do not use those cookies to track your online behavior. Did we mention that we don't track you?</p>
+      </div>
+  </div>
+  </div>
+</aside>

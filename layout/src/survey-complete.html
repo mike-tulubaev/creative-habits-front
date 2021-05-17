@@ -1,0 +1,59 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% block page_title %}
+		Survey - Complete
+{% endblock %}
+
+{% block page_header %}
+	{{ header(showSound=true, showHelp=true, showMenu=false) }}
+{% endblock %}
+
+{% set pageClass='page--survey' %}
+
+{% block page_content %}
+	<div class="container container--survey">
+		<div class="row row--survey">
+			<div class="col col--6 col--question">
+					<div class="question question--row question--disabled">
+						<h1 class="title title--survey question__title">How important to your creative process is it that you spend time outdoors in nature? </h1>
+						<div class="question__wrapper">
+							<div class="question__answer">
+								<input class="question__input" type="radio" name="q26" id="q26-1">
+								<label class="question__label" for="q26-1"><span class="question__text">Unimportant</span></label>
+							</div>
+							<div class="question__answer">
+								<input class="question__input" type="radio" name="q26" id="q26-2">
+								<label class="question__label" for="q26-2"></label>
+							</div>
+							<div class="question__answer">
+								<input class="question__input" type="radio" name="q26" id="q26-3">
+								<label class="question__label" for="q26-3"></label>
+							</div>
+							<div class="question__answer">
+								<input class="question__input" type="radio" name="q26" id="q26-4">
+								<label class="question__label" for="q26-4"></label>
+							</div>
+							<div class="question__answer">
+								<input class="question__input" type="radio" name="q26" id="q26-5">
+								<label class="question__label" for="q26-5"><span class="question__text">Extremely Important</span></label>
+							</div>
+						</div>
+					</div>
+				{% include "./templates/partials/_progress.html" %}
+			</div>
+		</div>
+	</div>
+	<div class="survey-complete">
+		<div class="survey-complete__wrapper">
+			<p class="survey-complete__text">
+					Your answers make up the unique DNA of your creative being. Although no two people share the exact same set of creative habits, we do all fit into one of Seven Creative Species
+			</p>
+			<a href="#" class="button button--same-font-hover button--complete">See what bloomed</a>
+		</div>
+		<!--<img class="survey-complete__animation" src="images/survey/seed-animation.gif" alt="">-->
+    <video class="survey-complete__video" preload="auto" autoplay="true" muted="muted">
+      <source src="video/complete.mp4" type='video/mp4' />
+    </video>
+		<button class="survey-complete__return">Wait, I’m not done</button>
+	</div>
+{% endblock %}

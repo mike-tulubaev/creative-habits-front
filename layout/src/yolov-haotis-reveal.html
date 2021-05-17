@@ -1,0 +1,50 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% from "templates/components/_header.html" import header %}
+{% from "./templates/components/_icon.html" import icon %}
+
+{% block page_title %}
+		Yolov Haotis reveal
+{% endblock %}
+
+{% block page_header %}
+	{{ header(showSound=true, showInfo=true, showMenu=true, darkRightSide=true) }}
+{% endblock %}
+
+{% set pageClass='page-species page-species--reveal page-species--reveal-light-gradient page-species--yolov-haotis' %}
+{{ header(showSound=true, showInfo=true) }}
+{% block page_content %}
+  <div class="page-species__wrapper">
+    <div class="page-species__bg-container">
+      <img class="page-species__bg" src="images/species/yolo_haotis_bg.jpg" alt="">
+    </div>
+    <div class="container page-species__container"></div>
+  </div>
+  <div class="container page-species__reveal-container">
+      <div class="row">
+        <div class="col col--page-species col--yolov-haotis--text">
+          <p class="page-species__text">
+            <span class="page-species__text-upper">YOL<span class="page-species__text-italic">O C</span>HAOTIS </span>
+            is best known for its many,
+            <span class="page-species__text-italic">varied, and sometimes wild </span>
+            thickets of bright flowers. A
+            <span class="page-species__text-italic">novelty-seeker </span>
+            like Novo Gregarious, this creative species thrives in mountain streams, where the
+            <span class="page-species__text-italic">current </span>
+            can carry it to
+            <span class="page-species__text-italic">new and changing environments. </span>
+            Unlike Socialis Adventurous, which draws nutrients from its environment, Yolo Chaotis has all it needs to thrive
+            <span class="page-species__text-italic">contained within </span>
+            its bulb, and will spread its energy
+            <span class="page-species__text-italic">across many new </span>
+            flowers at once, even if conditions aren’t perfect. Since Yolo Chaotis is
+            <span class="page-species__text-italic">inwardly-energized, </span>
+            in the right conditions the careful observer may even see a subtle glow emanating from deep inside this special creative species.
+          </p>
+        </div>
+      </div>
+      <a href="habits.html" class="page-species__reveal-next-page page-species__reveal-next-page--dark">
+        {{icon(name="scroll", class="icon--next-page")}}
+      </a>
+    </div>
+{% endblock %}

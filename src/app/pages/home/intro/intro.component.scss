@@ -1,0 +1,62 @@
+@import '../../../../styles/variables.scss';
+
+:host {
+	display: flex;
+	flex-grow: 1;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.player {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background: black;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	overflow: hidden;
+}
+
+.play-video {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	z-index: 1;
+	margin-bottom: 40px;
+
+  //.play-video__button
+  &__button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 71px;
+		height: 71px;
+		margin-bottom: 11px;
+		padding: 0;
+		background-color: $color-transparent;
+		border: 1px solid $color-yellow;
+		border-radius: 50px;
+		color: $color-yellow;
+
+		&:hover {
+			background-color: $color-yellow;
+			color: $color-dark-gray;
+		}
+  }
+
+  //.play-video__title
+  &__title {
+		margin-bottom: 0;
+		font-family: $font-gt-light;
+		font-size: 12px;
+		line-height: 22px;
+  }
+}

@@ -1,0 +1,28 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% from "./templates/components/_icon.html" import icon %}
+
+{% block page_title %}
+		Home - step 3
+{% endblock %}
+
+{% block page_header %}
+	{{ header() }}
+{% endblock %}
+
+{% set pageClass='page--home' %}
+
+{% block page_content %}
+	<div class="container container--home-step3">
+		<div class="row row--home-step3">
+			<div class="col col--6 col--offset-1">			
+				<p><span class="title title--home-step3">Eve<i class="title__italic">r</i>yone  <i class="title__italic">is</i> <i class="title__italic mr-5">c</i>reative,</span><br>
+					not just artists and musicians, writers and designers. No matter who you are or what you do, identifying, cultivating, and growing your creative self can benefit every part of your life. </p>
+				<p>The Creative Landscape survey is designed to help you better understand your own creative habits and share some insight into the habits of others. There are limitless ways to achieve your creative potential if you know what works for you. So, put on your gardening clothes and break out the shovel, it’s time to dig into what makes you creative.</p>
+			</div>
+			<div class="col col--5">
+				<a href="index.html" class="button button--home-step3">Begin</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}

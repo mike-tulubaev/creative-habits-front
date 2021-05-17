@@ -1,0 +1,47 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% from "templates/components/_header.html" import header %}
+{% from "./templates/components/_icon.html" import icon %}
+
+{% block page_title %}
+  Lanscape
+{% endblock %}
+
+{% block page_header %}
+  {{ header(showSound=true, showInfo=true, showMenu=true) }}
+{% endblock %}
+
+{% set pageClass='page--landscape-intro' %}
+{% set bodyClass = '' %}
+
+{% block page_content %}
+  <div class="landscape-intro">
+    <img src="images/landscape/map/map.png" alt="" class="landscape-intro__image">
+    <div class="container">
+      <div class="row">
+        <div class="col col--landscape-intro">
+          <h1 class="landscape-intro__title">Explore the habitats of the
+            <span class="landscape-intro__title-italic">Seven Creative Species.</span></h1>
+          <p class="landscape-intro__text">As in the natural world, each species thrives in some environments and struggles in others; some prefer calm, quiet alcoves, and others, bustling and social meadows. Some root deep for creative nutrients while others glide on the wind, seeking new experiences.</p>
+          <p class="landscape-intro__text">Ready to find your habitat?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+
+{% block page_after %}
+	<div class="cover cover--black">
+			<button class="cover__close">
+				{{ icon(name="close") }}
+			</button>
+			<div class="cover__wrapper">
+        <h4 class="page-species__info-title">Headline</h4>
+        <p class="page-species__info-text">Your answers make up the unique DNA of your creative being. Although no two people share the exact same set of creative habits, we do all fit into one of seven Creative Species, each thriving in some environments and struggling in others. </p>
+        <p class="page-species__info-text">These seven Creative Species were determined by broad patterns among ten thousand people. The Creative Species assigned to you is a function of how your unique combination of creative habits and preferences map onto the defining ones of the Seven Species. However, keep in mind that one or more of your preferences may differ completely from those most associated with your type. This is true in nature as well - even though they still can be grouped into species, every individual organism within a species is unique.</p>
+        <p class="page-species__info-text">Click here to read more about the scientific background of this project. </p>
+			</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% block page_title %}
+		Survey - Q26
+{% endblock %}
+
+{% block page_header %}
+	{{ header(showSound=true, showHelp=true, showMenu=false) }}
+{% endblock %}
+
+{% set pageClass='page--survey' %}
+
+{% block page_content %}
+	<div class="container container--survey">
+		<div class="row row--survey">
+			<div class="col col--6 col--question">
+        <div class="question question--row">
+          <h1 class="title title--survey question__title">
+            If you could choose, what time of day do you prefer to do creative work?
+            <span class="question__subtitle">(pick one)</span>
+          </h1>
+          <div class="question__wrapper">
+            <div class="question__answer">
+              <input class="question__input" type="radio" name="q25" id="q25-1">
+              <label class="question__label" for="q25-1"><span class="question__text">Early <br>Morning</span></label>
+            </div>
+            <div class="question__answer">
+              <input class="question__input" type="radio" name="q25" id="q25-2">
+              <label class="question__label" for="q25-2"><span class="question__text">Midday</span></label>
+            </div>
+            <div class="question__answer">
+              <input class="question__input" type="radio" name="q25" id="q25-3">
+              <label class="question__label" for="q25-3"><span class="question__text">Afternoon</span></label>
+            </div>
+            <div class="question__answer">
+              <input class="question__input" type="radio" name="q25" id="q25-4">
+              <label class="question__label" for="q25-4"><span class="question__text">Late Night</span></label>
+            </div>
+            <div class="question__answer">
+              <input class="question__input" type="radio" name="q25" id="q25-5">
+              <label class="question__label" for="q25-5"><span class="question__text">It Varies/ No Preference</span></label>
+            </div>
+          </div>
+        </div>
+				{% include "./templates/partials/_progress.html" %}
+			</div>
+			<div class="col col--6 d-flex-col">
+				<div class="seed-animation">
+					<img src="images/survey/seed26.png" alt="" class="seed-animation__image">
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

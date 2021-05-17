@@ -1,0 +1,50 @@
+.policy {
+  position: fixed;
+  z-index: 10001;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 32px;
+  background-color: rgba($color-yellow, .95);
+  transition: opacity 1s;
+  overflow-y: auto;
+
+  //.policy__close
+  &__close {
+    position: fixed;
+    top: 38px;
+    right: calc(50% - 680px);
+    width: 28px;
+    height: 28px;
+    padding: 2px;
+    background-color: $color-transparent;
+    border-width: 0;
+    color: $color-dark-gray;
+
+		@media (max-width: 1440px){
+			right: 41px;
+		}
+  }
+
+	//.policy__wrapper
+	&__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+		width: 100%;
+    min-height: 100%;
+		max-width: 425px;
+		margin: 0 auto;
+    padding-bottom: 30px;
+		color: $color-dark-gray;
+	}
+
+	//.policy__text
+	&__text {
+		margin-bottom: 22px;
+		font-family: $font-gt-regular;
+		font-size: 14px;
+		line-height: 20px;
+	}
+}

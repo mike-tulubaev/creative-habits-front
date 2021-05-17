@@ -1,0 +1,33 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% from "templates/components/_header.html" import header %}
+{% from "./templates/components/_icon.html" import icon %}
+
+{% block page_title %}
+  Habits
+{% endblock %}
+
+{% block page_header %}
+  {{ header(showSound=true, showInfo=true, showMenu=true) }}
+{% endblock %}
+
+{% set pageClass='page-species page-species--reveal page-species--mono-routinus page--habits' %}
+{{ header(showSound=true, showInfo=true) }}
+{% block page_content %}
+  <div class="page-species__wrapper">
+    <div class="page-species__bg-container">
+      <img class="page-species__bg" src="images/species/mono_routinus_bg.jpg" alt="">
+    </div>
+    <div class="container page-species__container"></div>
+  </div>
+  <div class="container page-species__reveal-container page-habits__container">
+    <div class="row">
+      <div class="col col--page-habits">
+        <p class="page-habits__final-text page-habits__final-text--italic">Diggin deeper...</p>
+        <p class="page-habits__final-text">Creative beings in this species can make the most of their talents by opening up to ideas and environments that would otherwise make them uncomfortable, because the most original ideas often seem risky, and new experiences can lead to new thoughts.</p>
+      </div>
+      <a href="habits.html" class="page-species__reveal-next-page">
+        {{icon(name="scroll", class="icon--next-page")}}
+      </a>
+    </div>
+  {% endblock %}

@@ -1,0 +1,75 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% from "templates/components/_header.html" import header %}
+{% from "./templates/components/_icon.html" import icon %}
+
+{% block page_title %}
+		Habits
+{% endblock %}
+
+{% block page_header %}
+	{{ header(showSound=true, showInfo=true, showMenu=true) }}
+{% endblock %}
+
+{% set pageClass='page-species page-species--reveal page-species--mono-routinus page--habits' %}
+{{ header(showSound=true, showInfo=true) }}
+{% block page_content %}
+  <div class="page-species__wrapper">
+    <div class="page-species__bg-container">
+      <img class="page-species__bg" src="images/species/mono_routinus_bg.jpg" alt="">
+    </div>
+    <div class="container page-species__container"></div>
+  </div>
+  <div class="container page-species__reveal-container page-habits__container">
+      <div class="row">
+        <div class="col col--page-habits">
+            <p class="page-habits__big-text">Your creative habits share a 75% affinity with Mono Routinus. See where your creative habits overlap.</p>
+            <div class="page-habits__tabs">
+              <button class="page-habits__tab page-habits__tab--active">Mono Routinus</button>
+              <button class="page-habits__tab">You</button>
+            </div>
+            <div class="page-habits__content-box">
+              <div class="page-habits__content page-habits__content--active">
+                <button class="page-habits__button page-habits__button--double-border">Dislike Distractions</button>
+                <button class="page-habits__button page-habits__button--disabled" disabled>Pragmatist</button>
+                <button class="page-habits__button page-habits__button--double-border">Risk-Averse</button>
+                <button class="page-habits__button page-habits__button--double-border">Solo Creator</button>
+                <button class="page-habits__button page-habits__button--double-border">Non-Kinetic</button>
+                <button class="page-habits__button page-habits__button--double-border">Routine-Seeker</button>
+                <button class="page-habits__button page-habits__button--double-border">Monotasker</button>
+                <button class="page-habits__button page-habits__button--disabled" disabled>Reframer</button>
+                <button class="page-habits__button page-habits__button--double-border">Make It Happen</button>
+                <button class="page-habits__button page-habits__button--double-border">Private</button>
+                <button class="page-habits__button page-habits__button--double-border">Externally Motivated</button>
+                <button class="page-habits__button page-habits__button--disabled" disabled>Night Owl</button>
+                <button class="page-habits__button">Stimulated by Constraints</button>
+                <button class="page-habits__button">Rational</button>
+                <button class="page-habits__button">Slow-Paced</button>
+                <button class="page-habits__button">Nature-Agnostic</button>
+              </div>
+              <div class="page-habits__content">
+                <button class="page-habits__button page-habits__button--double-border">Dislike Distractions</button>
+                <button class="page-habits__button page-habits__button--disabled" disabled>Pragmatist</button>
+                <button class="page-habits__button page-habits__button--double-border">Risk-Averse</button>
+                <button class="page-habits__button page-habits__button--double-border">Solo Creator</button>
+                <button class="page-habits__button page-habits__button--double-border">Non-Kinetic</button>
+                <button class="page-habits__button page-habits__button--double-border">Routine-Seeker</button>
+                <button class="page-habits__button page-habits__button--double-border">Monotasker</button>
+                <button class="page-habits__button page-habits__button--disabled" disabled>Reframer</button>
+                <button class="page-habits__button page-habits__button--double-border">Make It Happen</button>
+                <button class="page-habits__button page-habits__button--double-border">Private</button>
+                <button class="page-habits__button page-habits__button--double-border">Externally Motivated</button>
+                <button class="page-habits__button page-habits__button--disabled" disabled>Night Owl</button>
+                <button class="page-habits__button">Stimulated by Constraints</button>
+                <button class="page-habits__button">Rational</button>
+                <button class="page-habits__button">Slow-Paced</button>
+                <button class="page-habits__button">Nature-Agnostic</button>
+              </div>
+            </div>
+        </div>
+      </div>
+      <a href="habits.html" class="page-species__reveal-next-page">
+        {{icon(name="scroll", class="icon--next-page")}}
+      </a>
+    </div>
+{% endblock %}

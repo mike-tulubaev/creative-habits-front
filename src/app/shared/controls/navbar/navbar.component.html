@@ -1,0 +1,20 @@
+<header class="header container" [class.header--dark]="darkModeClass$ | async" *ngIf="currentNavbarSet.showNavbar" [class.header--right-placeholder] = "currentNavbarSet.rightPlaceholder">
+  <button class="header__button header__button--burger" (click)="showMenu()">
+    <app-icon name="burger"></app-icon>
+  </button>
+
+  <app-navbar-menu [isDarkMode]="darkModeClass$" *ngIf="currentNavbarSet.menu"></app-navbar-menu>
+
+  <button *ngIf="currentNavbarSet.audio" class="header__button header__button--audio audio-button" [class.audio-button--disabled]="!isAudioEnabled" (click)="toggleAudio()">
+    <app-icon name="audio"></app-icon>
+    <audio [src]="audioSource$ | async" loop #audio></audio>
+  </button>
+
+  <button *ngIf="currentNavbarSet.profileInfo" class="header__button header__button--info" (click)="showProfileRevealInfo()">
+    <app-icon name="info"></app-icon>
+  </button>
+
+  <button *ngIf="currentNavbarSet.surveyFAQ" class="header__button header__button--help" (click)="showServeqFAQ()">
+    <app-icon name="question"></app-icon>
+  </button>
+</header>

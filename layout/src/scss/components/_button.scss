@@ -1,0 +1,92 @@
+.button {
+  display: inline-block;
+  padding: 5px 40px 7px;
+  border: 1px solid $color-yellow;
+  border-radius: 100px;
+  font-family: $font-mi-roman;
+  font-size: 30px;
+  line-height: 1.8;
+  color: $color-yellow;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+
+  &:hover {
+    font-family: $font-mi-italic;
+    background-color: $color-yellow;
+    color: $color-dark-gray;
+  }
+
+  //.button__italic
+  &__italic {
+    font-family: $font-mi-italic;
+  }
+
+  //.button--same-font-hover
+  &--same-font-hover {
+    &:hover {
+      font-family: $font-mi-roman;
+    }
+  }
+
+  //.button--block
+  &--block {
+    display: block;
+    width: 100%;
+  }
+
+  //.button--home-step3
+  &--home-step3 {
+    display: block;
+    width: 100%;
+    max-width: 318px;
+    margin: 0 auto;
+  }
+
+  //.button--science-results
+  &--science-results {
+    display: block;
+    width: 100%;
+    max-width: 318px;
+    margin: 65px auto 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-color: $color-dark-gray;
+    color: $color-dark-gray;
+
+    &:hover {
+      background-color: $color-dark-gray;
+      color: $color-yellow;
+      word-spacing: 9px;
+    }
+  }
+
+  //.button--complete
+  &--complete {
+    width: 100%;
+    max-width: 518px;
+  }
+
+  //.button--rare-breed
+  &--rare-breed {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  //.button--plant-more
+  &--plant-more {
+    min-width: 137px;
+    padding: 13px 5px 14px;
+    font-family: $font-gt-light;
+    font-size: 12px;
+    line-height: 17px;
+    text-transform: none;
+
+    &:hover {
+      font-size: 12px;
+      line-height: 17px;
+      background-color: $color-yellow;
+      color: $color-dark-gray;
+    }
+  }
+}

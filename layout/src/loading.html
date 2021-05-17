@@ -1,0 +1,33 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% from "./templates/components/_icon.html" import icon %}
+
+{% block page_title %}
+		Loading
+{% endblock %}
+
+{% block page_header %}{% endblock %}
+
+{% set pageClass='page--intro' %}
+
+{% block page_content %}
+		<div class="container container--intro intro intro--loading">
+				<div class="wrapper wrapper--intro">
+						<h1 class="title title--intro">
+								This website is best 
+								<br>
+								experienced with sound.
+						</h1>
+						<div class="intro__icons">
+							{{ icon(name="headphones", class="icon--loading-headphones") }}
+							{{ icon(name="airpods", class="icon--loading-airpods") }}
+						</div>
+						<p class="intro__text">Loading...</p>
+				</div>
+				<p class="copyright">© Liminal Collective 2021</p>
+				<img src="images/intro/img1.png" alt="" class="intro__image intro__image--1">
+				<img src="images/intro/img2.png" alt="" class="intro__image intro__image--2">
+				<img src="images/intro/img3.png" alt="" class="intro__image intro__image--3">
+				<img src="images/intro/img4.png" alt="" class="intro__image intro__image--4">
+		</div>
+{% endblock %}

@@ -1,0 +1,125 @@
+<main class="page page-species page-species--reveal page-habits page-habits--landscape page--habits-landscape" [class]="pageClasses$ | async">
+  <div class="page-species__wrapper">
+    <div class="page-species__bg-container">
+      <video class="page-species__bg" preload="auto" autoplay="true" muted="muted" loop [src]="pageBackground$ | async" type='video/mp4'>
+      </video>
+    </div>
+    <div class="container page-species__container"></div>
+  </div>
+  <div class="page__scroll-wrapper">
+  <div class="container page-habits__container">
+    <div class="row">
+
+      <div class="col col--habits-landscape">
+        <div class="page-habits__wrapper">
+
+          <app-species-description [cluster]="selectedCluster$ | async"></app-species-description>
+          <div class="page-habits__content page-habits__content--active">
+            <button
+              *ngFor="let habit of clusterHabits$ | async"
+              class="page-habits__button"
+              [class.page-habits__button--double-border]="(sharedHabits$ | async)?.includes(habit)"
+              (click)="showHabbitDetails(habit)">
+              {{ habit }}
+            </button>
+          </div>
+        </div>
+        <!-- Plant links -->
+        <div class="page-habits__wrapper page-habits__wrapper--links" *ngIf="selectedCluster$ | async as selectedCluster">
+          <button
+            (click)="goToMap()"
+            class="link-to-map link-to-map--plant-links"
+            [class.link-to-map--white]="darkModeClass$ | async"
+          >
+            <app-icon name="mountain" class="icon--mountain"></app-icon> Back to Map
+          </button>
+          <div (click)="selectCluster(creativeSpeciesEnum.MONO_ROUTINUS)" class="plant-link plant-link--mono-routinus" [class.plant-link--active]="selectedCluster === creativeSpeciesEnum.MONO_ROUTINUS">
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/mono_routinus_white.webp">
+              <img appCache="/assets/img/landscape/plants/mono_routinus_white.png" class="plant-link__image plant-link__image--white" src="/assets/img/landscape/plants/mono_routinus_white.png" alt="">
+            </picture>
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/mono_routinus.webp">
+              <img appCache="/assets/img/landscape/plants/mono_routinus.png" class="plant-link__image plant-link__image--color" src="/assets/img/landscape/plants/mono_routinus.png" alt="">
+            </picture>
+          </div>
+
+          <div (click)="selectCluster(creativeSpeciesEnum.YOLO_CHAOTIS)" class="plant-link plant-link--yolo-chaotis" [class.plant-link--active]="selectedCluster === creativeSpeciesEnum.YOLO_CHAOTIS">
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/yolo_chaotis_white.webp">
+              <img appCache="/assets/img/landscape/plants/yolo_chaotis_white.png" class="plant-link__image plant-link__image--white" src="/assets/img/landscape/plants/yolo_chaotis_white.png" alt="">
+            </picture>
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/yolo_chaotis.webp">
+              <img appCache="/assets/img/landscape/plants/yolo_chaotis.png" class="plant-link__image plant-link__image--color" src="/assets/img/landscape/plants/yolo_chaotis.png" alt="">
+            </picture>
+          </div>
+
+          <div (click)="selectCluster(creativeSpeciesEnum.SOCIALIS_ADVENTUROUS)" class="plant-link plant-link--socialis-adventurous" [class.plant-link--active]="selectedCluster === creativeSpeciesEnum.SOCIALIS_ADVENTUROUS">
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/socialis_adventurous_white.webp">
+              <img appCache="/assets/img/landscape/plants/socialis_adventurous_white.png" class="plant-link__image plant-link__image--white" src="/assets/img/landscape/plants/socialis_adventurous_white.png" alt="">
+            </picture>
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/socialis_adventurous.webp">
+              <img appCache="/assets/img/landscape/plants/socialis_adventurous.png" class="plant-link__image plant-link__image--color" src="/assets/img/landscape/plants/socialis_adventurous.png" alt="">
+            </picture>
+          </div>
+
+          <div (click)="selectCluster(creativeSpeciesEnum.FOCUS_MONONOVOUS)" class="plant-link plant-link--focus-mononovous" [class.plant-link--active]="selectedCluster === creativeSpeciesEnum.FOCUS_MONONOVOUS">
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/focus_mononovous_white.webp">
+              <img appCache="/assets/img/landscape/plants/focus_mononovous_white.png" class="plant-link__image plant-link__image--white" src="/assets/img/landscape/plants/focus_mononovous_white.png" alt="">
+            </picture>
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/focus_mononovous.webp">
+              <img appCache="/assets/img/landscape/plants/focus_mononovous.png" class="plant-link__image plant-link__image--color" src="/assets/img/landscape/plants/focus_mononovous.png" alt="">
+            </picture>
+          </div>
+
+          <div (click)="selectCluster(creativeSpeciesEnum.NOVO_GREGARIOUS)" class="plant-link plant-link--novo-gregarious" [class.plant-link--active]="selectedCluster === creativeSpeciesEnum.NOVO_GREGARIOUS">
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/novo_gregarious_white.webp">
+              <img appCache="/assets/img/landscape/plants/novo_gregarious_white.png" class="plant-link__image plant-link__image--white" src="/assets/img/landscape/plants/novo_gregarious_white.png" alt="">
+            </picture>
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/novo_gregarious.webp">
+              <img appCache="/assets/img/landscape/plants/novo_gregarious.png" class="plant-link__image plant-link__image--color" src="/assets/img/landscape/plants/novo_gregarious.png" alt="">
+            </picture>
+          </div>
+
+          <div (click)="selectCluster(creativeSpeciesEnum.SUI_INSPIRA)" class="plant-link plant-link--sui-inspira" [class.plant-link--active]="selectedCluster === creativeSpeciesEnum.SUI_INSPIRA">
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/sui_inspira_white.webp">
+              <img appCache="/assets/img/landscape/plants/sui_inspira_white.png" class="plant-link__image plant-link__image--white" src="/assets/img/landscape/plants/sui_inspira_white.png" alt="">
+            </picture>
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/sui_inspira.webp">
+              <img appCache="/assets/img/landscape/plants/sui_inspira.png" class="plant-link__image plant-link__image--color" src="/assets/img/landscape/plants/sui_inspira.png" alt="">
+            </picture>
+          </div>
+
+          <div (click)="selectCluster(creativeSpeciesEnum.SOLO_NOCTUS)" class="plant-link plant-link--solo-noctus" [class.plant-link--active]="selectedCluster === creativeSpeciesEnum.SOLO_NOCTUS">
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/solo_noctus_white.webp">
+              <img appCache="/assets/img/landscape/plants/solo_noctus_white.png" class="plant-link__image plant-link__image--white" src="/assets/img/landscape/plants/solo_noctus_white.png" alt="">
+            </picture>
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/plants/solo_noctus.webp">
+              <img appCache="/assets/img/landscape/plants/solo_noctus.png" class="plant-link__image plant-link__image--color" src="/assets/img/landscape/plants/solo_noctus.png" alt="">
+            </picture>
+          </div>
+
+          <a [routerLink]="['/science']" class="plant-link plant-link--science">
+            <picture>
+              <source type="image/webp" srcset="/assets/img/landscape/science.webp">
+              <img appCache="/assets/img/landscape/science.png" class="plant-link__image plant-link__image--color" src="/assets/img/landscape/science.png" alt="">
+            </picture>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</main>
+<app-habit-description *ngIf="!!selectedHabit" [habit]="selectedHabit" (close)="closeHabitDetails()" @waitChildAnimation></app-habit-description>

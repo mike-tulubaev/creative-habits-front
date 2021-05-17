@@ -1,0 +1,37 @@
+<div class="progress">
+  <nav class="progress__nav" *ngIf="interview | async as interviewState">
+    <a 
+      class="progress__button progress__button--prev"
+      [routerLink]="currentIndex && currentIndex > 1 ? ['/survey', currentIndex - 1] : []"
+    >
+      <app-icon name="scroll" class="icon--question-prev"></app-icon>
+    </a>
+    <ul class="progress__list">
+      <li
+        *ngFor="let question of questions | async; index as i"
+        class="progress__item"
+      >
+        <a
+          [routerLink]="['/survey', i + 1]"
+          routerLinkActive=" progress__bullet--current"
+          class="progress__bullet"
+          [ngClass]="{
+            'progress__bullet--completed':
+              question &&
+              interviewState &&
+              !!interviewState.answers[question.text],
+            'progress__bullet--skipped':
+              interviewState.showMissed &&
+              !interviewState.answers[question.text]
+          }"
+        ></a>
+      </li>
+    </ul>
+    <a
+      class="progress__button progress__button--next"
+      [routerLink]="currentIndex && currentIndex < interviewState.numOfQuestions ? ['/survey', currentIndex + 1] : []"
+    >
+      <app-icon name="scroll" class="icon--question-next"></app-icon>
+    </a>
+  </nav>
+</div>

@@ -1,0 +1,34 @@
+.landscape-intro {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+
+  &__image {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    max-height: 100%;
+    transform: translateX(380px);
+  }
+
+  &__title {
+    margin-bottom: 60px;
+    font-size: 22px;
+    line-height: 31px;
+    letter-spacing: -0.01em;
+  }
+
+  &__title-italic {
+    display: block;
+    font-family: $font-mi-italic;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    font-family: $font-gt-light;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+  }
+}

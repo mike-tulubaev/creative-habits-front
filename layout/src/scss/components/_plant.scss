@@ -1,0 +1,243 @@
+.plant {
+  position: absolute;
+  bottom: 32%;
+  left: 39%;
+  width: 10vw;
+  height: 17.5vw;
+  transform: translate(-50%, 50%);
+
+  &--focus-mononovous {
+    bottom: 58%;
+    left: 51%;
+    width: 5vw;
+    height: 5vw * 1.74;
+  }
+
+  &--solo-noctus {
+    bottom: 73%;
+    left: 30%;
+    width: 5vw;
+    height: 5vw * 1.78;
+  }
+
+  &--sui-inspira {
+    bottom: 63%;
+    left: 41%;
+    width: 5vw;
+    height: 5vw * 2.22;
+  }
+
+  &--mono-routinus {
+    bottom: 38%;
+    left: 36%;
+    width: 5vw;
+    height: 5vw * 3.45;
+  }
+
+  &--novo-gregarious {
+    bottom: 35%;
+    left: 75%;
+    width: 16vw;
+    height: 16vw * 0.56;
+  }
+
+  &--yolo-chaotis {
+    bottom: 78%;
+    left: 57%;
+    width: 5vw;
+    height: 5vw * 1.7;
+  }
+
+  &--socialis-adventurous {
+    top: 29%;
+    left: 66%;
+    width: 11vw;
+    height: 11vw * 0.55;
+  }
+
+  &__image {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    transform: translate(-50%, 50%);
+
+    &--white {
+      opacity: 1;
+
+      .plant:hover & {
+        opacity: 0;
+      }
+
+      .plant--single & {
+        opacity: 0;
+      }
+    }
+
+    &--color {
+      opacity: 0;
+
+      .plant:hover & {
+        opacity: 1;
+      }
+
+      .plant--single & {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__text-wrapper {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    font-size: 12px;
+
+    .plant:hover & {
+      display: block;
+    }
+
+    .plant--single & {
+      display: block;
+    }
+
+    .plant--focus-mononovous & {
+      width: 421px;
+      padding-left: 104px;
+    }
+
+    .plant--solo-noctus & {
+      width: 351px;
+      padding-left: 30px;
+    }
+
+    .plant--sui-inspira & {
+      width: 366px;
+      padding-left: 55px;
+    }
+
+    .plant--mono-routinus & {
+      top: auto;
+      bottom: 100%;
+      left: 50%;
+      width: 327px;
+      transform: translateX(-50%);
+    }
+
+    .plant--socialis-adventurous & {
+      top: -100px;
+      width: 311px;
+      padding-left: 0;
+    }
+
+    .plant--yolo-chaotis & {
+      width: 341px;
+      padding-left: 30px;
+    }
+
+    .plant--novo-gregarious & {
+      top: auto;
+      bottom: 100%;
+      left: 25%;
+      width: 327px;
+      padding-bottom: 44px;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    font-family: $font-mi-roman;
+    font-size: 22px;
+    line-height: 31px;
+    letter-spacing: -0.01em;
+  }
+
+  &__text-name {
+    display: block;
+    text-transform: uppercase;
+  }
+
+  &__text-italic {
+    font-family: $font-mi-italic;
+  }
+
+  &__proportion-list {
+    display: flex;
+    margin: 0 -10px 30px;
+  }
+
+  &__proportion {
+    width: 100%;
+    max-width: 50%;
+    margin: 0 10px;
+    padding-top: 6px;
+    border-top: 1px solid rgba($color-yellow, 0.35);
+    font-family: $font-gt-light;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+  }
+
+  &__arrow-wrapper {
+    position: absolute;
+    display: none;
+    width: 256px;
+
+    .plant--mode-data:hover & {
+      display: flex;
+    }
+
+    .plant--solo-noctus & {
+      bottom: -37%;
+    right: 145%;
+    }
+
+    .plant--focus-mononovous & {
+      bottom: 42%;
+    right: 141%;
+    }
+
+    .plant--sui-inspira & {
+      bottom: 40%;
+    right: 151%;
+    }
+
+    .plant--mono-routinus & {
+      bottom: 40%;
+      right: 131%;
+    }
+
+    .plant--socialis-adventurous & {
+      bottom: -89%;
+    right: 51%;
+    }
+
+    .plant--yolo-chaotis & {
+      bottom: -20%;
+    right: 91%;
+    }
+
+    .plant--novo-gregarious & {
+      bottom: -11%;
+    right: 61%;
+    }
+  }
+
+  &__arrow-text {
+    margin-bottom: 0;
+    font-size: 22px;
+    line-height: 31px;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+
+  &__arrow {
+    margin-top: 20px;
+    margin-left: 15px;
+  }
+}

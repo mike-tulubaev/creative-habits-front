@@ -1,0 +1,27 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% from "./templates/components/_icon.html" import icon %}
+
+{% block page_title %}
+		Home
+{% endblock %}
+
+{% block page_header %}
+	{{ header() }}
+{% endblock %}
+
+{% set pageClass='page--home page--home-step1' %}
+
+{% block page_content %}
+	<div class="container container--home-step1">
+		<div class="wrapper wrapper--home-step1">
+      <img src="images/home/title.svg" alt="" class="img-title">
+		</div>
+			<div class="play-video">
+				<button class="play-video__button">
+					{{ icon(name="scroll", class="icon--play-video") }}
+				</button>
+				<p class="play-video__title">Play Video</p>
+			</div>
+	</div>
+{% endblock %}

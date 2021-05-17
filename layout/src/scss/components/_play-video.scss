@@ -1,0 +1,33 @@
+.play-video {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+  //.play-video__button
+  &__button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 71px;
+		height: 71px;
+		margin-bottom: 11px;
+		padding: 0;
+		background-color: $color-transparent;
+		border: 1px solid $color-yellow;
+		border-radius: 50px;
+		color: $color-yellow;
+
+		&:hover {
+			background-color: $color-yellow;
+			color: $color-dark-gray;
+		}
+  }
+
+  //.play-video__title
+  &__title {
+		margin-bottom: 0;
+		font-family: $font-gt-light;
+		font-size: 12px;
+		line-height: 22px;
+  }
+}

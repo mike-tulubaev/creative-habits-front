@@ -1,0 +1,46 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% from "templates/components/_header.html" import header %}
+{% from "./templates/components/_icon.html" import icon %}
+
+{% block page_title %}
+		Focus Mononovous reveal
+{% endblock %}
+
+{% block page_header %}
+	{{ header(showSound=true, showInfo=true, showMenu=true, darkRightSide=true) }}
+{% endblock %}
+
+{% set pageClass='page-species page-species--reveal page-species--reveal-light-gradient page-species--focus-mononovous' %}
+{{ header(showSound=true, showInfo=true) }}
+{% block page_content %}
+  <div class="page-species__wrapper">
+    <div class="page-species__bg-container">
+      <img class="page-species__bg" src="images/species/focus_mononovous_bg.jpg" alt="">
+    </div>
+    <div class="container page-species__container"></div>
+  </div>
+  <div class="container page-species__reveal-container">
+      <div class="row">
+        <div class="col col--page-species col--focus-mononovous-text">
+          <p class="page-species__text">
+            <span class="page-species__text-upper">FOCUS MONONOVOUS </span>
+            is a
+            <span class="page-species__text-italic">detailed and dignified </span>
+            creative species that, like Novo Gregarious, travels streams and rivers in search of
+            <span class="page-species__text-italic">novel, unconstrained environments. Single-minded and precise, </span>
+            Focus Mononovous requires
+            <span class="page-species__text-italic">calm and quiet </span>
+            to focus its energy into growing a colorful, perfectly-formed bloom. Although many creative species can thrive in indoor environments, Focus Mononovous grows best in the wild,
+            <span class="page-species__text-italic">unconstrained and free. </span>
+            Those who find a Focus Mononovous in the wild should be careful
+            <span class="page-species__text-italic">not to distract it, </span>
+            otherwise it may have to start its flowering process over again.
+          </p>
+        </div>
+      </div>
+      <a href="habits.html" class="page-species__reveal-next-page page-species__reveal-next-page--dark">
+        {{icon(name="scroll", class="icon--next-page")}}
+      </a>
+    </div>
+{% endblock %}

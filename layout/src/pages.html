@@ -1,0 +1,107 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% from "./templates/components/_icon.html" import icon %}
+
+{% block page_title %}
+		Pages list
+{% endblock %}
+
+{% block page_header %}
+	{{ header(showSound=true, showHelp=true, showMenu=true) }}
+{% endblock %}
+
+{% set pageClass='page--home' %}
+
+{% block page_content %}
+	<div class="container d-flex" style="flex-grow: 1; justify-content: center; align-items: center; z-index:10; font-size: 14px">
+		<nav class="page-nav" style="display: flex; align-items: flex-start;">
+			<ul>
+				<li>-------- Home & Survey --------<br><br></li>
+
+				<li><a href="index.html" target="_blank">Home</a></li>
+				<li><a href="index-step2.html" target="_blank">Home Step 2</a></li>
+				<li><a href="index-step3.html" target="_blank">Home Step 3</a></li>
+				<li><br><a href="survey-q1.html" target="_blank">Survey Q1</a></li>
+				<li><a href="survey-q19.html" target="_blank">Survey Q19</a></li>
+				<li><a href="survey-q25.html" target="_blank">Survey Q25</a></li>
+				<li><a href="survey-missed-question.html" target="_blank">Survey Missed questions</a></li>
+				<li><a href="survey-complete.html" target="_blank">Survey Complete</a></li>
+				<li><a href="survey-faq.html" target="_blank">Survey Faq</a></li>
+				<li><br><a href="login.html" target="_blank">Login</a></li>
+				<li><a href="loading.html" target="_blank">Loading</a></li>
+      </ul>
+      <ul style="margin-left: 30px">
+				<li>-------- Species --------<br><br></li>
+
+        <li><a href="mono-routinus.html" target="_blank">Mono Routinus</a></li>
+        <li><a href="mono-routinus-reveal.html" target="_blank">Mono Routinus Reveal</a></li>
+        <li><a href="mono-routinus-reveal-video.html" target="_blank">Mono Routinus Reveal Video</a></li>
+        <li><a href="mono-routinus-info.html" target="_blank">Mono Routinus Info overlay</a></li>
+
+        <li><br><a href="yolov-haotis.html" target="_blank">Yolov Haotis</a></li>
+        <li><a href="yolov-haotis-reveal.html" target="_blank">Yolov Haotis Reveal</a></li>
+
+        <li><br><a href="socialis-adventurous.html" target="_blank">Socialis Adventurous</a></li>
+        <li><a href="socialis-adventurous-reveal.html" target="_blank">Socialis Adventurous Reveal</a></li>
+
+        <li><br><a href="focus-mononovous.html" target="_blank">Focus Mononovous</a></li>
+        <li><a href="focus-mononovous-reveal.html" target="_blank">Focus Mononovous Reveal</a></li>
+
+        <li><br><a href="novo-gregarious.html" target="_blank">Novo Gregarious</a></li>
+        <li><a href="novo-gregarious-reveal.html" target="_blank">Novo Gregarious Reveal</a></li>
+
+        <li><br><a href="sui-inspira.html" target="_blank">Sui Inspira</a></li>
+        <li><a href="sui-inspira-reveal.html" target="_blank">Sui Inspira Reveal</a></li>
+
+        <li><br><a href="solo-noctus.html" target="_blank">Solo Noctus</a></li>
+        <li><a href="solo-noctus-reveal.html" target="_blank">Solo Noctus Reveal</a></li>
+
+        <li><br><a href="rare-breed.html" target="_blank">Rare breed</a></li>
+			</ul>
+      <ul style="margin-left: 30px">
+				<li>-------- Habits --------<br><br></li>
+
+        <li><a href="habits.html" target="_blank">Habits 1</a></li>
+        <li><a href="habits2.html" target="_blank">Habits 2</a></li>
+        <li><a href="habits3.html" target="_blank">Habits 3</a></li>
+        <li><a href="habits4.html" target="_blank">Habits 4</a></li>
+        <li><a href="habits-all-in-one.html" target="_blank">Habits all in one</a></li>
+        <li><a href="habits-window1.html" target="_blank">Habits window 1</a></li>
+        <li><a href="habits-window2.html" target="_blank">Habits window 2</a></li>
+        <li><a href="habits-window3.html" target="_blank">Habits window 3</a></li>
+
+			</ul>
+
+      <ul style="margin-left: 30px">
+				<li>-------- Science --------<br><br></li>
+
+        <li><a href="science.html" target="_blank">Science</a></li>
+        <li><a href="science-window1.html" target="_blank">Science window 1</a></li>
+        <li><a href="science-window2.html" target="_blank">Science window 2</a></li>
+        <li><a href="science-window3.html" target="_blank">Science window 3</a></li>
+        <li><a href="science-window4.html" target="_blank">Science window 4</a></li>
+        <li><a href="science-window5.html" target="_blank">Science window 5</a></li>
+        <li><a href="science-window6.html" target="_blank">Science window 6</a></li>
+
+			</ul>
+
+      <ul style="margin-left: 30px">
+				<li>-------- Landscape --------<br><br></li>
+
+        <li><a href="landscape-intro.html" target="_blank">Landscape intro</a></li>
+        <li><a href="landscape-intro-info.html" target="_blank">Landscape intro info</a></li>
+        <li><a href="landscape-single.html" target="_blank">Landscape single</a></li>
+        <li><a href="landscape-all.html" target="_blank">Landscape all</a></li>
+        <li><a href="landscape-habits.html" target="_blank">Landscape habits</a></li>
+
+			</ul>
+		</nav>
+	</div>
+
+	<style>
+		.page-nav a {
+			text-decoration: none;
+			color: #fff;
+		}
+	</style>
+{% endblock %}

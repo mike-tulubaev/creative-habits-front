@@ -1,0 +1,39 @@
+{% from "./_icon.html" import icon %}
+{% from "./_left-menu.html" import leftMenu %}
+{% from "./_header-menu.html" import headerMenu %}
+
+{% macro header(showSound=false, showHelp=false, showMenu=false, showInfo=false, dark, darkRightSide, showLinkToMap, class) %}
+	<header class="header container{{' header--dark' if dark}}{{' header--dark-right-side' if darkRightSide}}{{' '+class if class}}">
+    <div class="header__left-side">
+      <button class="header__button header__button--burger">
+        {{ icon(name="burger") }}
+      </button>
+      {% if showLinkToMap %}
+        <a href="#" class="link-to-map header__link-to-map">
+          {{icon(name="mountain", class="icon--mountain")}}
+          Back to Map
+        </a>
+      {% endif %}
+    </div>
+
+		{% if showMenu %}
+			{{ headerMenu(dark=(darkRightSide or dark)) }}
+		{% endif %}
+		{% if showHelp %}
+			<button class="header__button header__button--help">
+				{{ icon(name="question") }}
+			</button>
+		{% endif %}
+		{% if showSound %}
+			<button class="header__button header__button--audio audio-button">
+				{{ icon(name="audio") }}
+			</button>
+		{% endif %}
+    {% if showInfo %}
+			<button class="header__button header__button--info">
+				{{ icon(name="info") }}
+			</button>
+		{% endif %}
+	</header>
+	{{ leftMenu()}}
+{% endmacro %}

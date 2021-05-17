@@ -1,0 +1,30 @@
+{% extends "./templates/layout/_base.html" %}
+
+{% block page_title %}
+		Login
+{% endblock %}
+
+{% block page_header %}{% endblock %}
+
+{% set pageClass='page--intro' %}
+
+{% block page_content %}
+		<div class="container container--intro intro">
+				<div class="wrapper wrapper--intro">
+						<h1 class="title title--intro">
+								Welcome to
+								<br>
+								C<i class="title__italic">R</i>EATIVE LANDS<i class="title__italic">C</i>APE
+						</h1>
+						<form action="index.html" class="login-form">
+								<input type="password" class="input login-form__input" placeholder="Enter password">
+								<button class="button-small login-form__button" type="submit">Continue</button>
+						</form>
+				</div>
+				<p class="copyright">© Liminal Collective 2021</p>
+				<img src="images/intro/img1.png" alt="" class="intro__image intro__image--1">
+				<img src="images/intro/img2.png" alt="" class="intro__image intro__image--2">
+				<img src="images/intro/img3.png" alt="" class="intro__image intro__image--3">
+				<img src="images/intro/img4.png" alt="" class="intro__image intro__image--4">
+		</div>
+{% endblock %}

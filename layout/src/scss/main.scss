@@ -1,0 +1,476 @@
+﻿@import 'vars/_base.scss';
+@import 'vendor/_vendor.scss';
+
+@import 'utils/_fonts.scss';
+@import 'utils/_app.scss';
+@import 'utils/_animations.scss';
+@import 'utils/_mixins.scss';
+@import 'utils/_helpers.scss';
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 67px 0 40px;
+  background-color: $color-dark-gray;
+
+  //.page-home
+  &--home {
+    position: relative;
+    background-image: url('../images/home/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color-dark-gray, 0.6);
+      content: '';
+    }
+  }
+
+  //.page--home-step1
+  &--home-step1 {
+    padding: 90px 0;
+  }
+
+  //.page--intro
+  &--intro {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  //.page--science
+  &--science {
+    padding-bottom: 0;
+  }
+
+  //.page--landscape
+  &--landscape {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  //.page--landscape-intro
+  &--landscape-intro {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100%;
+  }
+
+  //.page--habits-landscape
+  &--habits-landscape {
+    height: 100vh;
+    overflow: hidden;
+    padding-bottom: 0;
+  }
+
+  //.page--habits
+  &--habits {
+    padding-bottom: 0;
+  }
+
+  //.page__wrapper
+  &__wrapper {
+    //.page__wrapper--landscape
+    &--landscape {
+      min-height: 800px;
+      max-height: 100vh;
+      overflow: hidden;
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  //.container--home-step1
+  &--home-step1 {
+    z-index: 10;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+  }
+
+  //.container--home-step3
+  &--home-step2 {
+    z-index: 10;
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 90px;
+  }
+
+  //.container--home-step3
+  &--home-step3 {
+    z-index: 10;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    line-height: 31px;
+  }
+
+  //.container--survey
+  &--survey {
+    flex-grow: 1;
+    display: flex;
+  }
+
+  //.container--grayscale
+  &--grayscale {
+    filter: grayscale(1);
+  }
+
+  //.container--intro
+  &--intro {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  //.container--science-results
+  &--science-results{
+    position: relative;
+    z-index: 1;
+    padding-bottom: 500px;
+  }
+}
+
+.wrapper {
+  //.wrapper--home-step1
+  &--home-step1 {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 95px 0 30px;
+  }
+
+  //.wrapper--questions
+  &--questions {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  //.wrapper--intro
+  &--intro {
+    position: relative;
+    z-index: 10;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -20px;
+  margin-right: -20px;
+
+  //.row--home-step3
+  &--home-step3 {
+    align-items: center;
+  }
+
+  //.row--survey
+  &--survey {
+    flex-grow: 1;
+    align-items: stretch;
+  }
+}
+
+.col {
+  width: 100%;
+  padding: 0 20px;
+
+  //.col--4
+  &--4 {
+    max-width: 100%/12 * 4;
+  }
+
+  //.col--3
+  &--3 {
+    max-width: 100%/12 * 3;
+  }
+
+  //.col--5
+  &--5 {
+    max-width: 100%/12 * 5;
+  }
+
+  //.col--6
+  &--6 {
+    max-width: 100%/12 * 6;
+  }
+
+  //.col--7
+  &--7 {
+    max-width: 100%/12 * 7;
+  }
+
+  //.col--9
+  &--9 {
+    max-width: 100%/12 * 9;
+  }
+
+  //.col--12
+  &--12 {
+    max-width: 100%;
+  }
+
+  //.col--offset-1
+  &--offset-1 {
+    margin-left: calc(100% / 12);
+  }
+
+  //.col--offset-3
+  &--offset-3 {
+    margin-left: calc(100% / 12 * 3);
+  }
+
+  //.col--question
+  &--question {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  //.col--page-species
+  &--page-species {
+    margin-left: auto;
+    margin-right: 97px;
+  }
+
+  //.col--mono-routinus-text
+  &--mono-routinus-text {
+    max-width: 492px;
+  }
+
+  //.col--yolov-haotis--text
+  &--yolov-haotis--text {
+    max-width: 502px;
+  }
+
+  //.col--socialis-adventurous-text
+  &--socialis-adventurous-text {
+    max-width: 502px;
+  }
+
+  //.col--focus-mononovous-text
+  &--focus-mononovous-text {
+    max-width: 513px;
+  }
+
+  //.col--novo-gregarious-text
+  &--novo-gregarious-text {
+    max-width: 496px;
+  }
+
+  //.col--sui-inspira-text
+  &--sui-inspira-text {
+    max-width: 541px;
+  }
+
+  //.col--solo-noctus-text
+  &--solo-noctus-text {
+    max-width: 515px;
+  }
+
+  //.col--rare-breed-title
+  &--rare-breed-title {
+    position: relative;
+    z-index: 1;
+    max-width: 100%/12*7;
+    padding-right: 80px;
+  }
+
+  //.col--rare-breed-text
+  &--rare-breed-text {
+    position: relative;
+    z-index: 10;
+    max-width: 100%/12*4;
+  }
+
+  //.col--page-habits
+  &--page-habits {
+    max-width: 470px;
+    margin-left: auto;
+    margin-right: 139px;
+  }
+
+  //.col--science-f1-text
+  &--science-f1-text {
+   padding-top: 30px;
+  }
+
+  //.col--science-f2-text
+  &--science-f2-text {
+    padding-right: 0;
+   }
+
+  //.col--science-f1-image
+  &--science-f1-image {
+    position: relative;
+  }
+
+  //.col--science-f2-image
+  &--science-f2-image {
+    position: relative;
+    padding-right: 0;
+  }
+
+  //.col--science-f2-image
+  &--science-results {
+    padding-top: 270px;
+  }
+
+  //.col--landscape-intro
+  &--landscape-intro {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 471px;
+    margin-left: auto;
+    margin-right: 140px;
+    padding-top: 67px;
+    padding-bottom: 40px;
+  }
+
+  //.col--landscape-scroll
+  &--habits-landscape {
+    display: flex;
+    max-width: 670px;
+    margin-left: auto;
+    height: calc(100vh - 67px);
+    padding-top: 30px;
+    overflow: hidden;
+  }
+}
+
+.title {
+  font-family: $font-mi-roman;
+
+  //.title__italic
+  &__italic {
+    font-family: $font-mi-italic;
+    font-style: normal;
+  }
+
+  //.title--home-step1
+  &--home-step1 {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-size: 120px;
+    text-transform: uppercase;
+    line-height: 160px;
+    letter-spacing: 0.02em;
+  }
+
+  //.title--home-step3
+  &--home-step3 {
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    word-spacing: 6px;
+  }
+
+  //.title--survey
+  &--survey {
+    margin-bottom: 30px;
+    font-size: 32px;
+    line-height: 1.25;
+    text-align: center;
+    letter-spacing: -0.02em;
+  }
+
+  //.title--policy
+  &--policy {
+    margin-bottom: 35px;
+    font-size: 24px;
+  }
+
+  //.title--intro
+  &--intro {
+    margin-bottom: 32px;
+    font-size: 32px;
+    letter-spacing: 0.02em;
+    text-align: center;
+  }
+}
+
+.img-title {
+  max-width: 100%;
+}
+
+.skip-video {
+  font-family: $font-gt-regular;
+  font-size: 12px;
+  color: $color-yellow;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.copyright {
+  margin-bottom: 0;
+  font-family: $font-gt-regular;
+  font-size: 12px;
+  color: $color-yellow;
+  text-align: center;
+}
+
+@import 'components/_intro.scss';
+@import 'components/_input.scss';
+@import 'components/_login-form.scss';
+@import 'components/_icon.scss';
+@import 'components/_button.scss';
+@import 'components/_button-small.scss';
+@import 'components/_header.scss';
+@import 'components/_header-menu.scss';
+@import 'components/_left-menu.scss';
+@import 'components/_policy.scss';
+@import 'components/_play-video.scss';
+@import 'components/_question.scss';
+@import 'components/_progress.scss';
+@import 'components/_seed-animation.scss';
+@import 'components/_survey-complete.scss';
+@import 'components/_cover.scss';
+@import 'components/_cover-half.scss';
+@import 'components/_survey-faq.scss';
+@import 'components/_survey-missed.scss';
+@import 'components/_page-species.scss';
+@import 'components/_habits.scss';
+@import 'components/_section-science.scss';
+@import 'components/_team-group.scss';
+@import 'components/_bio.scss';
+@import 'components/_map.scss';
+@import 'components/_plant.scss';
+@import 'components/_landscape-intro.scss';
+@import 'components/_plant-link.scss';
+@import 'components/_link-to-map.scss';

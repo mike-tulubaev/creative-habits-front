@@ -1,0 +1,175 @@
+@import './variables.scss';
+
+.col {
+  width: 100%;
+  padding: 0 20px;
+
+  //.col--3
+  &--3 {
+    max-width: 100%/12 * 3;
+  }
+
+  //.col--4
+  &--4 {
+    max-width: 100%/12 * 4;
+  }
+
+  //.col--5
+  &--5 {
+    max-width: 100%/12 * 5;
+  }
+
+  //.col--6
+  &--6 {
+    max-width: 100%/12 * 6;
+  }
+
+  //.col--7
+  &--7 {
+    max-width: 100%/12 * 7;
+  }
+
+  //.col--9
+  &--9 {
+    max-width: 100%/12 * 9;
+  }
+
+  //.col--12
+  &--12 {
+    max-width: 100%;
+  }
+
+  //.col--offset-1
+  &--offset-1 {
+    margin-left: calc(100% / 12);
+  }
+
+  //.col--offset-3
+  &--offset-3 {
+    margin-left: calc(100% / 12 * 3);
+  }
+
+  //.col--question
+  &--question {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  //.col--page-species
+  &--page-species {
+    margin-left: auto;
+    max-width: 500px;
+    margin-right: 106px;
+  }
+
+  /*
+  //.col--mono-routinus-text
+  &--mono-routinus-text {
+    max-width: 492px;
+  }
+
+  //.col--yolov-haotis--text
+  &--yolov-haotis--text {
+    max-width: 502px;
+  }
+
+  //.col--socialis-adventurous-text
+  &--socialis-adventurous-text {
+    max-width: 502px;
+  }
+
+  //.col--focus-mononovous-text
+  &--focus-mononovous-text {
+    max-width: 513px;
+  }
+
+  //.col--novo-gregarious-text
+  &--novo-gregarious-text {
+    max-width: 496px;
+  }
+
+  //.col--sui-inspira-text
+  &--sui-inspira-text {
+    max-width: 541px;
+  }
+
+  //.col--solo-noctus-text
+  &--solo-noctus-text {
+    max-width: 515px;
+  }
+  */
+
+  //.col--rare-breed-title
+  &--rare-breed-title {
+    position: relative;
+    z-index: 1;
+    max-width: 100%/12*7;
+    padding-right: 80px;
+  }
+
+  //.col--rare-breed-text
+  &--rare-breed-text {
+    position: relative;
+    z-index: 10;
+    max-width: 100%/12*4;
+  }
+
+  //.col--page-habits
+  &--page-habits {
+    max-width: 470px;
+    margin-left: auto;
+    margin-right: 139px;
+  }
+
+  //.col--science-f1-text
+  &--science-f1-text {
+   padding-top: 30px;
+  }
+
+  //.col--science-f2-text
+  &--science-f2-text {
+    padding-right: 0;
+   }
+
+  //.col--science-f1-image
+  &--science-f1-image {
+    position: relative;
+  }
+
+  //.col--science-f2-image
+  &--science-f2-image {
+    position: relative;
+    padding-right: 0;
+  }
+
+  //.col--science-f2-image
+  &--science-results {
+    padding-top: 270px;
+  }
+
+  //.col--landscape-intro
+  &--landscape-intro {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 471px;
+    margin-left: auto;
+    margin-right: 68px;
+    padding-top: 67px;
+    padding-bottom: 40px;
+  }
+
+  //.col--landscape-scroll
+  &--habits-landscape {
+    display: flex;
+    max-width: 671px;
+    margin-left: auto;
+    height: calc(100vh - 67px);
+    padding-top: 30px;
+    overflow: hidden;
+  }
+}
+

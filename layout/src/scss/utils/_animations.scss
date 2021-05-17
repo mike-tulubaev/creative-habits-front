@@ -1,0 +1,30 @@
+.audio-button {
+	&--disabled {
+		opacity: 0.4;
+	}
+
+  &__line1,
+  &__line2,
+  &__line3,
+  &__line4 {
+    position: relative;
+    transform-origin: 0 100%;
+    transition: color 0.2s, transform 0.5s;
+  }
+
+  &__line1,
+  &__line3 {
+    .audio-button:hover &,
+		.audio-button--disabled & {
+      transform: scaleY(0.6);
+    }
+  }
+
+  &__line2,
+  &__line4 {
+    .audio-button:hover &,
+		.audio-button--disabled & {
+      transform: scaleY(2);
+    }
+  }
+}

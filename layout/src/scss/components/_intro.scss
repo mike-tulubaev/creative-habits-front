@@ -1,0 +1,44 @@
+.intro {
+	//.intro__icons
+	&__icons {
+		display: flex;
+		align-items: center;
+		margin-bottom: 50px;
+		transform: translateX(-10px);
+	}
+
+	//.intro__text
+	&__text {
+		font-family: $font-gt-regular;
+		font-size: 14px;
+	}
+
+  //.intro__img
+  &__image {
+    position: absolute;
+
+    //.intro__img--1
+    &--1 {
+      top: -100px;
+      left: 107px;
+    }
+
+		//.intro__img--2
+    &--2 {
+      top: -120px;
+      right: 280px;
+    }
+
+		//.intro__img--3
+    &--3 {
+      left: 63px;
+			bottom: -334px;
+    }
+
+		//.intro__img--4
+    &--4 {
+			right: -72px;
+			bottom: -125px;
+    }
+  }
+}
