@@ -4,12 +4,12 @@
       <div class="col col--page-habits">
         <div class="page-habits__content-block">
           <p class="page-habits__big-text">
-            {{ clusterAffinity$ | async | number: '1.0-0'}}% of {{ createiveSpecies$ | async }}'' defining creative habits overlap with yours.</p>
+            {{ clusterAffinity$ | async | number: '1.0-0'}}% of {{ createiveSpecies$ | async }}' defining creative habits overlap with yours.</p>
           <p class="page-habits__small-text">
-            The Creative Species assigned to you is based on how your unique set of creative habits and preferences compare to other people in our reference database. 
+            The Creative Species assigned to you is based on how your unique set of creative habits and preferences compared to other people in our reference database. 
             No match is perfect. 
-            You also have your own unique preferences and likely will find some affinities with the top habits of one of the other Creative Species.
-            Explore below which of {{ createiveSpecies$ | async }} defining habits you share (habits at the top, circled with a double ring), and which are unique to you (habits at the bottom greyed out under {{ createiveSpecies$ | async }} and highlighted under 'You'). Click each habit to learn more about them.
+            You also have your own unique preferences and likely will find some affinities with the top habits of other Creative Species.
+            Explore below which of {{ createiveSpecies$ | async }}' defining habits you share (habits at the top with a double ring), and which are unique to you (habits at the bottom greyed out under {{ createiveSpecies$ | async }} and highlighted under 'You'). Click each habit to learn more about them.
           </p>
           <div class="page-habits__tabs" [class.page-habits__tabs--disabled]="!isClusterHabitsShown && !isPersonalHabitsShown">
             <button class="page-habits__tab" [class.page-habits__tab--active]="isClusterHabitsShown" (click)="showClusterHabits()">{{ createiveSpecies$ | async }}</button>
