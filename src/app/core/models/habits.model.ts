@@ -72,7 +72,7 @@ export const HABITS_BY_CLUSTERS = {
     'Collaborator',
     'Noise/Music',
     'Stimulated By Constraints',
-    'Like Distractions',
+    'Love Distractions',
     'Public Spaces',
   ],
   [CreativeSpeciesEnum.SUI_INSPIRA]: [
@@ -92,7 +92,7 @@ export const HABITS_BY_CLUSTERS = {
     'Tenacious',
     'NonKinetic',
     'Nature-Agnostic',
-    'Like Distractions',
+    'Love Distractions',
     'Specialist',
   ],
   [CreativeSpeciesEnum.RARE_BREED]: [],
