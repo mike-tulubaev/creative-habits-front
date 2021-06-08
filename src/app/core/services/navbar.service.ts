@@ -77,7 +77,7 @@ export class NavbarService {
           return 'assets/audio/Intro_Meditation_Nature_Relax.mp3';
       }
     }),
-    distinctUntilChanged(),
+    distinctUntilChanged()
   );
 
   constructor(private store: Store, private router: Router) {}
@@ -100,6 +100,19 @@ export class NavbarService {
         return 'assets/audio/YoloChaotis_Small Waterfall.mp3';
       default:
         return '';
+    }
+  }
+
+  private getTrackByQuestion(question: number | undefined): string {
+    if (!question) {
+      return '';
+    }
+    if (question < 10) {
+      return 'assets/audio/Survey-1-9-Underwater.mp3';
+    } else if (question >= 10 && question < 20) {
+      return 'assets/audio/Survey-10-19-Meditation-2.mp3';
+    } else {
+      return 'assets/audio/Survey-20-26-Inspiring-New-Age-M.mp3';
     }
   }
 }
