@@ -38,7 +38,7 @@ export class NavbarService {
     this.store.select(AppState.landscapeHabitsData),
   ]).pipe(
     filter(([path, data]) => !!path),
-    withLatestFrom(this.store.selectOnce(InterviewState.result)),
+    withLatestFrom(this.store.select(InterviewState.result)),
     map(([[segments, landscapeHabitsData], interview]) => {
       const cluster = interview?.Creative_Species;
       if (!segments) {
@@ -49,6 +49,10 @@ export class NavbarService {
           return segments[1] && segments[1].path === 'video'
             ? ''
             : 'assets/audio/Intro_Meditation_Nature_Relax.mp3';
+        case 'survey':
+          return this.getTrackByQuestion(
+              this.router.routerState.snapshot.root.firstChild?.params?.question
+          );
         case 'science':
           return 'assets/audio/Intro_Meditation_Nature_Relax.mp3';
 
@@ -61,7 +65,7 @@ export class NavbarService {
             case 'landscape':
               if (landscapeHabitsData.isLandscapeHabits) {
                 return this.getTrackByCluster(
-                  landscapeHabitsData.selectedCluster
+                  landscapeHabitsData.selectedCluster ? landscapeHabitsData.selectedCluster : cluster
                 );
               } else {
                 return 'assets/audio/Landscape_Map_Under_Water.mp3';
