@@ -35,7 +35,7 @@ export class HabitsComponent implements OnInit {
       }
       if (this._delta > 0 && element.scrollTop === element.scrollHeight - element.clientHeight) {
         this._delta = 0;
-        this.goToNextStep();
+        //this.goToNextStep();
       }
     }
     this.scrollRoutingIsActive = false;
@@ -141,6 +141,7 @@ export class HabitsComponent implements OnInit {
   download(event: Event) {
     event.preventDefault();
     this.store.dispatch(new DownloadResults());
+    this.router.navigate(['/profile-reveal', 'landscape']);
   }
 
   private activateScrollRouting() {
