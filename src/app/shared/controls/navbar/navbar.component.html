@@ -1,5 +1,5 @@
 <header class="header container" [class.header--dark]="darkModeClass$ | async" *ngIf="currentNavbarSet.showNavbar" [class.header--right-placeholder] = "currentNavbarSet.rightPlaceholder">
-  <button class="header__button header__button--burger" (click)="showMenu()">
+  <button class="header__button header__button--burger" (click)="showMenu()" *ngIf="currentNavbarSet.burger">
     <app-icon name="burger"></app-icon>
   </button>
 

@@ -27,32 +27,40 @@ class NavbarElements {
   profileInfo: boolean = false;
   surveyFAQ: boolean = false;
   rightPlaceholder: boolean = false;
+  burger: boolean = false;
 }
 
 const NavbarSet = {
   login: {
-    showNavbar: false,
+    burger: false,
+    showNavbar: true,
+    audio: true,
   } as NavbarElements,
   home: {
+    burger: true,
     audio: true,
     showNavbar: true,
   } as NavbarElements,
   survey: {
+    burger: true,
     audio: true,
     surveyFAQ: true,
     showNavbar: true,
   } as NavbarElements,
   profileRevealFirst: {
+    burger: true,
     audio: true,
     showNavbar: true,
   } as NavbarElements,
   profileRevealMain: {
+    burger: true,
     menu: true,
     audio: true,
     profileInfo: true,
     showNavbar: true,
   } as NavbarElements,
   profileRevealLandscape: {
+    burger: true,
     menu: true,
     audio: true,
     showNavbar: true,
@@ -147,7 +155,7 @@ export class NavbarComponent implements OnInit {
       )
       .subscribe((pages) => {
         switch (pages[0]) {
-          case 'login':
+          case null:
             this.currentNavbarSet = NavbarSet.login;
             break;
           case 'home':
