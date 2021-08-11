@@ -28,6 +28,9 @@
 
     .page-species--intro & {
       flex-direction: column;
+      &::before, &::after {
+        opacity: 0 !important;
+      }
     }
 
     .page-species--reveal & {
