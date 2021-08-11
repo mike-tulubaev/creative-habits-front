@@ -169,7 +169,6 @@ export class NavbarComponent implements OnInit {
               this.currentNavbarSet = NavbarSet.profileRevealFirst;
             } else if (pages[1] === 'landscape') {
               this.currentNavbarSet = NavbarSet.profileRevealLandscape;
-              console.log('f')
             } else {
               this.currentNavbarSet = NavbarSet.profileRevealMain;
             }
