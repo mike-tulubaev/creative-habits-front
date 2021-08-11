@@ -9,6 +9,7 @@ import { SeedComponent } from './seed/seed.component';
 import { QuestionComponent } from './question/question.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FaqSurveyComponent } from './faq/faq.component';
+import { PolicyComponent } from './policy/policy.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FaqSurveyComponent } from './faq/faq.component';
     SeedComponent,
     QuestionComponent,
     FaqSurveyComponent,
+    PolicyComponent,
   ],
   exports: [SurveyComponent],
   imports: [

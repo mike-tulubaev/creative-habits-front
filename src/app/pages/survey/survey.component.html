@@ -1,4 +1,7 @@
 <main class="page page--survey">
+  <div class="container">
+    <app-policy></app-policy>
+  </div>
   <div class="container container--survey">
     <div class="row row--survey">
       <div class="col col--6 col--question" app-question [question]="question | async" [index]="index | async">

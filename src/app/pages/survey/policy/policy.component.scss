@@ -1,0 +1,114 @@
+@import "../../../../styles/variables.scss";
+
+.policy {
+  position: fixed;
+  z-index: 10001;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  transition: opacity 1s;
+  user-select: none;
+
+  //.policy__box
+  &__box {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 667px;
+    height: 500px;
+    padding: 15px 120px 30px;
+    background-color: $color-yellow;
+    color: $color-dark-gray;
+  }
+
+  //.policy__wrapper
+  &__wrapper {
+    position: relative;
+    height: calc(100% - 46px);
+    &::before {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background-image: linear-gradient(
+        to bottom,
+        $color-yellow 10%,
+        $color-yellow,
+        rgba(#fff, 0)
+      );
+      content: "";
+    }
+    &::after {
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background-image: linear-gradient(
+        to top,
+        $color-yellow 5%,
+        $color-yellow,
+        rgba(#fff, 0)
+      );
+      content: "";
+    }
+  }
+
+  //.policy__content
+  &__content {
+    height: 100%;
+    padding: 70px 0 30px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 37px;
+    font-size: 22px;
+    line-height: 31px;
+  }
+
+  //.policy__text
+  &__text {
+    margin-bottom: 22px;
+    font-family: $font-gt-regular;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+  }
+
+  &__close-box {
+    text-align: center;
+  }
+
+  &__close {
+    display: inline-block;
+    min-width: 137px;
+    padding: 13px 5px 14px;
+    border: 1px solid rgba(37, 36, 36, 0.3);
+    background-color: rgba(#fff, 0);
+    border-radius: 100px;
+    font-family: $font-gt-light;
+    font-size: 12px;
+    line-height: 17px;
+    color: $color-dark-gray;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    transition: border-color 0.2s;
+    text-transform: none;
+
+    &:hover {
+      border: 1px solid rgba(37, 36, 36, 0.9);
+    }
+  }
+}

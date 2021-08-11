@@ -1,0 +1,36 @@
+<div class="policy" *ngIf="showPolicy">
+  <div class="policy__box">
+    <div class="policy__wrapper">
+      <div class="policy__content">
+        <h3 class="title title--policy policy__title">
+          Data Policy <i class="title__italic">&</i> Terms of Service
+        </h3>
+        <p class="policy__text">
+          This survey is anonymous. Your individual results are for your eyes
+          only unless you chose to share them with others. We do not collect any
+          personally identifiable information about you. We will not sell your
+          data to anyone or use your data target you with ads or sell you
+          things. We will not use your results to deny you a job or a loan or
+          raise your insurance rates. We will store your fully anonymous results
+          in a larger database of results which, along with the analysis code,
+          will be open-sourced to researchers for the the sole purpose of
+          advancing our (society's) collective knowledge of the creative
+          process.
+        </p>
+        <p class="policy__text">
+          You will receive at the end a unique anonymous ID which will only be
+          used to allow you to return to the site and see your results. Only you
+          will be able to connect that id to you. We will install a few cookies
+          on your computer for the sole purpose of making the site function
+          better for you — for example so we don't show you the introductory
+          video after the first time you arrive on on the site. We do not use
+          those cookies to track your online behavior. Did we mention that we
+          don't track you?
+        </p>
+      </div>
+    </div>
+    <div class="policy__close-box">
+      <button class="policy__close" (click)="close()">Okay</button>
+    </div>
+  </div>
+</div>
