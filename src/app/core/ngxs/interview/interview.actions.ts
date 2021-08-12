@@ -24,3 +24,7 @@ export class SetShowMissed {
 export class DownloadResults {
   static readonly type = '[Interview] Download Results';
 }
+
+export class ClearInterview {
+  static readonly type = '[Interview] Clear Interview';
+}

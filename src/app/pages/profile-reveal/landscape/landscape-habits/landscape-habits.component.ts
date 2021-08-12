@@ -56,6 +56,7 @@ export class LandscapeHabitsComponent implements OnInit, OnDestroy {
       switch (species) {
         case CreativeSpeciesEnum.FOCUS_MONONOVOUS:
           return 'assets/video/FocusMononovous.mp4';
+        case -1:
         case CreativeSpeciesEnum.MONO_ROUTINUS:
           return 'assets/video/MonoRoutinus.mp4';
         case CreativeSpeciesEnum.NOVO_GREGARIOUS:
@@ -78,6 +79,7 @@ export class LandscapeHabitsComponent implements OnInit, OnDestroy {
       switch (species) {
         case CreativeSpeciesEnum.FOCUS_MONONOVOUS:
           return 'page-species--focus-mononovous';
+        case -1:
         case CreativeSpeciesEnum.MONO_ROUTINUS:
           return 'page-species--mono-routinus';
         case CreativeSpeciesEnum.NOVO_GREGARIOUS:
@@ -122,7 +124,7 @@ export class LandscapeHabitsComponent implements OnInit, OnDestroy {
     this.store.dispatch(new SetIsLandscapeHabitsAction(true));
     this.createiveSpecies$
       .pipe(first())
-      .subscribe((cluster) => this.selectedCluster$.next(cluster));
+      .subscribe((cluster) => this.selectedCluster$.next(cluster === -1 ? CreativeSpeciesEnum.MONO_ROUTINUS : cluster));
   }
 
   ngOnDestroy(): void {

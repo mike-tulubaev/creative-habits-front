@@ -132,11 +132,19 @@ export class LandscapeComponent implements OnInit {
       if (this.step === this.steps.MAP_SINGLE) {
         this.interviewResult$.pipe(first()).subscribe((result) => {
           this.selectedCluster = result.Creative_Species;
+
+          if (this.selectedCluster === -1) {
+            this.step = this.steps.MAP_ALL;
+          }
         });
       }
       if (this.step === this.steps.MAP_ALL) {
         this.selectedCluster = undefined;
         this.makeClustersSelectable();
+      }
+    } else {
+      if (this.selectedCluster === -1) {
+        this.selectedCluster = CreativeSpeciesEnum.MONO_ROUTINUS;
       }
     }
   }
@@ -157,6 +165,9 @@ export class LandscapeComponent implements OnInit {
         if (this.step === this.steps.MAP_SINGLE) {
           this.interviewResult$.pipe(first()).subscribe((result) => {
             this.selectedCluster = result.Creative_Species;
+            if (this.selectedCluster === -1) {
+              this.router.navigate(['/profile-reveal', 'rare-breed']);
+            } 
           });
         }
         if (this.step === this.steps.MAP_ALL) {
@@ -164,7 +175,14 @@ export class LandscapeComponent implements OnInit {
         }
       }
     } else {
-      this.router.navigate(['/profile-reveal', 'habits']);
+      this.interviewResult$.pipe(first()).subscribe((result) => {
+        console.log('results', result);
+        if (result.Creative_Species === -1) {
+          this.router.navigate(['/profile-reveal', 'rare-breed']);
+        } else {
+          this.router.navigate(['/profile-reveal', 'habits']);
+        }
+      });
     }
   }
 

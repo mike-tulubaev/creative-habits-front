@@ -4,6 +4,7 @@ import { tap } from 'rxjs/operators';
 import { InterviewStateModel } from '../../models/interview-state.model';
 import { InterviewService } from '../../services/interview.service';
 import {
+  ClearInterview,
   DownloadResults,
   SetAnswerAction,
   SetInterviewResultAction,
@@ -95,5 +96,17 @@ export class InterviewState {
       }),
       tap(() => ctx.dispatch(new SetIsLoadingAction(false)))
     );
+  }
+
+  @Action(ClearInterview)
+  public clearInterview(ctx: StateContext<InterviewStateModel>) {
+    ctx.patchState({
+      id: '',
+      answers: {},
+      progress: 0,
+      showMissed: false,
+      numOfQuestions: 0,
+      result: null,
+    });
   }
 }

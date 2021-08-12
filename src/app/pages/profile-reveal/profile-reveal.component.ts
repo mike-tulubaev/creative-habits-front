@@ -8,10 +8,10 @@ import {
   group,
 } from '@angular/animations';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { Store } from '@ngxs/store';
-import { combineLatest, Observable } from 'rxjs';
-import { filter, first, map, startWith } from 'rxjs/operators';
+import { combineLatest, Observable, Subject } from 'rxjs';
+import { filter, first, map, startWith, takeUntil } from 'rxjs/operators';
 import {
   CreativeSpeciesEnum,
   CREATIVE_SPECIES_WHITE_BG,
@@ -95,6 +95,7 @@ import { NavbarService } from 'src/app/core/services/navbar.service';
   ],
 })
 export class ProfileRevealComponent implements OnInit {
+  private _destroy$: Subject<void> = new Subject<void>();
   createiveSpecies$: Observable<
     CreativeSpeciesEnum | undefined
   > = this.store
@@ -224,9 +225,18 @@ export class ProfileRevealComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.router.events.pipe(takeUntil(this._destroy$)).subscribe(ev => {
+      if (ev instanceof NavigationStart && ev.url === '/profile-reveal') {
+        this.createiveSpecies$.pipe(first()).subscribe((cluster) => {
+          if (cluster === CreativeSpeciesEnum.RARE_BREED) {
+            this.router.navigate(['rare-breed'], { relativeTo: this.route });
+          }
+        });
+      }
+    })
     this.createiveSpecies$.pipe(first()).subscribe((cluster) => {
       if (cluster === CreativeSpeciesEnum.RARE_BREED) {
-        this.router.navigate(['/rare-breed']);
+        this.router.navigate(['rare-breed'], { relativeTo: this.route });
       }
     });
 
@@ -246,6 +256,8 @@ export class ProfileRevealComponent implements OnInit {
     document.querySelectorAll('html, body').forEach(x => x.style.width = '');
     // @ts-ignore
     document.querySelectorAll('html, body').forEach(x => x.style.overflow = '');
+    this._destroy$.next();
+    this._destroy$.complete();
   }
 
   hideInfo() {
