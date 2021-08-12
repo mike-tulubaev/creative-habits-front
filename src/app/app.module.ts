@@ -16,6 +16,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
 import { CacheDirective } from './shared/cache/cache.directive';
 import { PreloaderService } from './shared/cache/preloader.service';
+import { LoadingComponent } from './pages/loading/loading.component';
 
 export function preloaderFunction(service: PreloaderService) {
   // service.preload('/assets/img/intro/img1.png');
@@ -112,7 +113,7 @@ export function preloaderFunction(service: PreloaderService) {
 }
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [AppComponent, LoginComponent, LoadingComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

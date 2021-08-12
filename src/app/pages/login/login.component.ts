@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
       this.invalid = true;
     } else {
       this.store.dispatch(new SetUserAuthenticated(true));
-      this.router.navigate(['/home']);
+      this.router.navigate(['/loading']);
     }
   }
 }

@@ -5,9 +5,11 @@ import { LoginComponent } from './pages/login/login.component';
 import { ScienceComponent } from './pages/science/science.component';
 import { SurveyComponent } from './pages/survey/survey.component';
 import { TeamComponent } from './pages/team/team.component';
+import { LoadingComponent } from './pages/loading/loading.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
+  { path: 'loading', component: LoadingComponent, canActivate: [AuthGuard] },
   { path: 'home', loadChildren: () => import(`./pages/home/home.module`).then(m => m.HomeModule) },
   { path: 'profile-reveal', loadChildren: () => import(`./pages/profile-reveal/profile-reveal.module`).then(m => m.ProfileRevealModule) },
   { path: 'science', component: ScienceComponent, canActivate: [AuthGuard] },
