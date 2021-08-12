@@ -46,6 +46,11 @@ export class HabitsComponent implements OnInit {
 
   @HostListener('window:wheel', ['$event'])
   onScroll(event: WheelEvent): void {
+    // Close detail on scroll
+    this.closeHabitDetails();
+    // @ts-ignore
+    if (document.activeElement != document.body) document.activeElement.blur();
+
     if (!this.scrollRoutingIsActive) {
       const element = document.querySelector('.page-habits__container');
       if (element && (element.scrollTop === element.scrollHeight - element.clientHeight || element.scrollTop === 0)) {
