@@ -74,7 +74,13 @@
     width: 100%;
     max-width: 518px;
   }
-  
+
+  //.button--rare-breed
+  &--rare-breed {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
   //.button--plant-more
   &--plant-more {
     min-width: 137px;
