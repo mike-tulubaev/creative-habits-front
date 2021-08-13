@@ -158,6 +158,9 @@ export class NavbarComponent implements OnInit {
           case null:
             this.currentNavbarSet = NavbarSet.login;
             break;
+          case 'loading':
+              this.currentNavbarSet = NavbarSet.login;
+              break;
           case 'home':
             this.currentNavbarSet = NavbarSet.home;
             break;
