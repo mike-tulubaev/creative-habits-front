@@ -110,7 +110,7 @@ export class LandscapeComponent implements OnInit {
 
   ngOnInit(): void {
     this.activateScrollRouting();
-    this.store
+    /*this.store
       .selectOnce(AppState.wasLandscapeIntroShown)
       .subscribe((wasLandscapeIntroShown) => {
         if (wasLandscapeIntroShown) {
@@ -118,7 +118,7 @@ export class LandscapeComponent implements OnInit {
         } else {
           this.store.dispatch(new SetWasLandscapeIntroShownAction());
         }
-      });
+      });*/
   }
 
   goToNextStep() {
@@ -167,7 +167,7 @@ export class LandscapeComponent implements OnInit {
             this.selectedCluster = result.Creative_Species;
             if (this.selectedCluster === -1) {
               this.router.navigate(['/profile-reveal', 'rare-breed']);
-            } 
+            }
           });
         }
         if (this.step === this.steps.MAP_ALL) {
