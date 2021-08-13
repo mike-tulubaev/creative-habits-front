@@ -6,11 +6,12 @@
       </div>
     </div>
 
-    <a
-      [routerLink]="['/profile-reveal','habits']"
-      class="page-species__reveal-next-page"
-      [class.page-species__reveal-next-page--dark]="darkModeClass$ | async"
-    >
-      <app-icon name="scroll" class="icon--next-page"></app-icon>
-    </a>
+
   </div>
+  <a
+    [routerLink]="['/profile-reveal','habits']"
+    class="page-species__reveal-next-page"
+    [class.page-species__reveal-next-page--dark]="darkModeClass$ | async"
+  >
+    <app-icon name="scroll" class="icon--next-page"></app-icon>
+  </a>
