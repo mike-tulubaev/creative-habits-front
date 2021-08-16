@@ -103,6 +103,8 @@ export class HabitsComponent implements OnInit {
   constructor(private store: Store, private router: Router) {}
 
   ngOnInit(): void {
+    //@ts-ignore
+    document.querySelector('body')?.classList.add('fixed');
     // @ts-ignore
     document.querySelectorAll('html, body').forEach(x => x.style.height = '100%');
     // @ts-ignore
@@ -153,5 +155,10 @@ export class HabitsComponent implements OnInit {
     setTimeout(() => {
       this.scrollRoutingIsActive = true;
     }, this.timeout);
+  }
+
+  ngOnDestroy(): void {
+    //@ts-ignore
+    document.querySelector('body')?.classList.remove('fixed');
   }
 }

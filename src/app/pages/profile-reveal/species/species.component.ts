@@ -92,9 +92,16 @@ export class SpeciesComponent implements OnInit {
   constructor(private store: Store, private router: Router) {}
 
   ngOnInit(): void {
+    //@ts-ignore
+    document.querySelector('body')?.classList.add('fixed');
     setTimeout(() => {
       this.scrollRoutingIsActive = true;
     }, this.timeout);
+  }
+
+  ngOnDestroy(): void {
+    //@ts-ignore
+    document.querySelector('body')?.classList.remove('fixed');
   }
 
 }
