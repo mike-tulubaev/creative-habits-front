@@ -30,7 +30,8 @@ export class SpeciesComponent implements OnInit {
   private _delta = 0;
   private set delta(v: number) {
     this._delta = v;
-    if (this._delta > DELTA_LIMIT) {
+    //@ts-ignore
+    if (this._delta > document.querySelector('.col--page-species')?.scrollHeight + 150) {
       document.querySelector('app-species-description')?.classList.add('leave');
       setTimeout(() => {
         this._delta = 0;
