@@ -47,6 +47,7 @@ export class SpeciesComponent implements OnInit {
     event.preventDefault();
     if (this.scrollRoutingIsActive) {
       this.delta += event.deltaY;
+      if(this.delta < 0) this.delta = 0;
     }
   }
   //-- scroll routing end --//
