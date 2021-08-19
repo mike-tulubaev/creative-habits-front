@@ -112,8 +112,16 @@
 
           <a [routerLink]="['/science']" class="plant-link plant-link--science">
             <picture>
-              <source type="image/webp" srcset="/assets/img/landscape/science.webp">
-              <img appCache="/assets/img/landscape/science.png" class="plant-link__science-image" src="/assets/img/landscape/science.png" alt="">
+              <source
+                type="image/webp"
+                srcset="/assets/img/landscape/science{{darkScienceButton?'_dark':''}}.webp"
+              >
+              <img
+                appCache="/assets/img/landscape/science{{darkScienceButton?'_dark':''}}.png"
+                class="plant-link__science-image"
+                src="/assets/img/landscape/science{{darkScienceButton?'_dark':''}}.png"
+                alt=""
+              >
             </picture>
           </a>
         </div>

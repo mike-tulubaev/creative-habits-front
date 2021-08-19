@@ -34,6 +34,8 @@ import { WAIT_CHILD_ANIMATION } from 'src/app/shared/animations/enter-leave.anim
 export class LandscapeHabitsComponent implements OnInit, OnDestroy {
   @Output() openMap = new EventEmitter<null>();
 
+  darkScienceButton: boolean = false;
+
   creativeSpeciesEnum = CreativeSpeciesEnum;
 
   interviewResult$: Observable<InterviewResultModel> = this.store
@@ -99,9 +101,11 @@ export class LandscapeHabitsComponent implements OnInit, OnDestroy {
   );
 
   darkModeClass$ = this.selectedCluster$.pipe(
-    map((species) =>
-      species ? CREATIVE_SPECIES_WHITE_BG.includes(species) : false
-    ),
+    map((species) => {
+      const res = species ? CREATIVE_SPECIES_WHITE_BG.includes(species) : false
+      this.darkScienceButton = res ? true : false;
+      return res
+    }),
     map((isDark) => (isDark ? 'page-species--reveal-light-gradient' : ''))
   );
 
