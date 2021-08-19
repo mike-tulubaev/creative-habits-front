@@ -1,5 +1,6 @@
 <div class="policy" *ngIf="showPolicy">
-  <div class="policy__box">
+  <div class="policy__backdrop" [ngClass]="{'policy__backdrop--show' : showBackdrop}"></div>
+  <div class="policy__box" [ngClass]="{'policy__box--show' : showModal}">
     <div class="policy__wrapper">
       <div class="policy__content">
         <h3 class="title title--policy policy__title">

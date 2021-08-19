@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class PolicyComponent implements OnInit {
 
   showPolicy = false;
+  showBackdrop = false;
+  showModal = false;
 
   constructor() { }
 
@@ -16,12 +18,26 @@ export class PolicyComponent implements OnInit {
   }
 
   show() {
-    document.body.style.overflow = 'hidden';
-    this.showPolicy = true;
+    setTimeout(() => {
+      document.body.style.overflow = 'hidden';
+      this.showPolicy = true;
+    }, 500);
+    setTimeout(() => {
+      this.showBackdrop = true;
+    }, 600);
+    setTimeout(() => {
+      this.showModal = true;
+    }, 1200);
   }
 
   close() {
-    document.body.style.overflow = '';
-    this.showPolicy = false;
+    this.showModal = false;
+    setTimeout(() => {
+      this.showBackdrop = false;
+    }, 500);
+    setTimeout(() => {
+      this.showPolicy = false;
+      document.body.style.overflow = '';
+    }, 600);
   }
 }
