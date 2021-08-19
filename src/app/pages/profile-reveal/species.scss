@@ -128,7 +128,59 @@
     transition: filter 1s;
 
     .page-species--intro & {
-      filter: blur(74px);
+      filter: blur(38px);
+
+      &::before {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+      }
+    }
+
+    .page-species--intro.page-species--focus-mononovous & { // FOCUS MONONOVOUS
+      &::before {
+        background: rgba(176, 184, 177, 0.25);
+      }
+    }
+
+    .page-species--intro.page-species--mono-routinus & { // MONO ROUTINUS
+      &::before {
+        background: rgba(238, 193, 211, 0.25);
+      }
+    }
+
+    .page-species--intro.page-species--novo-gregarious & { // NOVO GREGARIOUS
+      &::before {
+        background: rgba(108, 108, 217, 0.25);
+      }
+    }
+
+    .page-species--intro.page-species--socialis-adventurous & { // SOCIALIS ADVENTUROUS
+      &::before {
+        background: rgba(206, 188, 237, 0.25);
+      }
+    }
+
+    .page-species--intro.page-species--solo-noctus & { // SOLO NOCTUS
+      &::before {
+        background: rgba(62, 143, 213, 0.25);
+      }
+    }
+
+    .page-species--intro.page-species--sui-inspira & { // SUI INSPIRA
+      &::before {
+        background: rgba(2, 1, 1, 0.25);
+      }
+    }
+
+    .page-species--intro.page-species--yolov-haotis & { // YOLO CHAOTIS
+      &::before {
+        background: rgba(250, 162, 80, 0.25);
+      }
     }
 
     &--rare-breed {
@@ -141,6 +193,7 @@
 
   &__bg { // .page-species__bg
     position: absolute;
+    z-index: -1;
     top: 50%;
     left: 0;
     min-width: 100%;
