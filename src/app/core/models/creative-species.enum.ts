@@ -14,3 +14,8 @@ export const CREATIVE_SPECIES_WHITE_BG = [
   CreativeSpeciesEnum.SOCIALIS_ADVENTUROUS,
   CreativeSpeciesEnum.YOLO_CHAOTIS,
 ];
+
+export const CREATIVE_SPECIES_LIGHT_BURGER = [
+  CreativeSpeciesEnum.SOCIALIS_ADVENTUROUS,
+  CreativeSpeciesEnum.YOLO_CHAOTIS,
+];

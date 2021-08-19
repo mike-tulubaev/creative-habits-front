@@ -13,6 +13,7 @@ import { delay, map } from 'rxjs/operators';
 import {
   CreativeSpeciesEnum,
   CREATIVE_SPECIES_WHITE_BG,
+  CREATIVE_SPECIES_LIGHT_BURGER,
 } from 'src/app/core/models/creative-species.enum';
 import { AppState } from 'src/app/core/ngxs/app/app.state';
 import { InterviewState } from 'src/app/core/ngxs/interview/interview.state';
@@ -132,6 +133,12 @@ export class NavbarComponent implements OnInit {
     this.darkModeCommon$,
     this.darkModeLandscapeHabits$,
   ]).pipe(map((statements) => statements.some((val) => !!val)));
+
+  isLightBurger$ = this.createiveSpecies$.pipe(
+    map((species) =>
+      species ? CREATIVE_SPECIES_LIGHT_BURGER.includes(species) : false
+    )
+  );
 
   constructor(
     private store: Store,

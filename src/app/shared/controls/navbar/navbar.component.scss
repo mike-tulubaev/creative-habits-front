@@ -35,6 +35,10 @@
       .header--dark & {
         color: $color-dark-gray;
       }
+
+      .header--light-burger & {
+        color: $color-yellow !important;
+      }
     }
 
     //.header__button--audio
