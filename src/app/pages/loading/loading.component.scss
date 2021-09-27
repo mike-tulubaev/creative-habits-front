@@ -1,0 +1,8 @@
+.fade {
+  opacity: 0;
+  transition: opacity 600ms;
+
+  &.in {
+    opacity: 1;
+  }
+}

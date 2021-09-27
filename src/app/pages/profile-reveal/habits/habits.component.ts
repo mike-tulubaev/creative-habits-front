@@ -4,23 +4,39 @@ import {
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
+import {
+  trigger,
+  transition,
+  style,
+  animate,
+  query,
+  animateChild,
+  group,
+} from '@angular/animations';
+import { EventManager } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { CREATIVE_SPECIES_WHITE_BG } from 'src/app/core/models/creative-species.enum';
 import { InterviewResultModel } from 'src/app/core/models/interview-result.model';
-import { DownloadResults } from 'src/app/core/ngxs/interview/interview.actions';
 import { InterviewState } from 'src/app/core/ngxs/interview/interview.state';
+import { HabitViewEnum } from 'src/app/core/models/habits.model';
+import { FADE_HABIT_VIEW, FADE_HABIT_LIST, FADE_HABITS } from 'src/app/shared/animations/enter-leave.animation';
 
 @Component({
   selector: 'app-habits',
   templateUrl: './habits.component.html',
   styleUrls: ['../habits.scss'],
   encapsulation: ViewEncapsulation.None,
-
+  animations: [
+    FADE_HABIT_VIEW
+  ]
 })
 export class HabitsComponent implements OnInit {
+
+  public habitView = HabitViewEnum.INTRO;
+
   //-- scroll routing --//
   private timeout = 500;
   private scrollRoutingIsActive = false;
@@ -35,7 +51,7 @@ export class HabitsComponent implements OnInit {
       }
       if (this._delta > 0 && element.scrollTop === element.scrollHeight - element.clientHeight) {
         this._delta = 0;
-        //this.goToNextStep();
+        this.goToNextStep();
       }
     }
     this.scrollRoutingIsActive = false;
@@ -47,9 +63,14 @@ export class HabitsComponent implements OnInit {
   @HostListener('window:wheel', ['$event'])
   onScroll(event: WheelEvent): void {
     // Close detail on scroll
-    this.closeHabitDetails();
     // @ts-ignore
-    if (document.activeElement != document.body) document.activeElement.blur();
+    const path = event.path || (event.composedPath && event.composedPath());
+    // @ts-ignore
+    if (!path.filter((el) => el && el.nodeType && el.nodeType === Node.ELEMENT_NODE && el.classList.contains('cover-half__full-height')).length) {
+      this.closeHabitDetails();
+      // @ts-ignore
+      if (document.activeElement != document.body) document.activeElement.blur();
+    }
 
     if (!this.scrollRoutingIsActive) {
       const element = document.querySelector('.page-habits__container');
@@ -83,24 +104,9 @@ export class HabitsComponent implements OnInit {
     )
   );
 
-  allHabits$ = this.interviewResult$.pipe(
-    map((result) => Array.from(new Set([...result.Habits_Clus_shared, ...result.Clus_Top_Habits, ...result.Habits_unique])))
-  );
-  clusterHabits$ = this.interviewResult$.pipe(
-    map((result) => [...result.Habits_Clus_shared, ...result.Clus_Top_Habits])
-  );
-  personalHabits$ = this.interviewResult$.pipe(
-    map((result) => [...result.Habits_Clus_shared, ...result.Habits_unique])
-  );
-  sharedHabits$ = this.interviewResult$.pipe(
-    map((result) => result.Habits_Clus_shared)
-  );
-
-  isClusterHabitsShown: boolean = true;
-  isPersonalHabitsShown: boolean = false;
   selectedHabit: string = '';
 
-  constructor(private store: Store, private router: Router) {}
+  constructor(private store: Store, private router: Router) { }
 
   ngOnInit(): void {
     //@ts-ignore
@@ -110,17 +116,7 @@ export class HabitsComponent implements OnInit {
     // @ts-ignore
     document.querySelectorAll('html, body').forEach(x => x.style.width = '100%');
     // @ts-ignore
-    document.querySelectorAll('html, body').forEach(x => x.style.overflow = 'auto')
-  }
-
-  showClusterHabits() {
-    this.isClusterHabitsShown = true;
-    this.isPersonalHabitsShown = false;
-  }
-
-  showPersonalHabits() {
-    this.isClusterHabitsShown = false;
-    this.isPersonalHabitsShown = true;
+    document.querySelectorAll('html, body').forEach(x => x.style.overflow = 'auto');
   }
 
   showHabbitDetails(habitName: string = '') {
@@ -133,22 +129,28 @@ export class HabitsComponent implements OnInit {
 
   goToNextStep() {
     this.scrollRoutingIsActive = false;
-    this.router.navigate(['/profile-reveal', 'landscape']);
+    if (this.habitView != HabitViewEnum.DOWNLOAD) {
+      this.habitView = this.habitView + 1;
+      document.querySelector('app-habits')?.classList.remove('up');
+      document.querySelector('app-habits')?.classList.add('down');
+      return;
+    }
+    //this.router.navigate(['/profile-reveal', 'landscape']);
   }
 
   goToPrevStep() {
-      this.scrollRoutingIsActive = false;
-      document.querySelector('app-habits')?.classList.add('leave');
-      setTimeout(() => {
-        this.scrollRoutingIsActive = true;
-        this.router.navigate(['/profile-reveal', 'species']);
-      }, 750);
-  }
-
-  download(event: Event) {
-    event.preventDefault();
-    this.store.dispatch(new DownloadResults());
-    this.router.navigate(['/profile-reveal', 'landscape']);
+    this.scrollRoutingIsActive = false;
+    if (this.habitView != HabitViewEnum.INTRO) {
+      this.habitView = this.habitView - 1;
+      document.querySelector('app-habits')?.classList.add('up');
+      document.querySelector('app-habits')?.classList.remove('down');
+      return;
+    }
+    document.querySelector('app-habit-digging')?.classList.add('leave');
+    setTimeout(() => {
+      this.scrollRoutingIsActive = true;
+      this.router.navigate(['/profile-reveal', 'species']);
+    }, 750);
   }
 
   private activateScrollRouting() {

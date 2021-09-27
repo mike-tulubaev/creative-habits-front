@@ -36,13 +36,6 @@
     letter-spacing: -0.02em;
   }
 
-  &--intro {
-    margin-bottom: 32px;
-    font-size: 32px;
-    letter-spacing: 0.02em;
-    text-align: center;
-  }
-
   //.title--policy
   &--policy {
     margin-bottom: 35px;
@@ -52,8 +45,15 @@
   //.title--intro
   &--intro {
     margin-bottom: 32px;
-    font-size: 32px;
+    font-size: 30px;
+    line-height: 130%;    
     letter-spacing: 0.02em;
     text-align: center;
+  }
+
+  &__subtitle {
+    font-size: 32px;
+    line-height: 140%;
+    margin-top: 6px;
   }
 }

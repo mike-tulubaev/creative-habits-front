@@ -1,0 +1,102 @@
+<div class="habit-view">
+  <h2 class="habit-view__title">
+    Explore your <span class="habit-view__italic">creative habits</span>
+  </h2>
+  <p class="habit-view__desc habit-view__desc--explore">
+    Click to dig into your creative habits & see how they compare to the top
+    creative habits of {{ createiveSpecies$ | async }}.
+  </p>
+  <div>
+    <div
+      class="page-habits__tabs"
+      [class.page-habits__tabs--disabled]="!isClusterHabitsShown && !isPersonalHabitsShown"
+      [class.page-habits__tabs--left]="isPersonalHabitsShown"
+      [class.page-habits__tabs--right]="isClusterHabitsShown"
+    >
+      <button
+        class="page-habits__tab"
+        [class.page-habits__tab--active]="isPersonalHabitsShown"
+        (click)="showPersonalHabits()"
+      >
+        Your Creative Habits
+      </button>
+      <button
+        class="page-habits__tab"
+        [class.page-habits__tab--active]="isClusterHabitsShown"
+        (click)="showClusterHabits()"
+      >
+        {{ createiveSpecies$ | async }}' Habits
+      </button>
+      <div class="page-habits__marker">
+        <p class="page-habits__marker-text page-habits__marker-text--left">Your Creative Habits</p>
+        <p class="page-habits__marker-text page-habits__marker-text--right">{{ createiveSpecies$ | async }}' Habits</p>
+      </div>
+    </div>
+    <div
+      class="page-habits__content-box enter"
+      *ngIf="isClusterHabitsShown || isPersonalHabitsShown"
+    >
+      <div
+        class="page-habits__content"
+        [class.page-habits__content--active]="isPersonalHabitsShown"
+        *ngIf="isPersonalHabitsShown"
+      >
+        <!-- Group -->
+        <div class="page-habits__content-group">
+          <button
+            *ngFor="let habit of sharedHabits$ | async"
+            class="page-habits__button page-habits__button--glow"
+            (click)="showHabbitDetails(habit)"
+          >
+            {{ habit }}
+          </button>
+          <p class="page-habits__content-group-text">Habits you share with {{ createiveSpecies$ | async }}</p>
+        </div>
+        <!-- Group -->
+        <div class="page-habits__content-group">
+          <button
+            *ngFor="let habit of personalHabits$ | async"
+            class="page-habits__button"
+            (click)="showHabbitDetails(habit)"
+          >
+            {{ habit }}
+          </button>
+          <p class="page-habits__content-group-text">Habits Unique to You</p>
+        </div>
+      </div>
+      <div
+        class="page-habits__content"
+        [class.page-habits__content--active]="isClusterHabitsShown"
+        *ngIf="isClusterHabitsShown"
+      >
+        <!-- Group -->
+        <div class="page-habits__content-group">
+          <button
+            *ngFor="let habit of sharedHabits$ | async"
+            class="page-habits__button page-habits__button--glow"
+            (click)="showHabbitDetails(habit)"
+          >
+            {{ habit }}
+          </button>
+          <p class="page-habits__content-group-text">Habits you share with {{ createiveSpecies$ | async }}</p>
+        </div>
+        <!-- Group -->
+        <div class="page-habits__content-group">
+          <button
+            *ngFor="let habit of clusterHabits$ | async"
+            class="page-habits__button"
+            (click)="showHabbitDetails(habit)"
+          >
+            {{ habit }}
+          </button>
+          <p class="page-habits__content-group-text">{{ createiveSpecies$ | async }}’ other habits</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-marker">
+    <app-icon name="arrow-down" class="icon--arrow-down"></app-icon>Scroll to
+    learn how to make the most of your habits
+  </div>
+</div>

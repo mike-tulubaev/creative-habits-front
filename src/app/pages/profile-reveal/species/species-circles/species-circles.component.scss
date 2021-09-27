@@ -1,0 +1,128 @@
+@import "../../../../../styles/variables.scss";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 240px);
+}
+
+.circles-col {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: $color-yellow;
+
+  &--dark { // .circles-col--dark
+    color: $color-dark-gray;
+  }
+
+  &__title { // .circles-col__title
+    margin-bottom: 30px;
+    font-family: $font-mi-roman;
+    font-size: 30px;
+    line-height: 39px;
+  }
+
+  &__text { // .circles-col__text
+    margin-bottom: 40px;
+    font-family: $font-mi-roman;
+    font-size: 22px;
+    line-height: 30px;
+    transition: opacity 0.5s linear;
+
+    &--hidden { // .circles-col__text--hidden
+      opacity: 0;
+    }
+  }
+
+  &__text-italic { // .circles-col__text-italic
+    font-family: $font-mi-italic;
+  }
+}
+
+.circles {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  color: $color-yellow;
+  cursor: pointer;
+
+  &--dark { // .circles--dark
+    color: $color-dark-gray;
+  }
+
+  &__item { // .circles__item
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid $color-yellow;
+    text-align: center;
+    transition: transform 0.5s;
+
+    .circles--dark & {
+      border-color: $color-dark-gray;
+    }
+
+    &--you { // .circles__item--you
+      width: 200px;
+      height: 200px;
+    }
+
+    &--name { // .circles__item--name
+      width: 150px;
+      height: 150px;
+      transform: translateX(60px);
+
+      .circles--animated & {
+        transform: translateX(-112px);
+      }
+    }
+  }
+
+  &__text { // .circles__text
+    font-family: $font-mi-roman;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: -1%;
+    opacity: 1;
+    transition: opacity 0.2s linear;
+
+    .circles--animated & {
+      opacity: 0;
+    }
+  }
+
+  &__name-row { // .circles__name-row
+    display: block;
+  }
+
+  &__value { // .circles__value
+    position: absolute;
+    top: 50%;
+    left: 163px;
+    transform: translate(-50%, -50%);
+    min-width: 90px;
+    margin-top: -3px;
+    font-family: $font-mi-roman;
+    font-size: 30px;
+    line-height: 39px;
+    font-weight: 400;
+    text-align: center;
+    text-shadow: 0px 0px 3px #fffbf0;
+    opacity: 0;
+    transition: opacity 0.2s linear;
+    transition-delay: 0s;
+
+    &--left { // .circles__value--left
+      left: 240px;
+    }
+
+    .circles--animated & {
+      opacity: 1;
+      transition-delay: 0.4s;
+    }
+  }
+}

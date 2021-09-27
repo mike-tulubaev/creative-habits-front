@@ -97,3 +97,10 @@ export const HABITS_BY_CLUSTERS = {
   ],
   [CreativeSpeciesEnum.RARE_BREED]: [],
 };
+
+export enum HabitViewEnum {
+  INTRO = 1,
+  EXPLORE = 2,
+  DIGGING = 3,
+  DOWNLOAD = 4,
+}

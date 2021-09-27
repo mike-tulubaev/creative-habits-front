@@ -210,13 +210,20 @@
   }
 
   &__intro-text { // .page-species__intro-text
-    font-family: $font-gt-light;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 16px;
+    font-family: $font-mi-roman;
+    font-size: 30px;
+    line-height: 39px;
     text-align: center;
-    letter-spacing: 0.02em;
+  }
+
+  &__text-wrapper { // .page-species__text-wrapper
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 240px);
+
+    &--landscape { // .page-species__text-wrapper--landscape
+      height: auto;
+    }
   }
 
   &__text,
@@ -311,6 +318,9 @@
   }
 
   &__reveal-next-page { // .page-species__reveal-next-page
+    display: flex;
+    align-items: center;
+
     &--dark { // .page-species__reveal-next-page--dark
       color: $color-dark-gray;
     }
@@ -320,10 +330,89 @@
     }
   }
 
+  &__reveal-next-page-text { // .page-species__reveal-next-page-text
+    font-family: $font-gt-light;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 2%;
+    font-weight: 300;
+  }
+
+  &__reveal-next-page-icon { // .page-species__reveal-next-page-icon
+    width: 8px;
+    height: 24px;
+    margin-right: 12px;
+    transform: translateY(-5px);
+  }
+
+  &__reveal-hover-hint {// .page-species__reveal-hover-hint
+    position: fixed;
+    z-index: 10;
+    left: 50%;
+    bottom: 36px;
+    display: inline-block;
+    color: #fff;
+    transform: translateX(-50%);
+    max-width: 464px;
+    font-family: $font-gt-light;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 300;
+    letter-spacing: 2%;
+  }
+
   &__router {
     display: flex;
     flex-grow: 1;
     flex-direction: column;
     justify-content: center;
+  }
+}
+
+.species-col {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0;
+  }
+}
+
+app-species {
+  &.down {
+    app-species-description, app-species-circles {
+      animation: 1s slide-down-species linear;
+      animation-delay: 1ms;
+    }
+
+  }
+  &.up {
+    app-species-description, app-species-circles {
+      animation: 1s slide-up-species linear;
+      animation-delay: 1ms;
+    }
+  }
+}
+
+@keyframes slide-up-species {
+  from {
+    opacity: 0;
+    transform: translateY(-100vh);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down-species {
+  from {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

@@ -9,6 +9,8 @@
   //.row--home-step3
   &--home-step3 {
     align-items: center;
+    flex-direction: column;
+    //max-width: 896px;
   }
 
   //.row--survey
@@ -29,10 +31,18 @@
     &::-webkit-scrollbar {
       width: 0;
     }
-    -webkit-mask-image: -webkit-linear-gradient(bottom, rgba(#000, 0) 0%, rgba(0, 0, 0, 1.0) 10%, rgba(0, 0, 0, 1.0) 90%, rgba(#000, 0) 100%);
-    mask-image: -moz-linear-gradient(bottom, rgba(#000, 0) 0%, rgba(0, 0, 0, 1.0) 10%, rgba(0, 0, 0, 1.0) 90%, rgba(#000, 0) 100%);
-    mask-image: -o-linear-gradient(bottom, rgba(#000, 0) 0%, rgba(0, 0, 0, 1.0) 10%, rgba(0, 0, 0, 1.0) 90%, rgba(#000, 0) 100%);
-    mask-image: linear-gradient(to top, rgba(#000, 0) 0%, rgba(0, 0, 0, 1.0) 10%, rgba(0, 0, 0, 1.0) 90%, rgba(#000, 0) 100%);
+    -webkit-mask-image: -webkit-linear-gradient(bottom, rgba(#000, 0) 0%, rgba(0, 0, 0, 1.0) 5%, rgba(0, 0, 0, 1.0) 95%, rgba(#000, 0) 100%);
+    mask-image: -moz-linear-gradient(bottom, rgba(#000, 0) 0%, rgba(0, 0, 0, 1.0) 5%, rgba(0, 0, 0, 1.0) 95%, rgba(#000, 0) 100%);
+    mask-image: -o-linear-gradient(bottom, rgba(#000, 0) 0%, rgba(0, 0, 0, 1.0) 5%, rgba(0, 0, 0, 1.0) 95%, rgba(#000, 0) 100%);
+    mask-image: linear-gradient(to top, rgba(#000, 0) 0%, rgba(0, 0, 0, 1.0) 5%, rgba(0, 0, 0, 1.0) 95%, rgba(#000, 0) 100%);
   }
+
+  &--species-habits {
+    height: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
 }
 

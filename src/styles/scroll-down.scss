@@ -1,0 +1,29 @@
+.scroll-down {
+  display: flex !important;
+  align-items: center;
+  text-decoration: none;
+  color: $color-yellow;
+
+  &--dark { // .scroll-down--dark
+    color: $color-dark-gray;
+  }
+
+  &--in-text { // .scroll-down--in-text
+    margin-top: 32px;
+  }
+
+  &__icon { // .scroll-down__icon
+    width: 8px;
+    height: 24px;
+    margin-right: 12px;
+    transform: translateY(-2px);
+  }
+
+  &__text { // .scroll-down__text
+    font-family: $font-gt-light;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 2%;
+    font-weight: 300;
+  }
+}

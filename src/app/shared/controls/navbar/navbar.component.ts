@@ -85,6 +85,9 @@ export class NavbarComponent implements OnInit {
   );
   currentNavbarSet: NavbarElements = NavbarSet.home;
 
+  wasAudioBtnClick$ = this.navbarService.wasAudioBtnClick$;
+  isAudioPlay$ = this.navbarService.isAudioPlay$;
+
   createiveSpecies$: Observable<
     CreativeSpeciesEnum | undefined
   > = this.store
@@ -144,7 +147,13 @@ export class NavbarComponent implements OnInit {
     private store: Store,
     private router: Router,
     private navbarService: NavbarService
-  ) {}
+  ) {
+    this.isAudioPlay$.subscribe((val)=>{
+      if(val) {
+        this.playAudio();
+      }
+    })
+  }
 
   ngOnInit() {
     this.store
@@ -210,6 +219,13 @@ export class NavbarComponent implements OnInit {
   toggleAudio() {
     this.isAudioEnabled = !this.isAudioEnabled;
     this.audioToggleEvent$.next(this.isAudioEnabled);
+    this.navbarService.audioBtnClick();
+  }
+
+  playAudio() {
+    this.isAudioEnabled = true;
+    this.audioToggleEvent$.next(this.isAudioEnabled);
+    this.navbarService.audioBtnClick();
   }
 
   showServeqFAQ() {

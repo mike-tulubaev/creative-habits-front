@@ -1,0 +1,56 @@
+<div class="circles-col species-col" [ngClass]="{ 'circles-col--dark': dark }">
+  <div class="species-col__wrapper">
+    <h1 class="circles-col__title">Your Creative Species</h1>
+    <p class="circles-col__text">
+      You are {{ cluster }} because of your shared
+      <i class="circles-col__text-italic">creative habits</i>. But you likely also
+      have other habits that make you unique.
+    </p>
+    <!-- Circles -->
+    <div
+      class="circles"
+      [ngClass]="{ 'circles--dark': dark, 'circles--animated': animated }"
+      (click)="toggleCircleAnimation()"
+    >
+      <div class="circles__item circles__item--you">
+        <span class="circles__text">You</span>
+      </div>
+      <div
+        class="circles__item circles__item--name"
+        [ngStyle]="{ transform: 'translateX(' + circleTranslate + ')' }"
+      >
+        <span class="circles__text">
+          <span class="circles__name-row" *ngFor="let row of clusterList">{{
+            row
+          }}</span>
+        </span>
+      </div>
+      <div
+        class="circles__value"
+        [ngClass]="{ 'circles__value--left': isValueLeft }"
+        [ngStyle]="{ transform: 'translate(-50%, -50%) translateX(' + valueTranslate + ')' }"
+      >
+        {{ affinity }}%
+      </div>
+    </div>
+    <p
+      class="circles-col__text"
+      [ngClass]="{ 'circles-col__text--hidden': !animated }"
+    >
+      You share {{ affinity }}% of {{ cluster }}’s
+      <i class="circles-col__text-italic">creative habits</i>.
+    </p>
+
+    <a
+      [routerLink]="['/profile-reveal', 'habits']"
+      class="scroll-down scroll-down--in-text"
+      [ngClass]="{ 'scroll-down--dark': dark }"
+    >
+      <app-icon name="down" class="icon scroll-down__icon icon--down"></app-icon>
+      <span class="scroll-down__text">
+        <ng-container *ngIf="animated; else before_animation_text">Scroll on to learn more</ng-container>
+        <ng-template #before_animation_text>Scroll to see how much you have in common with <br />{{ cluster }}.</ng-template>
+      </span>
+    </a>
+  </div>
+</div>

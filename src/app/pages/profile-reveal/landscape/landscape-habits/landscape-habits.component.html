@@ -12,22 +12,30 @@
 
       <div class="col col--habits-landscape">
         <div class="page-habits__wrapper">
-
-          <app-species-description [cluster]="selectedCluster$ | async"></app-species-description>
+          <app-species-description [cluster]="selectedCluster$ | async" [dark]="darkMode" [landscapeMode]="true"></app-species-description>
           <div class="page-habits__content page-habits__content--active">
             <button
               *ngFor="let habit of clusterHabits$ | async"
               class="page-habits__button"
-              [class.page-habits__button--double-border]="(sharedHabits$ | async)?.includes(habit)"
+              [class.page-habits__button--glow]="(sharedHabits$ | async)?.includes(habit)"
               (click)="showHabbitDetails(habit)">
               {{ habit }}
             </button>
           </div>
+          <a
+            href="#"
+            class="scroll-down scroll-down--in-text"
+            [ngClass]="{'scroll-down--dark':darkMode}"
+            (click)="goToMap($event)"
+          >
+            <app-icon name="down" class="icon scroll-down__icon icon--down"></app-icon>
+            <span class="scroll-down__text">Scroll to continue</span>
+          </a>
         </div>
         <!-- Plant links -->
         <div class="page-habits__wrapper page-habits__wrapper--links" *ngIf="selectedCluster$ | async as selectedCluster">
           <button
-            (click)="goToMap()"
+            (click)="goToMap($event)"
             class="link-to-map link-to-map--plant-links"
             [class.link-to-map--white]="darkModeClass$ | async"
           >
@@ -114,12 +122,12 @@
             <picture>
               <source
                 type="image/webp"
-                srcset="/assets/img/landscape/science{{darkScienceButton?'_dark':''}}.webp"
+                srcset="/assets/img/landscape/science{{darkMode?'_dark':''}}.webp"
               >
               <img
-                appCache="/assets/img/landscape/science{{darkScienceButton?'_dark':''}}.png"
+                appCache="/assets/img/landscape/science{{darkMode?'_dark':''}}.png"
                 class="plant-link__science-image"
-                src="/assets/img/landscape/science{{darkScienceButton?'_dark':''}}.png"
+                src="/assets/img/landscape/science{{darkMode?'_dark':''}}.png"
                 alt=""
               >
             </picture>

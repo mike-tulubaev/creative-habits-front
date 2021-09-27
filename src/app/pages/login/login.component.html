@@ -3,8 +3,7 @@
     <div class="wrapper wrapper--intro">
       <h1 class="title title--intro">
         Welcome to
-        <br>
-        C<i class="title__italic">R</i>EATIVE LANDS<i class="title__italic">C</i>APE
+        <div class="title__subtitle">C<i class="title__italic">R</i>EATIVE LANDS<i class="title__italic">C</i>APE</div>
       </h1>
       <form class="login-form" (submit)="password.blur(); validatePassword(password.value, $event)">
         <input type="password" class="input login-form__input" [class.invalid]="invalid" placeholder="Enter password" #password>

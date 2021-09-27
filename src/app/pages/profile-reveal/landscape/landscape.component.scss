@@ -48,9 +48,13 @@
   transition: opacity 0.2s, color 0.2s;
 
   &--plant-links {
-    margin-bottom: 30px;
+    margin-bottom: 17px;
     border: none;
     background-color: unset;
+
+    @media (max-height: 900px) {
+      margin-bottom: 10px;
+    }
   }
 
   &:hover {
@@ -136,6 +140,38 @@
         pointer-events: none;
       }
     }
+  }
+
+  &__intro-welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  &__intro-header {
+    display: block;
+    max-width: 100%;
+  }
+
+  &__intro-subheader {
+    margin-bottom: 0;
+    font-family: $font-mi-roman;
+    font-size: 30px;
+    line-height: 39px;
+    color: $color-yellow;
+  }
+
+  &__intro-text {
+    max-width: 665px;
+    font-family: $font-mi-roman;
+    font-size: 22px;
+    line-height: 31px;
+    color: $color-yellow;
+    letter-spacing: -1%;
   }
 
   &__mode-toggle {
@@ -256,47 +292,52 @@
   flex-shrink: 0;
   width: 100px;
   height: 100px;
-  margin-bottom: 20px;
+  margin-bottom: 13px;
   cursor: pointer;
 
+  @media (max-height: 900px) {
+    margin-bottom: 0;
+    height: 11% !important;
+  }
+
   &--mono-routinus {
-    width: 61px;
-    height: 107px;
+    width: 42px;
+    height: 74px;
   }
 
   &--yolo-chaotis {
-    width: 55px;
-    height: 96px;
+    width: 38px;
+    height: 66px;
   }
 
   &--socialis-adventurous {
-    width: 153px;
-    height: 84px;
+    width: 100px;
+    height: 58px;
   }
 
   &--focus-mononovous {
-    width: 59px;
-    height: 103px;
+    width: 41px;
+    height: 72px;
   }
 
   &--novo-gregarious {
-    width: 106px;
-    height: 105px;
+    width: 100px;
+    height: 63px;
   }
 
   &--sui-inspira {
-    width: 52px;
-    height: 113px;
+    width: 35px;
+    height: 78px;
   }
 
   &--solo-noctus {
-    width: 109px;
-    height: 109px;
+    width: 47px;
+    height: 85px;
   }
 
   &--science {
     width: 66px;
-    height: 52px;
+    height: 57px;
   }
 
   &__image {

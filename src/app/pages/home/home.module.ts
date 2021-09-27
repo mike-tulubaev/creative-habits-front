@@ -6,6 +6,7 @@ import { VideoComponent } from './video/video.component';
 import { TakeSurveyComponent } from './take-survey/take-survey.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { SoundComponent } from './sound/sound.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     IntroComponent,
     VideoComponent,
     TakeSurveyComponent,
+    SoundComponent,
   ],
   exports: [HomeComponent],
   imports: [CommonModule, SharedModule, HomeRoutingModule],

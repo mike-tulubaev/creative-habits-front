@@ -1,0 +1,36 @@
+.habit-view {
+  min-height: calc(100vh - 170px);
+  padding-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+
+  .page-species--reveal-light-gradient & {
+    color: $color-dark-gray;
+  }
+
+  &__title {
+    font-size: 30px;
+    line-height: 130%;
+    margin-bottom: 30px;
+  }
+
+  &__italic {
+    font-family: $font-mi-italic;
+  }
+
+  &__desc {
+    font-size: 22px;
+    line-height: 140%;
+    margin-bottom: 0px;
+    
+    &--explore {
+      font-size: 12px;
+      line-height: 130%;
+      font-family: $font-gt-regular;      
+      letter-spacing: 0.02em;
+      margin-bottom: 60px;
+    }
+  }
+}

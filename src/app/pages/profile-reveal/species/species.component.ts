@@ -14,30 +14,36 @@ import {
 } from 'src/app/core/models/creative-species.enum';
 import { InterviewState } from 'src/app/core/ngxs/interview/interview.state';
 import { SCROLL_TIMEOUT, DELTA_LIMIT } from 'src/app/core/scroll.settings';
-import { FADE_IN_OUT } from 'src/app/shared/animations/enter-leave.animation';
+import { InterviewResultModel } from 'src/app/core/models/interview-result.model';
+import { SpeciesViewEnum } from 'src/app/core/models/species.model';
 
 @Component({
   selector: 'app-species',
   templateUrl: './species.component.html',
   styleUrls: ['./species.component.scss'],
-  animations: [FADE_IN_OUT],
   encapsulation: ViewEncapsulation.None,
 })
 export class SpeciesComponent implements OnInit {
+  public speciesView = SpeciesViewEnum.INTRO;
   //-- scroll routing --//
-  private timeout = SCROLL_TIMEOUT;
+  private timeout = 500;
   private scrollRoutingIsActive = false;
   private _delta = 0;
+  public isCirclesAnimated: boolean = false;
   private set delta(v: number) {
     this._delta = v;
-    //@ts-ignore
-    if (this._delta > document.querySelector('.col--page-species')?.scrollHeight + 150) {
-      document.querySelector('app-species-description')?.classList.add('leave');
-      setTimeout(() => {
+    const element = document.querySelector('.row--species-reveal');
+    if (element && this.scrollRoutingIsActive) {
+      if (this._delta < 0 && element.scrollTop === 0) {
         this._delta = 0;
-        this.router.navigate(['/profile-reveal', 'habits']);
-      }, 750);
+        this.goToPrevStep();
+      }
+      if (this._delta > 0 && element.scrollTop === element.scrollHeight - element.clientHeight) {
+        this._delta = 0;
+        this.goToNextStep();
+      }
     }
+    this.scrollRoutingIsActive = false;
   }
   private get delta(): number {
     return this._delta;
@@ -45,13 +51,24 @@ export class SpeciesComponent implements OnInit {
 
   @HostListener('window:wheel', ['$event'])
   onScroll(event: WheelEvent): void {
-    event.preventDefault();
     if (this.scrollRoutingIsActive) {
       this.delta += event.deltaY;
-      if(this.delta < 0) this.delta = 0;
+      if (this.delta < 0) this.delta = 0;
+    }
+
+    if (!this.scrollRoutingIsActive) {
+      const element = document.querySelector('.col--page-species');
+      if (element && (element.scrollTop === element.scrollHeight - element.clientHeight || element.scrollTop === 0)) {
+        this.activateScrollRouting();
+      }
+      return;
     }
   }
   //-- scroll routing end --//
+
+  interviewResult$: Observable<InterviewResultModel> = this.store
+    .select(InterviewState.result)
+    .pipe(filter((res) => !!res)) as Observable<InterviewResultModel>;
 
   creativeSpeciesEnum = CreativeSpeciesEnum;
   createiveSpecies$: Observable<
@@ -59,6 +76,11 @@ export class SpeciesComponent implements OnInit {
   > = this.store
     .select(InterviewState.result)
     .pipe(map((result) => result?.Creative_Species));
+
+  clusterAffinity$ = this.interviewResult$.pipe(
+    map((result) => result.Cluster_Affinity),
+    map((affinity) => (affinity ? affinity * 100 : 0))
+  );
 
   darkModeClass$ = this.createiveSpecies$.pipe(
     map((species) =>
@@ -89,7 +111,7 @@ export class SpeciesComponent implements OnInit {
     })
   );
 
-  constructor(private store: Store, private router: Router) {}
+  constructor(private store: Store, private router: Router) { }
 
   ngOnInit(): void {
     //@ts-ignore
@@ -104,4 +126,36 @@ export class SpeciesComponent implements OnInit {
     document.querySelector('body')?.classList.remove('fixed');
   }
 
+  public goToNextStep = () => {
+    this.scrollRoutingIsActive = false;
+    if (this.speciesView != SpeciesViewEnum.CIRCLES) {
+      this.speciesView = this.speciesView + 1;
+      document.querySelector('app-species')?.classList.remove('up');
+      document.querySelector('app-species')?.classList.add('down');
+      return;
+    }
+    else if (!this.isCirclesAnimated) {
+      this.isCirclesAnimated = true;
+    }
+    else {
+      this.router.navigate(['/profile-reveal', 'habits']);
+    }
+  }
+
+  goToPrevStep() {
+    this.scrollRoutingIsActive = false;
+    if (this.speciesView != SpeciesViewEnum.INTRO) {
+      this.speciesView = this.speciesView - 1;
+      document.querySelector('app-species')?.classList.add('up');
+      document.querySelector('app-species')?.classList.remove('down');
+      this.isCirclesAnimated = false;
+      return;
+    }
+  }
+
+  private activateScrollRouting() {
+    setTimeout(() => {
+      this.scrollRoutingIsActive = true;
+    }, this.timeout);
+  }
 }

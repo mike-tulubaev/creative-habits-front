@@ -1,58 +1,5 @@
 @import '../../../styles/variables.scss';
 
-.intro {
-	//.intro__icons
-	&__icons {
-		display: flex;
-		align-items: center;
-		margin-bottom: 50px;
-		transform: translateX(-10px);
-	}
-
-	//.intro__text
-	&__text {
-		font-family: $font-gt-regular;
-		font-size: 14px;
-	}
-
-  //.intro__img
-  &__image {
-    position: absolute;
-
-    //.intro__img--1
-    &--1 {
-      top: -40px;
-      right: 50%;
-      transform: translate(-16.1vw, 0);
-      width: 445px;
-    }
-
-		//.intro__img--2
-    &--2 {
-      top: -96px;
-      left: 50%;
-      transform: translate(0.7vw, 0);
-      width: 428px;
-    }
-
-		//.intro__img--3
-    &--3 {
-      right: 50%;
-      bottom: -261px;
-      transform: translate(-14vw, 0);
-      width: 623px;
-    }
-
-		//.intro__img--4
-    &--4 {
-      left: 50%;
-      bottom: 32px;
-      transform: translate(10.1vw, 0);
-      width: 627px;
-    }
-  }
-}
-
 .login-form {
 	display: flex;
 	flex-direction: column;
@@ -75,7 +22,7 @@
 	border-width: 0;
 	border-bottom: 1px solid rgba($color-yellow, .4);
 	font-family: $font-mi-roman;
-	font-size: 24px;
+	font-size: 22px;
 	line-height: 1;
 	color: $color-yellow;
 	text-align: center;

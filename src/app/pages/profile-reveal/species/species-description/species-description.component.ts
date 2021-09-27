@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CreativeSpeciesEnum } from 'src/app/core/models/creative-species.enum';
 
 @Component({
@@ -8,6 +8,10 @@ import { CreativeSpeciesEnum } from 'src/app/core/models/creative-species.enum';
 })
 export class SpeciesDescriptionComponent implements OnInit {
   @Input() cluster: CreativeSpeciesEnum | null | undefined;
+  @Input() dark: boolean | null | undefined;
+  @Input() landscapeMode: boolean | null | undefined;
+  //@ts-ignore
+  @Input() public nextStep:()=>void;
 
   creativeSpeciesEnum = CreativeSpeciesEnum;
 
@@ -16,4 +20,8 @@ export class SpeciesDescriptionComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  gotoCircles(e:any) {
+    e.preventDefault();
+    this.nextStep();
+  }
 }

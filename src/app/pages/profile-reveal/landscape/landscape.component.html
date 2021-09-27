@@ -5,7 +5,6 @@
       class="map map--mode-landscape"
       [ngClass]="{
         'map--intro': step === steps.INTRO,
-        'map--single': step === steps.MAP_SINGLE,
         'map--plant-selected': !!selectedCluster && step === steps.MAP_ALL
       }">
       <div class="map__bg-wrapper map__bg-wrapper--landscape">
@@ -46,15 +45,10 @@
         </ng-container>
         <ng-template #intro>
           <div class="container map__intro">
-            <div class="row">
-              <div class="col col--landscape-intro">
-                <h1 class="landscape-intro__title">Explore the habitats of the
-                  <span class="landscape-intro__title-italic">Seven Creative Species.</span></h1>
-                <p class="landscape-intro__text">
-                  As in the natural world, each species thrives in some environments and struggles in others; some prefer calm, quiet alcoves, and
-                  others, bustling and social meadows. Some root deep for creative nutrients while others glide on the wind, seeking new experiences.</p>
-                <p class="landscape-intro__text">Ready to find your habitat?</p>
-              </div>
+            <div class="map__intro-welcome">
+              <p class="map__intro-subheader">Welcome to the</p>
+              <img class="map__intro-header" src="/assets/img/landscape/intro/creative_landscape.svg" alt="">
+              <p class="map__intro-text">Some species thrive in quiet alcoves while others flourish in bustling, social meadows. Explore the unique habitats of the Creative Landscape and the species that thrive within them.</p>
             </div>
           </div>
         </ng-template>
@@ -67,7 +61,6 @@
           class="map__plant plant plant--focus-mononovous"
           [ngClass]="{
             'plant--mode-landscape': step === steps.MAP_ALL,
-            'plant--single': step === steps.MAP_SINGLE && selectedCluster === clusters.FOCUS_MONONOVOUS,
             'map__plant--selected': selectedCluster === clusters.FOCUS_MONONOVOUS
           }"
           (mouseenter)="onMouseEnterPlant($event)"
@@ -105,7 +98,6 @@
           class="map__plant plant plant--solo-noctus"
           [ngClass]="{
             'plant--mode-landscape': step === steps.MAP_ALL,
-            'plant--single': step === steps.MAP_SINGLE && selectedCluster === clusters.SOLO_NOCTUS,
             'map__plant--selected': selectedCluster === clusters.SOLO_NOCTUS
           }"
           (mouseenter)="onMouseEnterPlant($event)"
@@ -142,7 +134,6 @@
           class="map__plant plant plant--sui-inspira"
           [ngClass]="{
             'plant--mode-landscape': step === steps.MAP_ALL,
-            'plant--single': step === steps.MAP_SINGLE && selectedCluster === clusters.SUI_INSPIRA,
             'map__plant--selected': selectedCluster === clusters.SUI_INSPIRA
           }"
           (mouseenter)="onMouseEnterPlant($event)"
@@ -178,7 +169,6 @@
           class="map__plant plant plant--mono-routinus"
           [ngClass]="{
             'plant--mode-landscape': step === steps.MAP_ALL,
-            'plant--single': step === steps.MAP_SINGLE && selectedCluster === clusters.MONO_ROUTINUS,
             'map__plant--selected': selectedCluster === clusters.MONO_ROUTINUS
           }"
           (mouseenter)="onMouseEnterPlant($event)"
@@ -216,7 +206,6 @@
           class="map__plant plant plant--socialis-adventurous"
           [ngClass]="{
             'plant--mode-landscape': step === steps.MAP_ALL,
-            'plant--single': step === steps.MAP_SINGLE && selectedCluster === clusters.SOCIALIS_ADVENTUROUS,
             'map__plant--selected': selectedCluster === clusters.SOCIALIS_ADVENTUROUS
           }"
           (mouseenter)="onMouseEnterPlant($event)"
@@ -253,7 +242,6 @@
           class="map__plant plant plant--yolo-chaotis"
           [ngClass]="{
             'plant--mode-landscape': step === steps.MAP_ALL,
-            'plant--single': step === steps.MAP_SINGLE && selectedCluster === clusters.YOLO_CHAOTIS,
             'map__plant--selected': selectedCluster === clusters.YOLO_CHAOTIS
           }"
           (mouseenter)="onMouseEnterPlant($event)"
@@ -290,7 +278,6 @@
           class="map__plant plant plant--novo-gregarious"
           [ngClass]="{
             'plant--mode-landscape': step === steps.MAP_ALL,
-            'plant--single': step === steps.MAP_SINGLE && selectedCluster === clusters.NOVO_GREGARIOUS,
             'map__plant--selected': selectedCluster === clusters.NOVO_GREGARIOUS
           }"
           (mouseenter)="onMouseEnterPlant($event)"
@@ -328,9 +315,17 @@
   <a
     (click)="goToNextStep()"
     class="page-species__reveal-next-page"
+    *ngIf="step < steps.MAP_ALL"
   >
-    <app-icon name="scroll" class="icon--next-page"></app-icon>
+    <app-icon name="down" class="page-species__reveal-next-page-icon"></app-icon>
+    <span class="page-species__reveal-next-page-text">Scroll to continue</span>
   </a>
+  <p
+    class="page-species__reveal-hover-hint"
+    *ngIf="step == steps.MAP_ALL"
+  >
+    Hover on a Creative Species to see how much overlap you have with their creative habits. Click on to learn more!
+  </p>
 </main>
 
 <app-landscape-habits *ngIf="step === steps.HABITS" (openMap)="goToMap()"></app-landscape-habits>

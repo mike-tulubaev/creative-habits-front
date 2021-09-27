@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { NavigationEnd, Router, UrlSegment } from '@angular/router';
 import { Store } from '@ngxs/store';
-import { combineLatest, Subject } from 'rxjs';
+import { combineLatest, BehaviorSubject, Subject } from 'rxjs';
 import {
   distinctUntilChanged,
   filter,
@@ -20,6 +20,16 @@ import { InterviewState } from '../ngxs/interview/interview.state';
 export class NavbarService {
   showSurveyFAQ$: Subject<null> = new Subject();
   showProfileRevealInfo$: Subject<null> = new Subject();
+  wasAudioBtnClick$ = new BehaviorSubject(false);
+  isAudioPlay$ = new BehaviorSubject(false);
+
+  audioBtnClick() {
+    this.wasAudioBtnClick$.next(true);
+  }
+
+  playAudio() {
+    this.isAudioPlay$.next(true);
+  }
 
   audioSource$ = combineLatest([
     this.router.events.pipe(

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { InterviewResultModel } from 'src/app/core/models/interview-result.model';
 import { InterviewState } from 'src/app/core/ngxs/interview/interview.state';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-navbar-menu',
@@ -21,7 +22,16 @@ export class NavbarMenuComponent implements OnInit {
     map((result) => result.Creative_Species)
   );
 
-  constructor(private store: Store) { }
+  isSpeciesActive: boolean;
+
+  constructor(private store: Store,  private router: Router) {
+    this.isSpeciesActive = (this.router.url==='/profile-reveal/species');
+    router.events.subscribe((val) => {
+        if(val instanceof NavigationEnd) {
+          this.isSpeciesActive = (this.router.url==='/profile-reveal/species');
+        }
+    });
+  }
 
   ngOnInit(): void {
   }

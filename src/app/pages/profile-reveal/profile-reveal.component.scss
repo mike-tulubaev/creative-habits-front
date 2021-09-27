@@ -29,12 +29,26 @@ app-habits {
   }
 }
 
-app-species-description {
+app-species-description{
   &:not(.leave) {
     animation: 1s slide-up-species;
   }
   &.leave {
     animation: 1s slide-up-species-leave;
+  }
+}
+
+app-habits{
+  &.down {
+    app-habit-intro, app-habit-explore, app-habit-digging, app-habit-download {
+      animation: 1s slide-down-habits;
+    }
+
+  }
+  &.up {
+    app-habit-intro, app-habit-explore, app-habit-digging, app-habit-download {
+      animation: 1s slide-up-habits;
+    }
   }
 }
 
@@ -78,34 +92,32 @@ app-species-description {
   }
 }
 
-@keyframes slide-up-habits-leave {
+@keyframes slide-up-habits {
   from {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-
-  to {
     opacity: 0;
-    transform: translateY(-46vh);
-  }
-}
-
-@keyframes slide-up-habits-step3-enter {
-  from {
-    transform: translateY(110%);
+    transform: translateY(-150vh);
+    //margin-top: 50vh;
   }
 
   to {
+    opacity: 1;
     transform: translateY(0);
+    margin-top: 0;
   }
 }
 
-@keyframes slide-up-habits-content {
+@keyframes slide-down-habits {
   from {
-    margin-bottom: -150%;
+    //margin-bottom: 50vh;
+    opacity: 0;
+    transform: translateY(150vh);
   }
 
   to {
+    opacity: 1;
+    transform: translateY(0);
     margin-bottom: 0;
   }
 }
+
+

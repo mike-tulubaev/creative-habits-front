@@ -1,0 +1,14 @@
+<div class="sound" >
+  <div class="sound__backdrop" [ngClass]="{'sound__backdrop--show' : showBackdrop}"></div>
+  <div class="container sound__container">
+    <div class="sound__box" [ngClass]="{'sound__box--show' : showModal}">
+        <button class="sound__close" (click)="close()">
+          <app-icon name="close"></app-icon>
+        </button>
+        <div class="sound__play-clickable-area" (click)="playAudio()">
+          Sound on!
+          <app-icon name="sound" class="sound__icon"></app-icon>
+        </div>
+    </div>
+  </div>
+</div>

@@ -104,3 +104,16 @@ export const FADE_HABIT_LIST: AnimationTriggerMetadata = trigger(
     ]),
   ]
 );
+export const FADE_HABIT_VIEW: AnimationTriggerMetadata = trigger(
+  'fadeHabitView',
+  [
+    transition(':enter', [
+      style({ transform: 'translateY(100%)' }),
+      animate('0.5s', style({ transform: 'translateY(0)' })),
+    ]),
+    transition(':leave', [
+      style({ transform: 'translateY(0)' }),
+      animate('0.5s', style({ transform: 'translateY(-100%)' })),
+    ]),
+  ]
+);

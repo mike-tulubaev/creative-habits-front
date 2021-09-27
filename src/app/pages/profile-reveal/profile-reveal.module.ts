@@ -15,6 +15,11 @@ import { LandscapeHabitsComponent } from './landscape/landscape-habits/landscape
 import { SpeciesDescriptionComponent } from './species/species-description/species-description.component';
 import { HabitSummaryComponent } from './habits/habit-summary/habit-summary.component';
 import { ProfileRevealInfoComponent } from './profile-reveal-info/profile-reveal-info.component';
+import { SpeciesCirclesComponent } from './species/species-circles/species-circles.component';
+import { HabitIntroComponent } from './habits/habit-intro/habit-intro.component';
+import { HabitExploreComponent } from './habits/habit-explore/habit-explore.component';
+import { HabitDiggingComponent } from './habits/habit-digging/habit-digging.component';
+import { HabitDownloadComponent } from './habits/habit-download/habit-download.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +35,11 @@ import { ProfileRevealInfoComponent } from './profile-reveal-info/profile-reveal
     LandscapeHabitsComponent,
     MapComponent,
     SpeciesDescriptionComponent,
+    SpeciesCirclesComponent,
+    HabitIntroComponent,
+    HabitExploreComponent,
+    HabitDiggingComponent,
+    HabitDownloadComponent,
   ],
   exports: [ProfileRevealComponent],
   imports: [CommonModule, SharedModule, ProfileRevealRoutingModule],

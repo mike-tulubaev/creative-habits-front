@@ -11,19 +11,21 @@ export const MAP_STATES: AnimationTriggerMetadata = trigger('mapState', [
   state(
     'intro',
     style({
-      opacity: '1',
-      transform: ' translateX(380px)',
-      height: '100vh',
-      right: '50%',
+      opacity: '0.6',
+      transform: ' translateX(-50%)',
+      height: '100%',
+      left: '50%',
+      filter: 'blur(55px)',
     })
   ),
   state(
     'main',
     style({
-      opacity: '0.2',
-      transform: ' none',
+      opacity: '1',
+      transform: ' translateX(-50%)',
       height: '100%',
-      right: '0',
+      left: '50%',
+      filter: 'none',
     })
   ),
   transition('intro <=> main', [animate('500ms ease-in-out')]),

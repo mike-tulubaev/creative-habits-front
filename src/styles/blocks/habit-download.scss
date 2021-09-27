@@ -1,0 +1,49 @@
+.habit-download {
+  max-width: 317px;
+  padding-top: 53px;
+
+  &__text {
+    font-size: 10px;
+    line-height: 120%;
+    font-family: $font-gt-regular;
+    margin-bottom: 15px;
+  }
+
+  &__button { // .page-habits__download
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 13px 10px 14px 10px;
+    border: 1px solid $color-yellow;
+    border-radius: 50px;
+    font-family: $font-gt-light;
+    font-size: 12px;
+    line-height: 17px;
+    color: $color-yellow;
+    text-decoration: none;
+
+    .page-species--reveal-light-gradient & {
+      border-color: rgba($color-dark-gray, 0.35);
+      color: $color-dark-gray;
+    }
+  }
+
+  &__retake {
+    text-align: center;
+    font-size: 10px;
+    line-height: 120%;
+    padding-top: 14px;
+    
+    a {
+      font-family: $font-gt-regular;
+      color: $color-yellow;
+    }
+
+    .page-species--reveal-light-gradient & {
+      a {
+        color: $color-dark-gray;
+      }
+    }    
+  }
+}

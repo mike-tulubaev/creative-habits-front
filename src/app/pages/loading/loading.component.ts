@@ -7,13 +7,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./loading.component.scss']
 })
 export class LoadingComponent implements OnInit {
-
+  fadeClass = '';
+  
   constructor(private router: Router) { }
 
   ngOnInit(): void {
     setTimeout(() => {
+      this.fadeClass = 'in';
+    }, 500);
+
+    setTimeout(() => {
       this.router.navigate(['/home']);
-    }, 2500);
+    }, 3500);
   }
 
 }

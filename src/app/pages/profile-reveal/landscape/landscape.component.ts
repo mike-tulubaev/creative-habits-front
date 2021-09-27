@@ -26,7 +26,6 @@ import { MAP_STATES } from 'src/app/shared/animations/state-transition.animation
 
 enum LandscapeStepsEnum {
   INTRO,
-  MAP_SINGLE,
   MAP_ALL,
   HABITS,
 }
@@ -110,73 +109,27 @@ export class LandscapeComponent implements OnInit {
 
   ngOnInit(): void {
     this.activateScrollRouting();
-    /*this.store
-      .selectOnce(AppState.wasLandscapeIntroShown)
-      .subscribe((wasLandscapeIntroShown) => {
-        if (wasLandscapeIntroShown) {
-          this.goToNextStep();
-        } else {
-          this.store.dispatch(new SetWasLandscapeIntroShownAction());
-        }
-      });*/
   }
 
   goToNextStep() {
-    if (this.step < this.steps.MAP_ALL) {
-      this.activateScrollRouting();
-    } else {
-      this.scrollRoutingIsActive = false;
-    }
-    if (this.step < this.steps.HABITS) {
+    if(this.step == this.steps.INTRO) {
       this.step++;
-      if (this.step === this.steps.MAP_SINGLE) {
-        this.interviewResult$.pipe(first()).subscribe((result) => {
-          this.selectedCluster = result.Creative_Species;
-
-          if (this.selectedCluster === -1) {
-            this.step = this.steps.MAP_ALL;
-          }
-        });
-      }
-      if (this.step === this.steps.MAP_ALL) {
-        this.selectedCluster = undefined;
-        this.makeClustersSelectable();
-      }
-    } else {
-      if (this.selectedCluster === -1) {
-        this.selectedCluster = CreativeSpeciesEnum.MONO_ROUTINUS;
-      }
+      this.activateScrollRouting();
+    }
+    if(this.step == this.steps.MAP_ALL) {
+      this.makeClustersSelectable();
     }
   }
 
   goToPrevStep() {
     this.activateScrollRouting();
     if (this.step > this.steps.INTRO) {
-      if (this.step === this.steps.MAP_SINGLE) {
-        this.store
-          .selectOnce(AppState.wasLandscapeIntroShown)
-          .subscribe((wasLandscapeIntroShown) => {
-            if (wasLandscapeIntroShown) {
-              this.router.navigate(['/profile-reveal', 'habits']);
-            }
-          });
-      } else {
-        this.step--;
-        if (this.step === this.steps.MAP_SINGLE) {
-          this.interviewResult$.pipe(first()).subscribe((result) => {
-            this.selectedCluster = result.Creative_Species;
-            if (this.selectedCluster === -1) {
-              this.router.navigate(['/profile-reveal', 'rare-breed']);
-            }
-          });
-        }
-        if (this.step === this.steps.MAP_ALL) {
-          this.selectedCluster = undefined;
-        }
+      this.step--;
+      if (this.step === this.steps.MAP_ALL) {
+        this.selectedCluster = undefined;
       }
     } else {
       this.interviewResult$.pipe(first()).subscribe((result) => {
-        console.log('results', result);
         if (result.Creative_Species === -1) {
           this.router.navigate(['/profile-reveal', 'rare-breed']);
         } else {
@@ -196,11 +149,13 @@ export class LandscapeComponent implements OnInit {
   goToHabits() {
     this.scrollRoutingIsActive = false;
     this.interviewResult$.pipe(first()).subscribe((result) => {
-      this.store.dispatch(
+      if(this.selectedCluster) {
+        this.store.dispatch(
         new SelectedClusterOfLandscapeHabitsAction(
           this.selectedCluster ? this.selectedCluster : result.Creative_Species
         )
       );
+      }
     });
     this.step = this.steps.HABITS;
   }

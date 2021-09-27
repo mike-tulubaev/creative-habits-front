@@ -2,3 +2,16 @@
   display: flex;
   flex-grow: 1;
 }
+
+.text {
+  font-size: 30px;
+  line-height: 130%;
+  text-align: center;
+  margin-bottom: 33px;
+  
+  &--small {
+    font-size: 22px;
+    line-height: 30.8px;
+    margin-bottom: 66px;
+  }
+}
