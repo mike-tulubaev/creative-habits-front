@@ -34,7 +34,7 @@
       </div>
     </div>
     <p
-      class="circles-col__text"
+      class="circles-col__text circles-col__text--last"
       [ngClass]="{ 'circles-col__text--hidden': !animated }"
     >
       You share {{ affinity }}% of {{ cluster }}’s
@@ -43,7 +43,7 @@
 
     <a
       [routerLink]="['/profile-reveal', 'habits']"
-      class="scroll-down scroll-down--in-text"
+      class="scroll-down scroll-down--in-text scroll-down--two-lines"
       [ngClass]="{ 'scroll-down--dark': dark }"
     >
       <app-icon name="down" class="icon scroll-down__icon icon--down"></app-icon>

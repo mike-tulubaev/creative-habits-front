@@ -242,7 +242,7 @@
     color: $color-yellow;
     opacity: 0;
     transform: translateX(-17px);
-    transition: opacity 0.4s linear;
+    transition: opacity 0.45s;
 
     .page-habits__content-group:hover & {
       opacity: 1;
@@ -264,13 +264,13 @@
     font-family: $font-gt-light;
     font-size: 12px;
     line-height: 17px;
-    color: rgba($color-yellow, .65);
+    color: $color-yellow;
     white-space: nowrap;
     text-align: center;
     transition: border-color 0.3s, background-color 0.3s, color 0.5s, box-shadow 0.3s;
 
     .page-species--reveal-light-gradient & {
-      color: rgba($color-dark-gray, .65);
+      color: $color-dark-gray;
       border-color: rgba($color-dark-gray, 0.35);
     }
 
@@ -310,6 +310,26 @@
 
       .page-species--reveal-light-gradient .page-habits__content-group:hover & {
         box-shadow: 0 0 8px $color-dark-gray;
+      }
+    }
+
+    &--ghost {
+      border-color: rgba($color-yellow, 0.15);
+      color: rgba($color-yellow, .65);
+
+      .page-species--reveal-light-gradient & {
+        border-color: rgba($color-dark-gray, 0.15);
+        color: rgba($color-dark-gray, .65);
+      }
+
+      .page-habits__content-group:hover & {
+        border-color: rgba($color-yellow, 0.35);
+        color: $color-yellow;
+      }
+
+      .page-species--reveal-light-gradient .page-habits__content-group:hover & {
+        border-color: rgba($color-dark-gray, 0.35);
+        color: $color-dark-gray;
       }
     }
 

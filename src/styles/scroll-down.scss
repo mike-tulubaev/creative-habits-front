@@ -12,6 +12,10 @@
     margin-top: 32px;
   }
 
+  &--two-lines { // .scroll-down--two-lines
+    min-height: 32px;
+  }
+
   &__icon { // .scroll-down__icon
     width: 8px;
     height: 24px;

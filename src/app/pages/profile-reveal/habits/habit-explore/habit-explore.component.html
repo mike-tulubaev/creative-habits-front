@@ -84,7 +84,7 @@
         <div class="page-habits__content-group">
           <button
             *ngFor="let habit of clusterHabits$ | async"
-            class="page-habits__button"
+            class="page-habits__button page-habits__button--ghost"
             (click)="showHabbitDetails(habit)"
           >
             {{ habit }}

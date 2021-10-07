@@ -10,7 +10,7 @@ import {
 import { Router } from '@angular/router';
 import { Store } from '@ngxs/store';
 import { Observable, combineLatest, BehaviorSubject } from 'rxjs';
-import { filter, first, map } from 'rxjs/operators';
+import { filter, first, map, switchMap } from 'rxjs/operators';
 import {
   CreativeSpeciesEnum,
   CREATIVE_SPECIES_WHITE_BG,
@@ -122,6 +122,24 @@ export class LandscapeHabitsComponent implements OnInit, OnDestroy {
   sharedHabits$ = this.interviewResult$.pipe(
     map((result) => [...result.Habits_Clus_shared, ...result.Habits_unique])
   );
+  clusterHabitsNotShared$ = this.clusterHabits$.pipe(
+    switchMap((habits) => {
+      return this.sharedHabits$.pipe(
+        map(v => {
+          return habits.filter(h => !v.includes(h))
+        })
+      )
+    })
+  );
+  clusterHabitsShared$ = this.clusterHabits$.pipe(
+    switchMap((habits) => {
+      return this.sharedHabits$.pipe(
+        map(v => {
+          return habits.filter(h => v.includes(h))
+        })
+      )
+    })
+  );
 
   constructor(private store: Store, private router: Router) { }
 
@@ -130,7 +148,6 @@ export class LandscapeHabitsComponent implements OnInit, OnDestroy {
     this.createiveSpecies$
       .pipe(first())
       .subscribe((cluster) => this.selectedCluster$.next(cluster === -1 ? CreativeSpeciesEnum.MONO_ROUTINUS : cluster));
-    this.contentWrapper = document.querySelector('.page-habits__wrapper');
   }
 
   ngOnDestroy(): void {
@@ -153,67 +170,5 @@ export class LandscapeHabitsComponent implements OnInit, OnDestroy {
   goToMap(event: Event) {
     event.preventDefault();
     this.openMap.next();
-  }
-
-
-  private contentWrapper: Element | null = null;
-
-  //-- scroll routing --//
-  private timeout = 500;
-  private scrollRoutingIsActive = false;
-  private _delta = 0;
-  private set delta(v: number) {
-    this._delta = v;
-    const canRoute = this.contentWrapper && this.scrollRoutingIsActive;
-    // @ts-ignore
-    const scrollGotToTop = canRoute && this._delta < 0 && this.contentWrapper.scrollTop === 0;
-    // @ts-ignore
-    const scrollGotToBottom = canRoute && this._delta > this.contentWrapper.scrollHeight - this.contentWrapper.clientHeight;
-    if (scrollGotToTop) {
-      this._delta = 0;
-    }
-    // @ts-ignore
-    if (scrollGotToBottom) {
-      this._delta = 0;
-      this.openMap.next();
-    }
-    this.scrollRoutingIsActive = false;
-  }
-  private get delta(): number {
-    return this._delta;
-  }
-
-
-
-  @HostListener('window:wheel', ['$event'])
-  onScroll(event: WheelEvent): void {
-    // Close detail on scroll
-    // @ts-ignore
-    const path = event.path || (event.composedPath && event.composedPath());
-    // @ts-ignore
-    const scrollUnderDrawer = !path.filter((el) => el && el.nodeType && el.nodeType === Node.ELEMENT_NODE && el.classList.contains('cover-half__full-height')).length;
-    if (scrollUnderDrawer) {
-      this.closeHabitDetails();
-      // @ts-ignore
-      if (document.activeElement != document.body) {
-        // @ts-ignore
-        document.activeElement.blur();
-      }
-    }
-
-    const canActivateScroll = !this.scrollRoutingIsActive && this.contentWrapper && (this.contentWrapper.scrollTop === this.contentWrapper.scrollHeight - this.contentWrapper.clientHeight || this.contentWrapper.scrollTop === 0)
-    if (canActivateScroll) {
-      this.activateScrollRouting();
-      return;
-    }
-    if (!(event.target as HTMLElement).className.includes('cover-half')) {
-      this.delta += event.deltaY;
-    }
-  }
-
-  private activateScrollRouting() {
-    setTimeout(() => {
-      this.scrollRoutingIsActive = true;
-    }, this.timeout);
   }
 }

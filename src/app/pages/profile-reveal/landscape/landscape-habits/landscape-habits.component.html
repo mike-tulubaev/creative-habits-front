@@ -14,23 +14,21 @@
         <div class="page-habits__wrapper">
           <app-species-description [cluster]="selectedCluster$ | async" [dark]="darkMode" [landscapeMode]="true"></app-species-description>
           <div class="page-habits__content page-habits__content--active">
-            <button
-              *ngFor="let habit of clusterHabits$ | async"
-              class="page-habits__button"
-              [class.page-habits__button--glow]="(sharedHabits$ | async)?.includes(habit)"
-              (click)="showHabbitDetails(habit)">
-              {{ habit }}
-            </button>
+            <div class="page-habits__content-group">
+              <button
+                *ngFor="let habit of clusterHabitsShared$ | async"
+                class="page-habits__button page-habits__button--glow"
+                (click)="showHabbitDetails(habit)">
+                {{ habit }}
+              </button>
+              <button
+                *ngFor="let habit of clusterHabitsNotShared$ | async"
+                class="page-habits__button page-habits__button--ghost"
+                (click)="showHabbitDetails(habit)">
+                {{ habit }}
+              </button>
+            </div>
           </div>
-          <a
-            href="#"
-            class="scroll-down scroll-down--in-text"
-            [ngClass]="{'scroll-down--dark':darkMode}"
-            (click)="goToMap($event)"
-          >
-            <app-icon name="down" class="icon scroll-down__icon icon--down"></app-icon>
-            <span class="scroll-down__text">Scroll to continue</span>
-          </a>
         </div>
         <!-- Plant links -->
         <div class="page-habits__wrapper page-habits__wrapper--links" *ngIf="selectedCluster$ | async as selectedCluster">

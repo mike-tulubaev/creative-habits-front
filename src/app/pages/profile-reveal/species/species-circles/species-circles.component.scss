@@ -33,6 +33,10 @@
     &--hidden { // .circles-col__text--hidden
       opacity: 0;
     }
+
+    &--last { // .circles-col__text--last
+      margin-bottom: 20px;
+    }
   }
 
   &__text-italic { // .circles-col__text-italic
